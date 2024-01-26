@@ -1,19 +1,3 @@
----
-myst:
-  substitutions:
-    w1: [Introduction](./assets/pdf/course-introduction.pdf)
-    w2: |
-      ```
-    - [What is Data Mining]()
-    - [Common Data Mining Tasks]()
-      ```
-    fishy: |
-      ```{image} img/fun-fish.png
-      :alt: fishy
-      :width: 200px
-      ```
----
-
 # Welcome
 
 to our Knowledge Discovery and Data mining course. In this course, we’ll delve into the world of data mining, uncovering valuable insights from vast datasets. Explore techniques for identifying meaningful patterns, correlations, and trends, and apply them to real-world and synthetic data. Topics encompass all stages of knowledge discovery, from association rules to cluster analysis, classification, and regression. Through hands-on coding, students will implement essential data mining algorithms and use existing tools to expand their skill set in practical applications
@@ -50,7 +34,7 @@ There is no main textbook for the class. However, you may use materials from the
 | --- | --- | --- | --- |
 | 1 (01/08) | [Introduction](assets/pdf/course-introduction.pdf) |  | [Python](./python-resources.md) |
 | 2 (01/15) | <ul><li>[What is Data Mining](assets/pdf/data-mining-intro.pdf)</li><li>[Common Data Mining Tasks](assets/pdf/data-mining-tasks.pdf)</li></ul> | [HW 1](homeworks/1.md) | [Math Essentials](https://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf) |
-| 3 (01/22) | [Attribute]()[Basic statistics]()[Visualization]() |  |  |
+| 3 (01/22) | [Descriptive Statistics](assets/pdf/data-exploration-descriptive-statistics.pdf) |  | [Introduction to Python](samples/python.ipynb) |
 | 4 (01/29) | [Linear Regression]() [Linear Model Evaluation]() |  |  |
 | 5 (02/05) | [Logistic Regression 1]() [Logistic Regression 2]() |  |  |
 | 6 (02/12) | [Tree Bsed Model 1]() [Tree Bsed Model 2]() |  |  |

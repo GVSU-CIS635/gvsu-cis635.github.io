@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>CSIT 440 Data Preprocessing Example in Python &#8212; GVSU CIS 635 - Knowledge Discovery and Data Mining</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CSIT440_python_example_inClass';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="syllabus.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">GVSU CIS 635 - Knowledge Discovery and Data Mining</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="syllabus.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homeworks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="homeworks/1.html">Homework 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-resources.html">Python Resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="samples/python.html">Introduction to Python</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Yong-Zhuang/gvsu-cis635/blob/main/book/CSIT440_python_example_inClass.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CSIT440_python_example_inClass.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CSIT 440 Data Preprocessing Example in Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-online-book">Recommended Online Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data-set">About the data set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading">1. Data Loading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">2. Descriptive Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-selecting">3. Data Selecting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-normalization">4. Data Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">Min_Max normalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">5. Data Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">6. Data Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">6.1 Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">6.2 Scatter Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-between-features">7. Correlation between Features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dim-reduction-pca">8. Dim Reduction: PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binning-and-histogram">9. Binning and Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equal-width-binning">9.1 Equal-width Binning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equal-depth-binning">9.2 Equal-depth Binning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">9.3 Histogram</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="csit-440-data-preprocessing-example-in-python">
+<h1>CSIT 440 Data Preprocessing Example in Python<a class="headerlink" href="#csit-440-data-preprocessing-example-in-python" title="Permalink to this heading">#</a></h1>
+<section id="recommended-online-book">
+<h2>Recommended Online Book<a class="headerlink" href="#recommended-online-book" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/index.html">Python Data Science Handbook</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="about-the-data-set">
+<h2>About the data set<a class="headerlink" href="#about-the-data-set" title="Permalink to this heading">#</a></h2>
+<p>This file <strong>Cars93.csv</strong> contains the data set from the MASS package of R. It includes 93 rows and 27 columns.</p>
+<p>Cars were selected at random from among 1993 passenger car models that were listed in both the Consumer Reports issue and the PACE Buying Guide. Pickup trucks and Sport/Utility vehicles were eliminated due to incomplete information in the Consumer Reports source. Duplicate models (e.g., Dodge Shadow and Plymouth Sundance) were listed at most once.</p>
+<p>Source:
+Lock, R. H. (1993) 1993 New Car Data. Journal of Statistics Education 1(1). <a class="reference external" href="https://doi.org/10.1080/10691898.1993.11910459">https://doi.org/10.1080/10691898.1993.11910459</a></p>
+<p>Semetics of the columns:</p>
+<ol class="arabic simple">
+<li><p>Manufacturer.</p></li>
+<li><p>Model.</p></li>
+<li><p>Type: a factor with levels “Small”, “Sporty”, “Compact”, “Midsize”, “Large” and “Van”.</p></li>
+<li><p>Min.Price: Minimum Price (in $1,000): price for a basic version.</p></li>
+<li><p>Price: Midrange Price (in $1,000): average of Min.Price and Max.Price.</p></li>
+<li><p>Max.Price: Maximum Price (in $1,000): price for “a premium version”.</p></li>
+<li><p>MPG.city: City MPG (miles per US gallon by EPA rating).</p></li>
+<li><p>MPG.highway: Highway MPG.</p></li>
+<li><p>AirBags: Air Bags standard. Factor: none, driver only, or driver &amp; passenger.</p></li>
+<li><p>DriveTrain: Drive train type: rear wheel, front wheel or 4WD; (factor).</p></li>
+<li><p>Cylinders: Number of cylinders (missing for Mazda RX-7, which has a rotary engine).</p></li>
+<li><p>EngineSize: Engine size (litres).</p></li>
+<li><p>Horsepower: Horsepower (maximum).</p></li>
+<li><p>RPM: RPM (revs per minute at maximum horsepower).</p></li>
+<li><p>Rev.per.mile: Engine revolutions per mile (in highest gear).</p></li>
+<li><p>Man.trans.avail: Is a manual transmission version available? (yes or no, Factor).</p></li>
+<li><p>Fuel.tank.capacity: Fuel tank capacity (US gallons).</p></li>
+<li><p>Passengers: Passenger capacity (persons)</p></li>
+<li><p>Length: Length (inches).</p></li>
+<li><p>Wheelbase: Wheelbase (inches).</p></li>
+<li><p>Width: Width (inches).</p></li>
+<li><p>Turn.circle: U-turn space (feet).</p></li>
+<li><p>Rear.seat.room: Rear seat room (inches) (missing for 2-seater vehicles).</p></li>
+<li><p>Luggage.room: Luggage capacity (cubic feet) (missing for vans).</p></li>
+<li><p>Weight: Weight (pounds).</p></li>
+<li><p>Origin: Of non-USA or USA company origins? (factor).</p></li>
+<li><p>Make: Combination of Manufacturer and Model (character).</p></li>
+</ol>
+</section>
+<section id="data-loading">
+<h2>1. Data Loading<a class="headerlink" href="#data-loading" title="Permalink to this heading">#</a></h2>
+<p>Load <strong>Cars93.csv</strong> as a dataframe named <em><strong>cars</strong></em>.</p>
+</section>
+<section id="descriptive-statistics">
+<h2>2. Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this heading">#</a></h2>
+<p>Find the mean, median, maximum, minimum and standard deviation of <strong>Max.Price</strong>.</p>
+</section>
+<section id="data-selecting">
+<h2>3. Data Selecting<a class="headerlink" href="#data-selecting" title="Permalink to this heading">#</a></h2>
+<p>List all the records of compact cars.</p>
+<p>List all the records of compact cars made by Ford.</p>
+</section>
+<section id="data-normalization">
+<h2>4. Data Normalization<a class="headerlink" href="#data-normalization" title="Permalink to this heading">#</a></h2>
+<section id="min-max-normalization">
+<h3>Min_Max normalization<a class="headerlink" href="#min-max-normalization" title="Permalink to this heading">#</a></h3>
+<p>In most cases, when you normalize data you eliminate the units of measurement for data, enabling you to more easily compare data from different places. Rescaling data to have values between 0 and 1 is usually called feature scaling. One possible formula to achieve this is:</p>
+<p>x_new = x - x_min / x_max - x_min</p>
+<p>Normalize the range of feature <strong>Length</strong> between 0 and 1 so that the minimum has value 0 and maximum has value 1.</p>
+</section>
+</section>
+<section id="data-cleaning">
+<h2>5. Data Cleaning<a class="headerlink" href="#data-cleaning" title="Permalink to this heading">#</a></h2>
+<p>List the items in <strong>cars</strong> which have missing values in the column <strong>Min.Price</strong>.</p>
+<p>Replace missing values in <strong>Min.Price</strong> with its respective average value.</p>
+<p>Replace missing values in <strong>Max.Price</strong> with its respective median value.</p>
+</section>
+<section id="data-visualization">
+<h2>6. Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this heading">#</a></h2>
+<p>We will exercise data visualization using the well-known Iris data set, which lists measurements of petals and sepals of three iris species.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Drop the column of <strong>species</strong>.</p>
+<section id="box-plot">
+<h3>6.1 Box Plot<a class="headerlink" href="#box-plot" title="Permalink to this heading">#</a></h3>
+<p>Use a box plot to display the distribution of each measurement in the dataframe features.</p>
+</section>
+<section id="scatter-plot">
+<h3>6.2 Scatter Plot<a class="headerlink" href="#scatter-plot" title="Permalink to this heading">#</a></h3>
+<p>Display the scatter matrix and histograms of all the features in the dataframe features. Can you find any features in a positive correlation?</p>
+</section>
+<section id="correlation-between-features">
+<h3>7. Correlation between Features<a class="headerlink" href="#correlation-between-features" title="Permalink to this heading">#</a></h3>
+<p>Get the Pearson correlation between every two columns in <strong>features</strong>.</p>
+</section>
+</section>
+<section id="dim-reduction-pca">
+<h2>8. Dim Reduction: PCA<a class="headerlink" href="#dim-reduction-pca" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>The fit learns some quantities from the data, most importantly “explained variance” which is the ammount of variance explained by each of the selected component.</p>
+<p>Get the transformed data with one feature</p>
+</section>
+<section id="binning-and-histogram">
+<h2>9. Binning and Histogram<a class="headerlink" href="#binning-and-histogram" title="Permalink to this heading">#</a></h2>
+<section id="equal-width-binning">
+<h3>9.1 Equal-width Binning<a class="headerlink" href="#equal-width-binning" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">cut</span></code> method for Pandas data splits the dataset into bins. There are a number of arguments for the method. The following code creates equal sized bins. The method <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> returns a frequency table.</p>
+<p>Combine the binning data with the original data set</p>
+<p>Sort the data by the values in <strong>Min.Price</strong>.</p>
+</section>
+<section id="equal-depth-binning">
+<h3>9.2 Equal-depth Binning<a class="headerlink" href="#equal-depth-binning" title="Permalink to this heading">#</a></h3>
+<p>The pandas documentation describes qcut as a “Quantile-based discretization function.” This basically means that qcut tries to divide up the underlying data into equal sized bins. The function defines the bins using percentiles based on the distribution of the data, not the actual numeric edges of the bins.</p>
+</section>
+</section>
+<section id="histogram">
+<h2>9.3 Histogram<a class="headerlink" href="#histogram" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-online-book">Recommended Online Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data-set">About the data set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-loading">1. Data Loading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-statistics">2. Descriptive Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-selecting">3. Data Selecting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-normalization">4. Data Normalization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#min-max-normalization">Min_Max normalization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">5. Data Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization">6. Data Visualization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">6.1 Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">6.2 Scatter Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-between-features">7. Correlation between Features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dim-reduction-pca">8. Dim Reduction: PCA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binning-and-histogram">9. Binning and Histogram</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equal-width-binning">9.1 Equal-width Binning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equal-depth-binning">9.2 Equal-depth Binning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">9.3 Histogram</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Yong Zhuang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
