@@ -36,7 +36,7 @@ There is no main textbook for the class. However, you may use materials from the
 | --- | --- | --- | --- |
 | 1 (01/08) | [Introduction](assets/pdf/course-introduction.pdf) |  | [Python](./python-resources.md) |
 | 2 (01/15) | <ul><li>[What is Data Mining](assets/pdf/data-mining-intro.pdf)</li><li>[Common Data Mining Tasks](assets/pdf/data-mining-tasks.pdf)</li></ul> | [HW 1](homeworks/1.md) | [Math Essentials](https://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf) |
-| 3 (01/22) | [Descriptive Statistics](assets/pdf/data-exploration-descriptive-statistics.pdf) |  | [Introduction to Python](samples/python.ipynb) |
+| 3 (01/22) | [Descriptive Statistics](assets/pdf/data-exploration-descriptive-statistics.pdf) |  | <ul><li>[Introduction to Python](samples/python.ipynb)</li><li>[Introduction to Numpy](samples/numpy.ipynb)</li></ul> |
 | 4 (01/29) | [Linear Regression]() [Linear Model Evaluation]() |  |  |
 | 5 (02/05) | [Logistic Regression 1]() [Logistic Regression 2]() |  |  |
 | 6 (02/12) | [Tree Bsed Model 1]() [Tree Bsed Model 2]() |  |  |
