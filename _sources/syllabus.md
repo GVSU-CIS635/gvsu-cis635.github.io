@@ -30,6 +30,8 @@ There is no main textbook for the class. However, you may use materials from the
 
 ## Tentative Schedule
 
+- To execute the sample Jupyter Notebook code, click on the rocket icon <i class="fa fa-rocket" aria-hidden="true"></i> at the top of the page, which will open the notebook in Google Colab for interactive use.
+
 | Week | Topic | Homework | Reading |
 | --- | --- | --- | --- |
 | 1 (01/08) | [Introduction](assets/pdf/course-introduction.pdf) |  | [Python](./python-resources.md) |
