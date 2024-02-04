@@ -32,12 +32,12 @@ There is no main textbook for the class. However, you may use materials from the
 
 - To execute the sample Jupyter Notebook code, click on the rocket icon <i class="fa fa-rocket" aria-hidden="true"></i> at the top of the page, which will open the notebook in Google Colab for interactive use.
 
-| Week | Topic | Homework | Reading |
+| Week | Topic | Video | Resources |
 | --- | --- | --- | --- |
 | 1 (01/08) | [Introduction](assets/pdf/course-introduction.pdf) |  | [Python](./python-resources.md) |
-| 2 (01/15) | <ul><li>[What is Data Mining](assets/pdf/data-mining-intro.pdf)</li><li>[Common Data Mining Tasks](assets/pdf/data-mining-tasks.pdf)</li></ul> | [HW 1](homeworks/1.md) | [Math Essentials](https://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf) |
-| 3 (01/22) | [Descriptive Statistics](assets/pdf/data-exploration-descriptive-statistics.pdf) | [HW 2](homeworks/2.md) | <ul><li>[Introduction to Python](samples/python.ipynb)</li><li>[Introduction to Numpy](samples/numpy.ipynb)</li></ul> |
-| 4 (01/29) | <ul><li>[Data Visualization]()</li><li> [Data Quality]()</li></ul> |  | <ul><li>[Introduction to Pandas](samples/pandas.ipynb)</li></ul> |
+| 2 (01/15) | <ul><li>[What is Data Mining](assets/pdf/data-mining-intro.pdf)</li><li>[Data Mining Tasks](assets/pdf/data-mining-tasks.pdf)</li><li>[HW 1](homeworks/1.md)</li> </ul> | <ul><li>[What is Data Mining](https://youtu.be/vLOU_C9U3TM)</li><li>[Data Mining Tasks](https://youtu.be/pPdu-E95Mng)</li></ul> | [Math Essentials](https://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf) |
+| 3 (01/22) | <ul><li>[Descriptive Statistics](assets/pdf/data-exploration-descriptive-statistics.pdf)</li><li>[HW 2](homeworks/2.md)</li> </ul> | <ul><li>[Descriptive Statistics](https://youtu.be/HDRjhgB6EN0)</li></ul> | <ul><li>[Introduction to Python](samples/python.ipynb)</li><li>[Introduction to Numpy](samples/numpy.ipynb)</li></ul> |
+| 4 (01/29) | <ul><li>[Data Visualization](assets/pdf/data-exploration-data-visualization.pdf)</li><li>[Data Preprocessing I](assets/pdf/data-preprocessing1.pdf)</li></ul> | <ul><li>[Data Visualization](https://youtu.be/VcuphW6n1Mo)</li><li>[Data Preprocessing I](https://youtu.be/9EBOeQA6LD0)</li></ul> | <ul><li>[Introduction to Pandas](samples/pandas.ipynb)</li></ul> |
 | 5 (02/05) | <ul><li>[Data Transformation]()</li><li> [Similarity and Distance]()</li></ul> |  |  |
 | 6 (02/12) | <ul><li>[Correlation]()</li><li> [Correlation II]()</li></ul> |  |  |
 | 7 (02/19) | <ul><li>[Feature Extraction]()</li><li> [Feature Selection]()</li></ul> |  |  |

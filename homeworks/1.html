@@ -539,14 +539,50 @@ document.write(`
 <p>Examine the dataset “University Student Information” provided above. For each of the six attributes (Student ID, Major, Class Standing, Test Score, Age, Attendance), identify and justify its type (nominal, ordinal, interval-scaled, or ratio-scaled)</p>
 <section id="answer">
 <h3>Answer<a class="headerlink" href="#answer" title="Permalink to this heading">#</a></h3>
+<!-- - **Student ID**: Norminal: does not have a quantitative value or order.
+- **Major**: Norminal: categories without any inherent order
+- **Class Standing**: Ordinal: Indicates a ranking or order
+- **Test Score**: Ratio-scaled: Has a true zero point (a score of 0 means no answers were correct). Differences and ratios are meaningful (a score of 80 is twice as much as a score of 40).
+- **Age**: Ratio-scaled: A quantitative measure with a meaningful zero point (age of 0). Differences and ratios are meaningful (a 20-year-old is twice as old as a 10-year-old).
+- **Attendance (%)**: Ratio-scalsed: it’s a quantitative measure with a true zero point (0% attendance means no attendance at all). Differences and ratios are meaningful. -->
+<ol class="arabic simple">
+<li><p><strong>Student ID</strong></p>
 <ul class="simple">
-<li><p><strong>Student ID</strong>:</p></li>
-<li><p><strong>Major</strong>:</p></li>
-<li><p><strong>Class Standing</strong>:</p></li>
-<li><p><strong>Test Score</strong>:</p></li>
-<li><p><strong>Age</strong>:</p></li>
-<li><p><strong>Attendance (%)</strong>:</p></li>
+<li><p><strong>Type</strong>: Nominal</p></li>
+<li><p><strong>Justification</strong>: It serves as a unique identifier without quantitative value or order.</p></li>
 </ul>
+</li>
+<li><p><strong>Major</strong></p>
+<ul class="simple">
+<li><p><strong>Type</strong>: Nominal</p></li>
+<li><p><strong>Justification</strong>: Represents categories (academic majors) that lack inherent order.</p></li>
+</ul>
+</li>
+<li><p><strong>Class Standing</strong></p>
+<ul class="simple">
+<li><p><strong>Type</strong>: Ordinal</p></li>
+<li><p><strong>Justification</strong>: Indicates a clear ranking or sequence (Freshman to Senior) without uniform intervals.</p></li>
+</ul>
+</li>
+<li><p><strong>Test Score</strong></p>
+<ul class="simple">
+<li><p><strong>Type</strong>: Ratio-scaled</p></li>
+<li><p><strong>Justification</strong>: Quantitative measure with a true zero point (0 indicating no correct answers). The differences and ratios are significant and interpretable (e.g., 80 is twice 40).</p></li>
+</ul>
+</li>
+<li><p><strong>Age</strong></p>
+<ul class="simple">
+<li><p><strong>Type</strong>: Ratio-scaled</p></li>
+<li><p><strong>Justification</strong>: A quantitative attribute with a meaningful zero (age 0). The differences and ratios are significant (e.g., a 20-year-old is twice as old as a 10-year-old).</p></li>
+</ul>
+</li>
+<li><p><strong>Attendance (%)</strong></p>
+<ul class="simple">
+<li><p><strong>Type</strong>: Ratio-scaled</p></li>
+<li><p><strong>Justification</strong>: Quantitative measure with a true zero point (0% indicating no attendance). Differences and ratios provide meaningful information.</p></li>
+</ul>
+</li>
+</ol>
 </section>
 </section>
 <section id="part-b-thinking-about-common-data-mining-applications">
