@@ -32,21 +32,21 @@ There is no main textbook for the class. However, you may use materials from the
 
 - To execute the sample Jupyter Notebook code, click on the rocket icon <i class="fa fa-rocket" aria-hidden="true"></i> at the top of the page, which will open the notebook in Google Colab for interactive use.
 
-| Week | Topic | Video | Resources |
-| --- | --- | --- | --- |
-| 1 (01/08) | [Introduction](assets/pdf/course-introduction.pdf) |  | [Python](./python-resources.md) |
-| 2 (01/15) | <ul><li>[What is Data Mining](assets/pdf/data-mining-intro.pdf)</li><li>[Data Mining Tasks](assets/pdf/data-mining-tasks.pdf)</li><li>[HW 1](homeworks/1.md)</li> </ul> | <ul><li>[What is Data Mining](https://youtu.be/vLOU_C9U3TM)</li><li>[Data Mining Tasks](https://youtu.be/pPdu-E95Mng)</li></ul> | [Math Essentials](https://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf) |
-| 3 (01/22) | <ul><li>[Descriptive Statistics](assets/pdf/data-exploration-descriptive-statistics.pdf)</li><li>[HW 2](homeworks/2.md)</li> </ul> | <ul><li>[Descriptive Statistics](https://youtu.be/HDRjhgB6EN0)</li></ul> | <ul><li>[Introduction to Python](samples/python.ipynb)</li><li>[Introduction to Numpy](samples/numpy.ipynb)</li></ul> |
-| 4 (01/29) | <ul><li>[Data Visualization](assets/pdf/data-exploration-data-visualization.pdf)</li><li>[Data Preprocessing I](assets/pdf/data-preprocessing1.pdf)</li></ul> | <ul><li>[Data Visualization](https://youtu.be/VcuphW6n1Mo)</li><li>[Data Preprocessing I](https://youtu.be/9EBOeQA6LD0)</li></ul> | <ul><li>[Introduction to Pandas](samples/pandas.ipynb)</li></ul> |
-| 5 (02/05) | <ul><li>[Data Transformation]()</li><li> [Similarity and Distance]()</li></ul> |  | <ul><li>[NumPy Cheat Sheet](https://media.geeksforgeeks.org/wp-content/uploads/20240104182515/NumPy-Cheat-Sheet.pdf)</li><li>[Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)</li><li>[Descriptive Statistics](samples/descriptive_statistics.ipynb)</li><li>[Data Preprocessing I](samples/preprocessing1.ipynb)</li></ul> |
-| 6 (02/12) | <ul><li>[Correlation]()</li><li> [Correlation II]()</li></ul> |  | <ul><li>[scikit-learn Cheat Sheet](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)</li><li>[matplotlib Cheat Sheet](https://matplotlib.org/cheatsheets/)</li><li>[Data Preprocessing I](samples/preprocessing2.ipynb)</li></ul> |
-| 7 (02/19) | <ul><li>[Feature Extraction]()</li><li> [Feature Selection]()</li></ul> |  |  |
-| 8 (02/26) | <ul><li>[Regression]()</li><li> [Regression II]()</li></ul> |  |  |
-| 9 (03/04) | Spring | Break | No Classes |
-| 10 (03/11) | <ul><li>[Classification]()</li><li> [Classification II]()</li></ul> |  |  |
-| 11 (03/18) | <ul><li>[Clustering]()</li><li> [Clustering II]()</li></ul> |  |  |
-| 12 (03/25) | <ul><li>[Neural Network]()</li><li> [CNN]()</li></ul> |  |  |
-| 13 (04/01) | <ul><li>[RNN]()</li><li> [RNN II]()</li></ul> |  |  |
-| 14 (04/08) | <ul><li>[Attention]()</li><li> [Transformer]()</li></ul> |  |  |
-| 15 (04/15) | [Association Rules]() |  |  |
-| 16 (04/22) | [Project Presentation]() |  |  |
+| Week | Topic | Resources |
+| --- | --- | --- |
+| 1 (01/08) | Introduction <ul><li>[Introduction](assets/pdf/course-introduction.pdf)</li></ul> | <ul><li>[Python](./python-resources.md)</li></ul> |
+| 2 (01/15) | What is Data Mining <ul><li>[Slides](assets/pdf/data-mining-intro.pdf)</li><li>[Video](https://youtu.be/vLOU_C9U3TM)</li></ul> Data Mining Tasks <ul><li>[Slides](assets/pdf/data-mining-tasks.pdf)</li><li>[Video](https://youtu.be/pPdu-E95Mng)</li></ul>[HW 1](homeworks/1.md) | <ul><li>[Math Essentials](https://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf)</li></ul> |
+| 3 (01/22) | Descriptive Statistics <ul><li>[Slides](assets/pdf/data-exploration-descriptive-statistics.pdf)</li><li>[Video](https://youtu.be/HDRjhgB6EN0)</li><li>[Code](https://gvsu-cis635.github.io/samples/descriptive_statistics.html)</li></ul>[HW 2](homeworks/2.md) | <ul><li>[Introduction to Python](samples/python.ipynb)</li><li>[Introduction to Numpy](samples/numpy.ipynb)</li></ul> |
+| 4 (01/29) | Data Visualization <ul><li>[Slides](assets/pdf/data-exploration-data-visualization.pdf)</li><li>[Video](https://youtu.be/VcuphW6n1Mo)</li></ul> Cleaning & Integration <ul><li>[Slides](assets/pdf/cleaning-Integration.pdf)</li><li>[Video](https://youtu.be/9EBOeQA6LD0)</li><li>[Code](https://gvsu-cis635.github.io/samples/cleaning-Integration.html)</li></ul> | <ul><li>[Introduction to Pandas](samples/pandas.ipynb)</li></ul> |
+| 5 (02/05) | Transformation <ul><li>[Slides](assets/pdf/data-transformation.pdf)</li><li>[Video](https://youtu.be/8fws0-6h52I)</li><li>[Code](samples/data-transformation.ipynb)</li></ul> Similarity and Distance | <ul><li>[NumPy Cheat Sheet](https://media.geeksforgeeks.org/wp-content/uploads/20240104182515/NumPy-Cheat-Sheet.pdf)</li><li>[Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)</li></ul> |
+| 6 (02/12) | Correlation <ul><li>[Correlation](#)</li><li>[Correlation II](#)</li></ul> | <ul><li>[scikit-learn Cheat Sheet](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)</li><li>[matplotlib Cheat Sheet](https://matplotlib.org/cheatsheets/)</li></ul> |
+| 7 (02/19) | Feature Extraction and Selection <ul><li>[Feature Extraction](#)</li><li>[Feature Selection](#)</li></ul> |  |
+| 8 (02/26) | Regression <ul><li>[Regression](#)</li><li>[Regression II](#)</li></ul> |  |
+| 9 (03/04) | Spring Break | No Classes |
+| 10 (03/11) | Classification <ul><li>[Classification](#)</li><li>[Classification II](#)</li></ul> |  |
+| 11 (03/18) | Clustering <ul><li>[Clustering](#)</li><li>[Clustering II](#)</li></ul> |  |
+| 12 (03/25) | Neural Networks <ul><li>[Neural Network](#)</li><li>[CNN](#)</li></ul> |  |
+| 13 (04/01) | RNN <ul><li>[RNN](#)</li><li>[RNN II](#)</li></ul> |  |
+| 14 (04/08) | Attention Mechanisms <ul><li>[Attention](#)</li><li>[Transformer](#)</li></ul> |  |
+| 15 (04/15) | [Association Rules](#) |  |
+| 16 (04/22) | [Project Presentation](#) |  |
