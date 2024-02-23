@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>KL-Divergence &#8212; GVSU CIS 635 - Knowledge Discovery and Data Mining</title>
+    <title>Final Project Progress Update &#8212; GVSU CIS 635 - Knowledge Discovery and Data Mining</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'samples/kl-divergence';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project/project-progress-report';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project Final Report" href="project-final-report.html" />
+    <link rel="prev" title="Final Project Proposal Guide" href="project-proposal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,19 +174,19 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample Code</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python.html">Introduction to Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numpy.html">Introduction to Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pandas.html">Introduction to Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="descriptive_statistics.html">Descriptive Statistics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cleaning-Integration.html">Data Preprocessing I</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data-transformation.html">Data Preprocessing II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/python.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/numpy.html">Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/pandas.html">Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/descriptive_statistics.html">Descriptive Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/cleaning-Integration.html">Data Preprocessing I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples/data-transformation.html">Data Preprocessing II</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../project/project-overview.html">Final Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/project-proposal.html">Final Project Proposal Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/project-progress-report.html">Final Project Progress Update</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/project-final-report.html">Final Project Final Report</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="project-overview.html">Final Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project-proposal.html">Final Project Proposal Guide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Final Project Progress Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project-final-report.html">Final Project Final Report</a></li>
 </ul>
 
     </div>
@@ -241,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/samples/kl-divergence.md" target="_blank"
+      <li><a href="../_sources/project/project-progress-report.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +325,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>KL-Divergence</h1>
+    <h1>Final Project Progress Update</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -335,11 +335,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">KL-Divergence:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-1-smoothing">Add-1 Smoothing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kl-divergence-calculation">KL-Divergence Calculation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delivery">Delivery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
 </ul>
             </nav>
         </div>
@@ -351,47 +349,103 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="kl-divergence">
-<h1>KL-Divergence<a class="headerlink" href="#kl-divergence" title="Permalink to this heading">#</a></h1>
-<p>With Add-1 Smoothing</p>
-<hr class="docutils" />
-<p>Given the sample distributions:</p>
-<p><span class="math notranslate nohighlight">\(P = \{a: 1/2, c: 1/4, d: 1/4\}\)</span></p>
-<p><span class="math notranslate nohighlight">\(Q = \{a: 2/5, b: 1/5, e: 2/5\}\)</span></p>
-<section id="id1">
-<h2><a class="reference external" href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL-Divergence</a>:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<div class="math notranslate nohighlight">
-\[D_{KL}(P|| Q) = \sum_{i \in \{a, b, c, d, e\}} P(i) \times \ln \left( \frac{P(i)}{Q(i)} \right)\]</div>
-<p>If we calculate this KL-Divergence, for any value <span class="math notranslate nohighlight">\(i\)</span> where <span class="math notranslate nohighlight">\(Q(i) = 0\)</span>, the value becomes infinite (since dividing by zero is undefined).</p>
-<p>To handle this case, we apply smoothing. I described a simple method for smoothing in the lecture, which introduces the idea of accounting for unseen events when calculating KL-Divergence. In practice, more refined smoothing techniques are often employed. One such technique is <code class="docutils literal notranslate"><span class="pre">add-one</span> <span class="pre">smoothing</span></code> (also known as <code class="docutils literal notranslate"><span class="pre">Laplacian</span> <span class="pre">correction</span></code> or <code class="docutils literal notranslate"><span class="pre">Laplace</span> <span class="pre">smoothing</span></code>). This method is a popular solution to the <code class="docutils literal notranslate"><span class="pre">Zero-Probability</span> <span class="pre">problem</span></code>. More details are available on the <a class="reference external" href="https://en.wikipedia.org/wiki/Additive_smoothing">Wikipedia page</a>.</p>
-<section id="add-1-smoothing">
-<h3>Add-1 Smoothing<a class="headerlink" href="#add-1-smoothing" title="Permalink to this heading">#</a></h3>
-<p>For <span class="math notranslate nohighlight">\(P\)</span>, there are 4 samples: two a’s, 1 c, and 1 d, but it’s missing b and e. Considering a total of 5 values {a,b,c,d,e}, we add 1 for each:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="final-project-progress-update">
+<h1>Final Project Progress Update<a class="headerlink" href="#final-project-progress-update" title="Permalink to this heading">#</a></h1>
+<p>The project progress report is an essential part of your final project. This report is your opportunity to reflect on the work you’ve done so far, identify any challenges you’ve encountered, and plan your next steps. Regular progress updates help ensure consistent work on the project and reduce the likelihood of last-minute rushes.</p>
+<p>You should not wait for my feedback on your progress update before resuming work on your project.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h2>
+<p>Your progress update report should be a concise yet comprehensive document of approximately one to two pages covering the following areas:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(P'(a) = \frac{(1/2 \times 4) + 1}{4 + 5} = \frac{1}{3}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P'(b) = \frac{1}{9}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P'(c) = \frac{(1/4 \times 4) + 1}{4 + 5} = \frac{2}{9}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P'(d) = \frac{(1/4 \times 4) + 1}{4 + 5} = \frac{2}{9}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(P'(e) = \frac{1}{9}\)</span></p></li>
+<li><p><strong>Progress so far</strong></p>
+<ul>
+<li><p>Completed Tasks: Detail what portions of the project you have successfully completed up to this point.</p></li>
+<li><p>Data: Provide links to the datasets you’re utilizing.</p></li>
 </ul>
-<p>For <span class="math notranslate nohighlight">\(Q\)</span>, we follow the same smoothing process:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Q'(a) = \frac{(2/5 \times 5) + 1}{5 + 5} = \frac{3}{10}=0.3\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q'(b) = \frac{(1/5 \times 5) + 1}{5 + 5} = \frac{1}{5}=0.2\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q'(c) = \frac{1}{10}=0.1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q'(d) = \frac{1}{10}=0.1\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Q'(e) = \frac{(2/5 \times 5) + 1}{5 + 5} = \frac{3}{10}=0.3\)</span></p></li>
+</li>
+<li><p><strong>Challenges</strong></p>
+<ul>
+<li><p>Encountered Difficulties: Discuss any significant challenges you have faced during the project. This could include technical difficulties, conceptual misunderstandings, or data issues.</p></li>
+<li><p>Describe how you addressed these challenges. If some challenges remain unresolved, outline your proposed approach to tackle them moving forward.</p></li>
 </ul>
+</li>
+<li><p><strong>Collaboration</strong> (if applicable)</p>
+<ul>
+<li><p>How frequently does your group meet?</p></li>
+<li><p>Does everyone feel like each group member is contributing meaningfully to the project? If not, how does your group plan address this problem?</p></li>
+</ul>
+</li>
+<li><p><strong>Next steps</strong></p>
+<ul>
+<li><p>Remaining Tasks: Outline what still needs to be accomplished on your project.</p></li>
+<li><p>What is your plan to complete the remaining tasks?</p></li>
+<li><p>Do you foresee any potential challenges?</p></li>
+</ul>
+</li>
+</ul>
+<p>Organize your progress report into sections (one for each of the categories above).</p>
 </section>
-<section id="kl-divergence-calculation">
-<h3>KL-Divergence Calculation<a class="headerlink" href="#kl-divergence-calculation" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-D_{KL}(P' || Q') = \sum_{i \in \{a, b, c, d, e\}} P'(i) \times \ln \left( \frac{P'(i)}{Q'(i)} \right)\\
-% = P'(a)\times \ln\left(\frac{P'(a)}{Q'(a)}\right) + P'(b)\times \ln\left(\frac{P'(b)}{Q'(b)}\right) + P'(c)\times \ln\left(\frac{P'(c)}{Q'(c)}\right) + P'(d)\times \ln\left(\frac{P'(d)}{Q'(d)}\right) + P'(e)\times \ln\left(\frac{P'(e)}{Q'(e)}\right)\\
-= \frac{1}{3}\times \ln\left(\frac{\frac{1}{3}}{0.3}\right) + \frac{1}{9}\times \ln\left(\frac{\frac{1}{9}}{0.2}\right) + \frac{2}{9}\times \ln\left(\frac{\frac{2}{9}}{0.1}\right) + \frac{2}{9}\times \ln\left(\frac{\frac{2}{9}}{0.1}\right) + \frac{1}{9}\times \ln\left(\frac{\frac{1}{9}}{0.3}\right)
-\end{split}\]</div>
+<section id="delivery">
+<h2>Delivery<a class="headerlink" href="#delivery" title="Permalink to this heading">#</a></h2>
+<p>Submit your report through Blackboard. If your report is a <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> file, attach it to the submission. If your report is a live webpage, include a (working) link.</p>
+<p>One submission per group. Include in the comments section of the assignment the names of the group members.</p>
+<p>As part of your report, you will need to include working links to your code and data (e.g., in a github repository).</p>
 </section>
+<section id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h2>
+<p>Your progress report will be evaluated based on the following criteria, totaling 100 points:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Item</p></th>
+<th class="head"><p>Points</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Coverage of Required Points Above</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-odd"><td><p>Overall Organization of the Document</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>Formality and Clarity of Writing</p></td>
+<td><p>10</p></td>
+</tr>
+</tbody>
+</table>
+<p>All components of your final project are subject to GVSU and the School of Computing’s academic honesty policies. Violations of these policies may result in failure from the course.</p>
+<!-- - **Progress Report:** Submit your team's progress report to your GitHub repository. Only one submission per team is required.
+- **Code Submission:** Push your project code to the same repository. If you're using Google Colab notebooks, you can save your notebook directly to GitHub. Just click `File` in the Colab menu and choose `Save a copy in GitHub`.
+
+  ```{image} colab-github.jpg
+  :alt: Colab to GitHub Saving Process
+  :width: 300px
+  :align: center
+  ``` -->
+<!--
+Ensure you can access your GitHub account using an SSH Key. If you haven't set this up, follow the steps below or check this [tutorial](https://youtu.be/a-zX_qc2S-M).
+
+1. Open a Git terminal. If you haven't yet configured an SSH key for GitHub on your machine, generate a new one with the following command:
+
+   ```bash
+   ssh-keygen
+````
+
+1. Navigate to your GitHub account settings. Click on "SSH and GPG keys" and then "New SSH key". Paste the public key that was generated in the first step and click "Add SSH key".
+
+2. Set up your GitHub username and email on your local machine in a Git terminal. You can do this with the following commands:
+
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "your-email@example.com"
+   ```
+
+3. Now you're ready to clone the repository. In your Git terminal, enter the following command to download the repository to your local machine:
+
+   ```bash
+   git clone [YOUR_REPO_LINK]
+   ```
+
+   You can get YOUR_REPO_LINK in the assignment repo under your GitHub account:-->
 </section>
 </section>
 
@@ -408,7 +462,7 @@ D_{KL}(P' || Q') = \sum_{i \in \{a, b, c, d, e\}} P'(i) \times \ln \left( \frac{
         },
         kernelOptions: {
             name: "python3",
-            path: "./samples"
+            path: "./project"
         },
         predefinedOutput: true
     }
@@ -425,6 +479,24 @@ D_{KL}(P' || Q') = \sum_{i \in \{a, b, c, d, e\}} P'(i) \times \ln \left( \frac{
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="project-proposal.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Final Project Proposal Guide</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project-final-report.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Final Project Final Report</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -440,11 +512,9 @@ D_{KL}(P' || Q') = \sum_{i \in \{a, b, c, d, e\}} P'(i) \times \ln \left( \frac{
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">KL-Divergence:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-1-smoothing">Add-1 Smoothing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kl-divergence-calculation">KL-Divergence Calculation</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delivery">Delivery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
 </ul>
   </nav></div>
 
