@@ -44,7 +44,7 @@ All components of your final project are subject to GVSU and the School of Compu
 | Week 8, 9 | Make groups & project proposal |
 | Week 10 | [Project proposal](./project-proposal.md) due (Monday, 03/11) |
 | Week 13 | [Progress report](./project-progress-report.md) due (Monday, 04/01) |
-| Week 16 | [Final report](./final-project-report.md) due (Monday, 04/22) |
+| Week 16 | [Final report](./project-final-report.md) due (Monday, 04/22) |
 
 ## Possible project ideas
 
