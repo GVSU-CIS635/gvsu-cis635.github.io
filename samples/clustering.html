@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Clustering &#8212; GVSU CIS 635 - Knowledge Discovery and Data Mining</title>
+    <title>Cluster Analysis &#8212; GVSU CIS 635 - Knowledge Discovery and Data Mining</title>
   
   
   
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="data-transformation.html">Data Preprocessing II</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data-compression-sampling.html">Data Preprocessing III</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_extraction.html">Feature Extraction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clustering</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cluster Analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
 <ul class="nav bd-sidenav">
@@ -359,7 +359,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Clustering</h1>
+    <h1>Cluster Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,8 +385,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="clustering">
-<h1>Clustering<a class="headerlink" href="#clustering" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="cluster-analysis">
+<h1>Cluster Analysis<a class="headerlink" href="#cluster-analysis" title="Permalink to this heading">#</a></h1>
 <p>The following tutorial contains Python examples for cluster analysis. Follow the step-by-step instructions below carefully. To execute the code, click on the corresponding cell and press the SHIFT+ENTER keys simultaneously.</p>
 <p><strong>Cluster analysis</strong> aims to partition input data into closely related groups of instances, so that instances belonging to the same cluster are more similar to each other than instances belonging to other clusters. In this tutorial, we will provide examples using different clustering techniques from the scikit-learn library package.</p>
 <section id="importing-libraries-and-configuration">
@@ -394,6 +394,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -450,7 +451,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-0d206a9a-eb64-4c0b-8918-b4619730cc2a" class="colab-df-container">
+  <div id="df-ef0570fc-2ce9-44a4-ada6-bcc41a8d346e" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -574,7 +575,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-0d206a9a-eb64-4c0b-8918-b4619730cc2a')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ef0570fc-2ce9-44a4-ada6-bcc41a8d346e')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -626,12 +627,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-0d206a9a-eb64-4c0b-8918-b4619730cc2a button.colab-df-convert');
+        document.querySelector('#df-ef0570fc-2ce9-44a4-ada6-bcc41a8d346e button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-0d206a9a-eb64-4c0b-8918-b4619730cc2a');
+        const element = document.querySelector('#df-ef0570fc-2ce9-44a4-ada6-bcc41a8d346e');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -651,8 +652,8 @@ document.write(`
   </div>
 
 
-<div id="df-e94db8fb-550f-4bb6-a93c-168698f09da9">
-  <button class="colab-df-quickchart" onclick="quickchart('df-e94db8fb-550f-4bb6-a93c-168698f09da9')"
+<div id="df-3e1f1623-dca4-468b-9d25-b63156842836">
+  <button class="colab-df-quickchart" onclick="quickchart('df-3e1f1623-dca4-468b-9d25-b63156842836')"
             title="Suggest charts"
             style="display:none;">
 
@@ -771,7 +772,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-e94db8fb-550f-4bb6-a93c-168698f09da9 button');
+        document.querySelector('#df-3e1f1623-dca4-468b-9d25-b63156842836 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -808,7 +809,7 @@ document.write(`
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-9a5d7349-7fe6-4d02-bfed-a9f345a5ee8e" class="colab-df-container">
+  <div id="df-99e2944f-0d68-4cfa-ab96-a91cb3c01808" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -943,7 +944,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-9a5d7349-7fe6-4d02-bfed-a9f345a5ee8e')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-99e2944f-0d68-4cfa-ab96-a91cb3c01808')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -995,12 +996,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-9a5d7349-7fe6-4d02-bfed-a9f345a5ee8e button.colab-df-convert');
+        document.querySelector('#df-99e2944f-0d68-4cfa-ab96-a91cb3c01808 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-9a5d7349-7fe6-4d02-bfed-a9f345a5ee8e');
+        const element = document.querySelector('#df-99e2944f-0d68-4cfa-ab96-a91cb3c01808');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1020,8 +1021,8 @@ document.write(`
   </div>
 
 
-<div id="df-d6e04256-59ec-4057-8df5-25c73bc21399">
-  <button class="colab-df-quickchart" onclick="quickchart('df-d6e04256-59ec-4057-8df5-25c73bc21399')"
+<div id="df-2847ee26-f881-4a4c-bd85-640e5a8e2b58">
+  <button class="colab-df-quickchart" onclick="quickchart('df-2847ee26-f881-4a4c-bd85-640e5a8e2b58')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1140,7 +1141,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-d6e04256-59ec-4057-8df5-25c73bc21399 button');
+        document.querySelector('#df-2847ee26-f881-4a4c-bd85-640e5a8e2b58 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1181,7 +1182,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-346ab6a4-e149-43cb-b741-48e34cd927f9" class="colab-df-container">
+  <div id="df-bf5bef06-a830-4df2-b429-4a13924e1c27" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1230,7 +1231,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-346ab6a4-e149-43cb-b741-48e34cd927f9')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-bf5bef06-a830-4df2-b429-4a13924e1c27')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1282,12 +1283,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-346ab6a4-e149-43cb-b741-48e34cd927f9 button.colab-df-convert');
+        document.querySelector('#df-bf5bef06-a830-4df2-b429-4a13924e1c27 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-346ab6a4-e149-43cb-b741-48e34cd927f9');
+        const element = document.querySelector('#df-bf5bef06-a830-4df2-b429-4a13924e1c27');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1307,8 +1308,8 @@ document.write(`
   </div>
 
 
-<div id="df-935aec05-588f-4a8e-8927-307ab885c2e4">
-  <button class="colab-df-quickchart" onclick="quickchart('df-935aec05-588f-4a8e-8927-307ab885c2e4')"
+<div id="df-46a8c65a-bcdb-446f-815d-2d746ce2ad5e">
+  <button class="colab-df-quickchart" onclick="quickchart('df-46a8c65a-bcdb-446f-815d-2d746ce2ad5e')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1427,7 +1428,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-935aec05-588f-4a8e-8927-307ab885c2e4 button');
+        document.querySelector('#df-46a8c65a-bcdb-446f-815d-2d746ce2ad5e button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1466,7 +1467,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-66eec119-0194-4e32-9eff-b51bcfcb4fe3" class="colab-df-container">
+  <div id="df-206b4fa9-9251-471e-af1e-20efea627ffb" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1490,8 +1491,8 @@ document.write(`
       <th>petal length</th>
       <th>petal width</th>
       <th>class</th>
-      <th>kmeans-label</th>
       <th>label</th>
+      <th>kmeans-label</th>
       <th>agglo-single-label</th>
       <th>agglo-average-label</th>
       <th>agglo-complete-label</th>
@@ -1645,7 +1646,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-66eec119-0194-4e32-9eff-b51bcfcb4fe3')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-206b4fa9-9251-471e-af1e-20efea627ffb')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1697,12 +1698,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-66eec119-0194-4e32-9eff-b51bcfcb4fe3 button.colab-df-convert');
+        document.querySelector('#df-206b4fa9-9251-471e-af1e-20efea627ffb button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-66eec119-0194-4e32-9eff-b51bcfcb4fe3');
+        const element = document.querySelector('#df-206b4fa9-9251-471e-af1e-20efea627ffb');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1722,8 +1723,8 @@ document.write(`
   </div>
 
 
-<div id="df-ac7c7b67-2cdc-4bca-ac9d-e3ddc209fc9e">
-  <button class="colab-df-quickchart" onclick="quickchart('df-ac7c7b67-2cdc-4bca-ac9d-e3ddc209fc9e')"
+<div id="df-dc7cd787-1abd-4588-952b-db5f53317819">
+  <button class="colab-df-quickchart" onclick="quickchart('df-dc7cd787-1abd-4588-952b-db5f53317819')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1842,7 +1843,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-ac7c7b67-2cdc-4bca-ac9d-e3ddc209fc9e button');
+        document.querySelector('#df-dc7cd787-1abd-4588-952b-db5f53317819 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
