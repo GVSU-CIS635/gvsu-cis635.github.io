@@ -44,7 +44,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 8 (02/26) | Feature Extraction<ul><li>[Slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf)</li><li>[Code](samples/feature_extraction.ipynb)</li></ul> | <ul><li>[Colab to GitHub](https://www.geeksforgeeks.org/how-to-upload-project-on-github-from-google-colab/?ref=ml_lbp)</li></ul> |
 | 9 (03/04) | Spring Break | No Classes |
 | 10 (03/11) | Feature Selection<ul><li>[Slides](assets/pdf/dimensionality-reduction-feature-selection.pdf)</li><li>[Code](samples/feature_selection.ipynb)</li></ul>Markov Blanket<ul><li>[Slides](assets/pdf/markov-blanket-boundary.pdf)</li></ul> |  |
-| 11 (03/18) | Supervised & Unsupervised Learning<ul><li>[Slides](assets/pdf/supervised-unsupervised-learning.pdf)</li></ul>Clustering <ul><li>[Slides](assets/pdf/clustering.pdf)</li><li>[Code](samples/clustering.ipynb)</li></ul> |  |
+| 11 (03/18) | Supervised & Unsupervised Learning<ul><li>[Slides](assets/pdf/supervised-unsupervised-learning.pdf)</li><li>[Video](https://youtu.be/hX2V98JBMbY)</li></ul>Clustering <ul><li>[Slides](assets/pdf/clustering.pdf)</li><li>[Video](https://youtu.be/qaaiHx3NK40)</li><li>[Code](samples/clustering.ipynb)</li></ul> |  |
 | 12 (03/25) | Neural Networks <ul><li>[Neural Network](#)</li><li>[CNN](#)</li></ul> |  |
 | 13 (04/01) | RNN <ul><li>[RNN](#)</li><li>[RNN II](#)</li></ul> |  |
 | 14 (04/08) | Attention Mechanisms <ul><li>[Attention](#)</li><li>[Transformer](#)</li></ul> |  |
