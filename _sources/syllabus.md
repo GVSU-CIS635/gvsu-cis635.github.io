@@ -45,7 +45,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 9 (03/04) | Spring Break | No Classes |
 | 10 (03/11) | Feature Selection<ul><li>[Slides](assets/pdf/dimensionality-reduction-feature-selection.pdf)</li><li>[Code](samples/feature_selection.ipynb)</li></ul>Markov Blanket<ul><li>[Slides](assets/pdf/markov-blanket-boundary.pdf)</li></ul> |  |
 | 11 (03/18) | Supervised & Unsupervised Learning<ul><li>[Slides](assets/pdf/supervised-unsupervised-learning.pdf)</li><li>[Video](https://youtu.be/hX2V98JBMbY)</li></ul>Clustering <ul><li>[Slides](assets/pdf/clustering.pdf)</li><li>[Video](https://youtu.be/qaaiHx3NK40)</li><li>[Code](samples/clustering.ipynb)</li></ul> |  |
-| 12 (03/25) | [HW 4](homeworks/4.md) |  |
+| 12 (03/25) | Neural Network<ul><li>[Slides](assets/pdf/nn.pdf)</li></ul>[HW 4](homeworks/4.md) |  |
 | 13 (04/01) | RNN <ul><li>[RNN](#)</li><li>[RNN II](#)</li></ul> |  |
 | 14 (04/08) | Attention Mechanisms <ul><li>[Attention](#)</li><li>[Transformer](#)</li></ul> |  |
 | 15 (04/15) | [Association Rules](#) |  |
