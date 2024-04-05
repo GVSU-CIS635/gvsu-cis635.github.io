@@ -48,7 +48,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 12 (03/25) | Neural Networks<ul><li>[Slides](assets/pdf/nn.pdf)</li></ul>[HW 4](homeworks/4.md) |  |
 | 13 (04/01) | Convolutional Neural Networks<ul><li>[Slides](assets/pdf/cnn.pdf)</li></ul> |  |
 | 14 (04/08) | Recurrent Neural Networks<ul><li>[Slides](assets/pdf/rnn.pdf)</li></ul> Attention Mechanisms <ul><li>[Slides](assets/pdf/attention.pdf)</li></ul> |  |
-| 15 (04/15) | Transformer<ul><li>[Slides](assets/pdf/transformer.pdf)</li></ul> |  |
+| 15 (04/15) | Transformer<ul><li>[Slides](assets/pdf/transformer.pdf)</li><li>[Code Example](samples/air_passenger_forecast.ipynb)</li></ul> |  |
 | 16 (04/22) | [Project Presentation](#) |  |
 
 <!-- Feature Extraction and Selection <ul><li>[Feature Extraction](#)</li><li>[Feature Selection](#)</li></ul> -->

@@ -1,0 +1,3197 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Forecasting Air Passenger Traffic &#8212; GVSU CIS 635 - Knowledge Discovery and Data Mining</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'samples/air_passenger_forecast';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Final Project Overview" href="../project/project-overview.html" />
+    <link rel="prev" title="Cluster Analysis" href="clustering.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../syllabus.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">GVSU CIS 635 - Knowledge Discovery and Data Mining</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../syllabus.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homeworks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../homeworks/1.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeworks/2.html">Homework 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeworks/3.html">Homework 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeworks/4.html">Homework 4</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python-resources.html">Python Resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample Code</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptive_statistics.html">Descriptive Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleaning-Integration.html">Data Preprocessing I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-transformation.html">Data Preprocessing II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-compression-sampling.html">Data Preprocessing III</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_extraction.html">Feature Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_selection.html">Feature Selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clustering.html">Cluster Analysis</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Forecasting Air Passenger Traffic</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/project-overview.html">Final Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-proposal.html">Final Project Proposal Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-progress-report.html">Final Project Progress Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-final-report.html">Final Project Final Report</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/GVSU-CIS635/gvsu-cis635.github.io/blob/gh-pages/_sources/samples/air_passenger_forecast.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/samples/air_passenger_forecast.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Forecasting Air Passenger Traffic</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-in-comparison">Models in Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approach">Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-and-configuration">Importing Libraries and Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-handling-time-series-in-pandas">Loading and Handling Time Series in Pandas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima">ARIMA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-data-into-training-and-test-sets-for-arima">Splitting Data into Training and Test Sets for ARIMA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-model-experimentation">ARIMA Model Experimentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-normalization-for-neural-network-experiments">Data Normalization for Neural Network Experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-dataset-for-neural-network-models">Preparing Dataset for Neural Network Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-data-for-neural-network-models">Splitting Data for Neural Network Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm-model-building-and-training">LSTM Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#non-rolling-prediction">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-prediction">Rolling Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm-with-attention-mechanism-model-building-and-training">LSTM with Attention Mechanism: Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rolling Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-model-building-and-training">CNN Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Rolling Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-model-building-and-training">Transformer Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Rolling Prediction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="forecasting-air-passenger-traffic">
+<h1>Forecasting Air Passenger Traffic<a class="headerlink" href="#forecasting-air-passenger-traffic" title="Permalink to this heading">#</a></h1>
+<p>A Comparative Study on the International Airport Passengers Dataset</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>In this Jupyter Notebook, we delve into the realm of time series forecasting using the “International Airport Passengers” dataset. This dataset is a quintessential example of a time series featuring distinct trends and seasonal variations, making it ideal for benchmarking different forecasting models.</p>
+</section>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">#</a></h2>
+<p>Our primary objective is to assess the performance of various time series forecasting models in predicting future trends in passenger traffic. Through this comparison, we aim to discern the capabilities and limitations of each model, particularly in terms of handling complex patterns inherent in time series data.</p>
+</section>
+<section id="models-in-comparison">
+<h2>Models in Comparison<a class="headerlink" href="#models-in-comparison" title="Permalink to this heading">#</a></h2>
+<p>We will be evaluating four distinct models:</p>
+<ul class="simple">
+<li><p><strong>ARIMA (AutoRegressive Integrated Moving Average)</strong>: A classic statistical model renowned for capturing linear trends in time series data.</p></li>
+<li><p><strong>LSTM (Long Short-Term Memory)</strong>: A type of recurrent neural network that excels in recognizing long-term dependencies, ideal for non-linear data sequences.</p></li>
+<li><p><strong>LSTM with Attention Mechanism</strong>: Enhancing the standard LSTM’s capabilities by incorporating an attention mechanism for better context understanding.</p></li>
+<li><p><strong>CNN (Convolutional Neural Network)</strong>: Typically used in image processing, but also effective in identifying local patterns in sequential data.</p></li>
+<li><p><strong>Transformer</strong>: A recent innovation that employs attention mechanisms to focus on different parts of input data, proving effective in sequence-to-sequence modeling.</p></li>
+</ul>
+</section>
+<section id="approach">
+<h2>Approach<a class="headerlink" href="#approach" title="Permalink to this heading">#</a></h2>
+<p>In our study, we employ two distinct prediction methodologies to evaluate the performance of our models. These methodologies help us understand how well each model can forecast future values under different scenarios.</p>
+<ul class="simple">
+<li><p><strong>Non-Rolling Prediction</strong>: This approach involves using the trained model to predict future time steps all at once, based solely on the historical data. It is a straightforward prediction method where the model uses the known data to forecast the next steps in the sequence. Non-Rolling Prediction is often used to evaluate the model’s performance when complete future data is available for prediction.</p></li>
+<li><p><strong>Rolling Prediction</strong>: Contrary to Non-Rolling Prediction, Rolling Prediction simulates a more realistic scenario where each future time step is predicted one at a time, and each prediction is fed back as input for the next prediction. This method mimics a real-world situation where each prediction depends on the previous ones, and the model does not have access to future data. It is particularly useful for evaluating how well a model adapts to new data and its effectiveness in a continuously updating environment.</p></li>
+</ul>
+<section id="importing-libraries-and-configuration">
+<h3>Importing Libraries and Configuration<a class="headerlink" href="#importing-libraries-and-configuration" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.arima.model</span> <span class="kn">import</span> <span class="n">ARIMA</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">LayerNormalization</span><span class="p">,</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">MaxPooling1D</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">MultiHeadAttention</span><span class="p">,</span> <span class="n">Input</span><span class="p">,</span> <span class="n">GlobalAveragePooling1D</span><span class="p">,</span> <span class="n">Concatenate</span><span class="p">,</span> <span class="n">Attention</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.regularizers</span> <span class="kn">import</span> <span class="n">l2</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.callbacks</span> <span class="kn">import</span> <span class="n">ReduceLROnPlateau</span><span class="p">,</span> <span class="n">EarlyStopping</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">from</span> <span class="nn">matplotlib.pylab</span> <span class="kn">import</span> <span class="n">rcParams</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;axes.titlesize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;xx-large&quot;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;axes.titleweight&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span>
+<span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;legend.loc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;upper left&quot;</span>
+
+
+<span class="c1"># Setting random seeds for reproducibility</span>
+<span class="n">seed_value</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;PYTHONHASHSEED&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">seed_value</span><span class="p">)</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed_value</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed_value</span><span class="p">)</span>
+<span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed_value</span><span class="p">)</span>
+
+<span class="n">l2_reg</span><span class="o">=</span><span class="mf">0.001</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-and-handling-time-series-in-pandas">
+<h3>Loading and Handling Time Series in Pandas<a class="headerlink" href="#loading-and-handling-time-series-in-pandas" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s2">&quot;https://raw.githubusercontent.com/GVSU-CIS635/Datasets/master/airline-passengers.csv&quot;</span><span class="p">,</span>
+    <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;Month&quot;</span>
+<span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m&quot;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-42f58729-2991-41f8-ab2a-719e5007ffa8" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Passengers</th>
+    </tr>
+    <tr>
+      <th>Month</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1949-01-01</th>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1949-02-01</th>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>1949-03-01</th>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>1949-04-01</th>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>1949-05-01</th>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-42f58729-2991-41f8-ab2a-719e5007ffa8')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-42f58729-2991-41f8-ab2a-719e5007ffa8 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-42f58729-2991-41f8-ab2a-719e5007ffa8');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-89f70fc7-2c2d-4c9b-8cc7-8ba358420be7">
+  <button class="colab-df-quickchart" onclick="quickchart('df-89f70fc7-2c2d-4c9b-8cc7-8ba358420be7')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-89f70fc7-2c2d-4c9b-8cc7-8ba358420be7 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">passengers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Passengers&quot;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+    <span class="s2">&quot;International airline passengers: monthly totals in thousands. </span><span class="se">\n</span><span class="s2"> Jan 49 – Dec 60. Units: Thousands of passengers&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">passengers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7e2bba1b25c0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/230c5d90ea89f2be939f62e6d255b97f0c75ca0ee6bcad1db510c3fb499824c3.png" src="../_images/230c5d90ea89f2be939f62e6d255b97f0c75ca0ee6bcad1db510c3fb499824c3.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="arima">
+<h2>ARIMA<a class="headerlink" href="#arima" title="Permalink to this heading">#</a></h2>
+<section id="splitting-data-into-training-and-test-sets-for-arima">
+<h3>Splitting Data into Training and Test Sets for ARIMA<a class="headerlink" href="#splitting-data-into-training-and-test-sets-for-arima" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_train</span><span class="p">,</span> <span class="n">data_test</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">data</span><span class="p">[:</span><span class="o">-</span><span class="mi">24</span><span class="p">],</span>
+    <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:],</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data_train</span><span class="p">)</span><span class="si">}</span><span class="s2">, Test </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data_test</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data_train</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training 120, Test 24
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="arima-model-experimentation">
+<h3>ARIMA Model Experimentation<a class="headerlink" href="#arima-model-experimentation" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">data_train</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="n">results_ARIMA</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">yhat</span> <span class="o">=</span> <span class="n">results_ARIMA</span><span class="o">.</span><span class="n">forecast</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">passengers</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Actual Data&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yhat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Forecasted Data&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculating the RMSE (Root Mean Squared Error)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">data_test</span><span class="p">[</span><span class="s2">&quot;Passengers&quot;</span><span class="p">],</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMSE: </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: No frequency information was provided, so inferred frequency MS will be used.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.10/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: No frequency information was provided, so inferred frequency MS will be used.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.10/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: No frequency information was provided, so inferred frequency MS will be used.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.10/dist-packages/statsmodels/tsa/statespace/sarimax.py:978: UserWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  warn(&#39;Non-invertible starting MA parameters found.&#39;
+/usr/local/lib/python3.10/dist-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn(&quot;Maximum Likelihood optimization failed to &quot;
+</pre></div>
+</div>
+<img alt="../_images/3c3a37e42b80f11de1123ae49d67f98d075832144f1cb456ec20261b5d7678c1.png" src="../_images/3c3a37e42b80f11de1123ae49d67f98d075832144f1cb456ec20261b5d7678c1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="neural-networks">
+<h2>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this heading">#</a></h2>
+<section id="data-normalization-for-neural-network-experiments">
+<h3>Data Normalization for Neural Network Experiments<a class="headerlink" href="#data-normalization-for-neural-network-experiments" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">scaled_data</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scaled_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scaled_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(144, 1)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7e2b61e760b0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/42830539f05ad6c8051686a355dec7783a3e87405156eb7e5a87031d4ee46fcb.png" src="../_images/42830539f05ad6c8051686a355dec7783a3e87405156eb7e5a87031d4ee46fcb.png" />
+</div>
+</div>
+</section>
+<section id="preparing-dataset-for-neural-network-models">
+<h3>Preparing Dataset for Neural Network Models<a class="headerlink" href="#preparing-dataset-for-neural-network-models" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_dataset</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">look_back</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">-</span> <span class="n">look_back</span><span class="p">):</span>
+        <span class="n">end_ix</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">look_back</span>
+        <span class="c1"># gather input and output parts of the pattern</span>
+        <span class="n">seq_x</span><span class="p">,</span> <span class="n">seq_y</span> <span class="o">=</span> <span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">end_ix</span><span class="p">],</span> <span class="n">sequence</span><span class="p">[</span><span class="n">end_ix</span><span class="p">]</span>
+        <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seq_x</span><span class="p">)</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seq_y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using past 12 time steps to predict the next step</span>
+<span class="n">look_back</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">create_dataset</span><span class="p">(</span><span class="n">scaled_data</span><span class="p">,</span> <span class="n">look_back</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(samples, timesteps, features): &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(samples, timesteps, features): (132, 12, 1)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="splitting-data-for-neural-network-models">
+<h3>Splitting Data for Neural Network Models<a class="headerlink" href="#splitting-data-for-neural-network-models" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="o">-</span><span class="mi">36</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">36</span><span class="p">]</span>
+<span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">36</span><span class="p">:</span><span class="o">-</span><span class="mi">24</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">36</span><span class="p">:</span><span class="o">-</span><span class="mi">24</span><span class="p">]</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:],</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;training samples shape: </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;validation samples shape: </span><span class="si">{</span><span class="n">X_valid</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;test samples shape: </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>training samples shape: (96, 12, 1)
+validation samples shape: (12, 12, 1)
+test samples shape: (24, 12, 1)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lstm-model-building-and-training">
+<h3>LSTM Model Building and Training<a class="headerlink" href="#lstm-model-building-and-training" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lstm</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">lstm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">LSTM</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">look_back</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">)))</span>
+<span class="n">lstm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LayerNormalization</span><span class="p">())</span>
+<span class="n">lstm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">lstm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">)))</span>
+<span class="n">lstm</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">network_training</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">model_name</span><span class="p">):</span>
+    <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+    <span class="c1"># Configure the optimizer with the specified learning rate</span>
+    <span class="n">adam_optimizer</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;mean_squared_error&quot;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">adam_optimizer</span><span class="p">)</span>
+
+    <span class="c1"># Early Stopping Callback</span>
+    <span class="n">early_stopping</span> <span class="o">=</span> <span class="n">EarlyStopping</span><span class="p">(</span>
+        <span class="n">monitor</span><span class="o">=</span><span class="s2">&quot;val_loss&quot;</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Reduce learning rate when the validation loss plateaus</span>
+    <span class="n">reduce_lr</span> <span class="o">=</span> <span class="n">ReduceLROnPlateau</span><span class="p">(</span>
+        <span class="n">monitor</span><span class="o">=</span><span class="s2">&quot;val_loss&quot;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_lr</span><span class="o">=</span><span class="mf">0.000000001</span>
+    <span class="p">)</span>
+
+    <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">X_train</span><span class="p">,</span>
+        <span class="n">y_train</span><span class="p">,</span>
+        <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">X_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">),</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">early_stopping</span><span class="p">,</span> <span class="n">reduce_lr</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Plotting the evaluation loss</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_loss&quot;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Validation Loss&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> Validation Loss&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Loss&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Epoch&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network_training</span><span class="p">(</span><span class="n">lstm</span><span class="p">,</span> <span class="s2">&quot;LSTM&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/500
+3/3 [==============================] - 2s 208ms/step - loss: 0.2277 - val_loss: 0.1734 - lr: 0.0010
+Epoch 2/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.1660 - val_loss: 0.2898 - lr: 0.0010
+Epoch 3/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.1245 - val_loss: 0.0973 - lr: 0.0010
+Epoch 4/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.1007 - val_loss: 0.1130 - lr: 0.0010
+Epoch 5/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.1062 - val_loss: 0.0937 - lr: 0.0010
+Epoch 6/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0932 - val_loss: 0.1339 - lr: 0.0010
+Epoch 7/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0948 - val_loss: 0.1122 - lr: 0.0010
+Epoch 8/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0877 - val_loss: 0.0931 - lr: 0.0010
+Epoch 9/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0893 - val_loss: 0.0910 - lr: 0.0010
+Epoch 10/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0871 - val_loss: 0.0982 - lr: 0.0010
+Epoch 11/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0832 - val_loss: 0.1047 - lr: 0.0010
+Epoch 12/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0848 - val_loss: 0.1036 - lr: 0.0010
+Epoch 13/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0807 - val_loss: 0.0971 - lr: 0.0010
+Epoch 14/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0798 - val_loss: 0.0924 - lr: 0.0010
+Epoch 15/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0795 - val_loss: 0.0888 - lr: 0.0010
+Epoch 16/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0786 - val_loss: 0.0883 - lr: 0.0010
+Epoch 17/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0785 - val_loss: 0.0891 - lr: 0.0010
+Epoch 18/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0779 - val_loss: 0.0927 - lr: 0.0010
+Epoch 19/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0771 - val_loss: 0.0927 - lr: 0.0010
+Epoch 20/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0777 - val_loss: 0.0855 - lr: 0.0010
+Epoch 21/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0760 - val_loss: 0.0832 - lr: 0.0010
+Epoch 22/500
+3/3 [==============================] - 0s 56ms/step - loss: 0.0765 - val_loss: 0.0844 - lr: 0.0010
+Epoch 23/500
+3/3 [==============================] - 0s 66ms/step - loss: 0.0745 - val_loss: 0.0859 - lr: 0.0010
+Epoch 24/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0743 - val_loss: 0.0839 - lr: 0.0010
+Epoch 25/500
+3/3 [==============================] - 0s 63ms/step - loss: 0.0748 - val_loss: 0.0855 - lr: 0.0010
+Epoch 26/500
+3/3 [==============================] - 0s 60ms/step - loss: 0.0724 - val_loss: 0.0872 - lr: 0.0010
+Epoch 27/500
+3/3 [==============================] - 0s 61ms/step - loss: 0.0702 - val_loss: 0.0855 - lr: 0.0010
+Epoch 28/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0706 - val_loss: 0.0835 - lr: 0.0010
+Epoch 29/500
+3/3 [==============================] - 0s 64ms/step - loss: 0.0692 - val_loss: 0.0809 - lr: 0.0010
+Epoch 30/500
+3/3 [==============================] - 0s 67ms/step - loss: 0.0698 - val_loss: 0.0804 - lr: 0.0010
+Epoch 31/500
+3/3 [==============================] - 0s 63ms/step - loss: 0.0697 - val_loss: 0.0791 - lr: 0.0010
+Epoch 32/500
+3/3 [==============================] - 0s 66ms/step - loss: 0.0687 - val_loss: 0.0806 - lr: 0.0010
+Epoch 33/500
+3/3 [==============================] - 0s 62ms/step - loss: 0.0673 - val_loss: 0.0808 - lr: 0.0010
+Epoch 34/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0667 - val_loss: 0.0762 - lr: 0.0010
+Epoch 35/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0675 - val_loss: 0.0746 - lr: 0.0010
+Epoch 36/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0667 - val_loss: 0.0749 - lr: 0.0010
+Epoch 37/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0665 - val_loss: 0.0770 - lr: 0.0010
+Epoch 38/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0657 - val_loss: 0.0784 - lr: 0.0010
+Epoch 39/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0673 - val_loss: 0.0768 - lr: 0.0010
+Epoch 40/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0666 - val_loss: 0.0714 - lr: 0.0010
+Epoch 41/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0644 - val_loss: 0.0705 - lr: 0.0010
+Epoch 42/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0637 - val_loss: 0.0728 - lr: 0.0010
+Epoch 43/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0638 - val_loss: 0.0762 - lr: 0.0010
+Epoch 44/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0620 - val_loss: 0.0698 - lr: 0.0010
+Epoch 45/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0616 - val_loss: 0.0695 - lr: 0.0010
+Epoch 46/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0612 - val_loss: 0.0716 - lr: 0.0010
+Epoch 47/500
+3/3 [==============================] - 0s 35ms/step - loss: 0.0615 - val_loss: 0.0720 - lr: 0.0010
+Epoch 48/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0600 - val_loss: 0.0692 - lr: 0.0010
+Epoch 49/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0602 - val_loss: 0.0678 - lr: 0.0010
+Epoch 50/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0584 - val_loss: 0.0691 - lr: 0.0010
+Epoch 51/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0587 - val_loss: 0.0679 - lr: 0.0010
+Epoch 52/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0578 - val_loss: 0.0666 - lr: 0.0010
+Epoch 53/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0587 - val_loss: 0.0658 - lr: 0.0010
+Epoch 54/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0571 - val_loss: 0.0672 - lr: 0.0010
+Epoch 55/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0573 - val_loss: 0.0672 - lr: 0.0010
+Epoch 56/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0565 - val_loss: 0.0647 - lr: 0.0010
+Epoch 57/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0552 - val_loss: 0.0639 - lr: 0.0010
+Epoch 58/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0550 - val_loss: 0.0638 - lr: 0.0010
+Epoch 59/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0546 - val_loss: 0.0642 - lr: 0.0010
+Epoch 60/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0540 - val_loss: 0.0620 - lr: 0.0010
+Epoch 61/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0529 - val_loss: 0.0620 - lr: 0.0010
+Epoch 62/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0529 - val_loss: 0.0612 - lr: 0.0010
+Epoch 63/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0528 - val_loss: 0.0599 - lr: 0.0010
+Epoch 64/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0520 - val_loss: 0.0607 - lr: 0.0010
+Epoch 65/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0532 - val_loss: 0.0594 - lr: 0.0010
+Epoch 66/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0520 - val_loss: 0.0593 - lr: 0.0010
+Epoch 67/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0499 - val_loss: 0.0591 - lr: 0.0010
+Epoch 68/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0500 - val_loss: 0.0562 - lr: 0.0010
+Epoch 69/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0497 - val_loss: 0.0549 - lr: 0.0010
+Epoch 70/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0515 - val_loss: 0.0612 - lr: 0.0010
+Epoch 71/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0503 - val_loss: 0.0619 - lr: 0.0010
+Epoch 72/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0494 - val_loss: 0.0537 - lr: 0.0010
+Epoch 73/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0498 - val_loss: 0.0528 - lr: 0.0010
+Epoch 74/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0472 - val_loss: 0.0558 - lr: 0.0010
+Epoch 75/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0482 - val_loss: 0.0536 - lr: 0.0010
+Epoch 76/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0474 - val_loss: 0.0519 - lr: 0.0010
+Epoch 77/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0465 - val_loss: 0.0505 - lr: 0.0010
+Epoch 78/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0462 - val_loss: 0.0554 - lr: 0.0010
+Epoch 79/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0468 - val_loss: 0.0568 - lr: 0.0010
+Epoch 80/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0454 - val_loss: 0.0489 - lr: 0.0010
+Epoch 81/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0462 - val_loss: 0.0484 - lr: 0.0010
+Epoch 82/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0442 - val_loss: 0.0534 - lr: 0.0010
+Epoch 83/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0447 - val_loss: 0.0541 - lr: 0.0010
+Epoch 84/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0438 - val_loss: 0.0487 - lr: 0.0010
+Epoch 85/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0432 - val_loss: 0.0475 - lr: 0.0010
+Epoch 86/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0427 - val_loss: 0.0480 - lr: 0.0010
+Epoch 87/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0430 - val_loss: 0.0483 - lr: 0.0010
+Epoch 88/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0436 - val_loss: 0.0462 - lr: 0.0010
+Epoch 89/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0416 - val_loss: 0.0446 - lr: 0.0010
+Epoch 90/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0418 - val_loss: 0.0442 - lr: 0.0010
+Epoch 91/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0421 - val_loss: 0.0443 - lr: 0.0010
+Epoch 92/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0410 - val_loss: 0.0426 - lr: 0.0010
+Epoch 93/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0408 - val_loss: 0.0424 - lr: 0.0010
+Epoch 94/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0407 - val_loss: 0.0424 - lr: 0.0010
+Epoch 95/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0395 - val_loss: 0.0434 - lr: 0.0010
+Epoch 96/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0393 - val_loss: 0.0416 - lr: 0.0010
+Epoch 97/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0394 - val_loss: 0.0416 - lr: 0.0010
+Epoch 98/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0384 - val_loss: 0.0419 - lr: 0.0010
+Epoch 99/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0390 - val_loss: 0.0399 - lr: 0.0010
+Epoch 100/500
+3/3 [==============================] - 0s 58ms/step - loss: 0.0382 - val_loss: 0.0395 - lr: 0.0010
+Epoch 101/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0373 - val_loss: 0.0386 - lr: 0.0010
+Epoch 102/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0368 - val_loss: 0.0384 - lr: 0.0010
+Epoch 103/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0370 - val_loss: 0.0385 - lr: 0.0010
+Epoch 104/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0371 - val_loss: 0.0374 - lr: 0.0010
+Epoch 105/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0366 - val_loss: 0.0374 - lr: 0.0010
+Epoch 106/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0363 - val_loss: 0.0368 - lr: 0.0010
+Epoch 107/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0358 - val_loss: 0.0365 - lr: 0.0010
+Epoch 108/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0361 - val_loss: 0.0360 - lr: 0.0010
+Epoch 109/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0352 - val_loss: 0.0370 - lr: 0.0010
+Epoch 110/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0354 - val_loss: 0.0360 - lr: 0.0010
+Epoch 111/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0343 - val_loss: 0.0357 - lr: 0.0010
+Epoch 112/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0348 - val_loss: 0.0349 - lr: 0.0010
+Epoch 113/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0343 - val_loss: 0.0351 - lr: 0.0010
+Epoch 114/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0339 - val_loss: 0.0349 - lr: 0.0010
+Epoch 115/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0332 - val_loss: 0.0346 - lr: 0.0010
+Epoch 116/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0338 - val_loss: 0.0342 - lr: 0.0010
+Epoch 117/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0328 - val_loss: 0.0340 - lr: 0.0010
+Epoch 118/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0329 - val_loss: 0.0336 - lr: 0.0010
+Epoch 119/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0326 - val_loss: 0.0332 - lr: 0.0010
+Epoch 120/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0320 - val_loss: 0.0338 - lr: 0.0010
+Epoch 121/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0322 - val_loss: 0.0326 - lr: 0.0010
+Epoch 122/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0315 - val_loss: 0.0328 - lr: 0.0010
+Epoch 123/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0311 - val_loss: 0.0323 - lr: 0.0010
+Epoch 124/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0306 - val_loss: 0.0319 - lr: 0.0010
+Epoch 125/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0310 - val_loss: 0.0317 - lr: 0.0010
+Epoch 126/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0309 - val_loss: 0.0312 - lr: 0.0010
+Epoch 127/500
+3/3 [==============================] - 0s 67ms/step - loss: 0.0305 - val_loss: 0.0308 - lr: 0.0010
+Epoch 128/500
+3/3 [==============================] - 0s 63ms/step - loss: 0.0300 - val_loss: 0.0304 - lr: 0.0010
+Epoch 129/500
+3/3 [==============================] - 0s 60ms/step - loss: 0.0301 - val_loss: 0.0306 - lr: 0.0010
+Epoch 130/500
+3/3 [==============================] - 0s 76ms/step - loss: 0.0307 - val_loss: 0.0310 - lr: 0.0010
+Epoch 131/500
+3/3 [==============================] - 0s 66ms/step - loss: 0.0297 - val_loss: 0.0301 - lr: 0.0010
+Epoch 132/500
+3/3 [==============================] - 0s 69ms/step - loss: 0.0301 - val_loss: 0.0311 - lr: 0.0010
+Epoch 133/500
+3/3 [==============================] - 0s 67ms/step - loss: 0.0289 - val_loss: 0.0300 - lr: 0.0010
+Epoch 134/500
+3/3 [==============================] - 0s 63ms/step - loss: 0.0287 - val_loss: 0.0298 - lr: 0.0010
+Epoch 135/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0289 - val_loss: 0.0295 - lr: 0.0010
+Epoch 136/500
+3/3 [==============================] - 0s 69ms/step - loss: 0.0284 - val_loss: 0.0292 - lr: 0.0010
+Epoch 137/500
+3/3 [==============================] - 0s 65ms/step - loss: 0.0282 - val_loss: 0.0290 - lr: 0.0010
+Epoch 138/500
+3/3 [==============================] - 0s 64ms/step - loss: 0.0281 - val_loss: 0.0289 - lr: 0.0010
+Epoch 139/500
+3/3 [==============================] - 0s 66ms/step - loss: 0.0279 - val_loss: 0.0286 - lr: 0.0010
+Epoch 140/500
+3/3 [==============================] - 0s 70ms/step - loss: 0.0273 - val_loss: 0.0281 - lr: 0.0010
+Epoch 141/500
+3/3 [==============================] - 0s 55ms/step - loss: 0.0274 - val_loss: 0.0276 - lr: 0.0010
+Epoch 142/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0270 - val_loss: 0.0276 - lr: 0.0010
+Epoch 143/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0265 - val_loss: 0.0272 - lr: 0.0010
+Epoch 144/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0266 - val_loss: 0.0271 - lr: 0.0010
+Epoch 145/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0267 - val_loss: 0.0269 - lr: 0.0010
+Epoch 146/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0263 - val_loss: 0.0267 - lr: 0.0010
+Epoch 147/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0263 - val_loss: 0.0265 - lr: 0.0010
+Epoch 148/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0259 - val_loss: 0.0266 - lr: 0.0010
+Epoch 149/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0257 - val_loss: 0.0265 - lr: 0.0010
+Epoch 150/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0254 - val_loss: 0.0264 - lr: 0.0010
+Epoch 151/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0252 - val_loss: 0.0261 - lr: 0.0010
+Epoch 152/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0250 - val_loss: 0.0264 - lr: 0.0010
+Epoch 153/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0254 - val_loss: 0.0259 - lr: 0.0010
+Epoch 154/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0252 - val_loss: 0.0256 - lr: 0.0010
+Epoch 155/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0248 - val_loss: 0.0255 - lr: 0.0010
+Epoch 156/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0246 - val_loss: 0.0257 - lr: 0.0010
+Epoch 157/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0244 - val_loss: 0.0251 - lr: 0.0010
+Epoch 158/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0237 - val_loss: 0.0252 - lr: 0.0010
+Epoch 159/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0240 - val_loss: 0.0247 - lr: 0.0010
+Epoch 160/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0239 - val_loss: 0.0245 - lr: 0.0010
+Epoch 161/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0239 - val_loss: 0.0251 - lr: 0.0010
+Epoch 162/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0236 - val_loss: 0.0241 - lr: 0.0010
+Epoch 163/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0231 - val_loss: 0.0238 - lr: 0.0010
+Epoch 164/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0231 - val_loss: 0.0237 - lr: 0.0010
+Epoch 165/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0229 - val_loss: 0.0237 - lr: 0.0010
+Epoch 166/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0229 - val_loss: 0.0236 - lr: 0.0010
+Epoch 167/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0225 - val_loss: 0.0234 - lr: 0.0010
+Epoch 168/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0222 - val_loss: 0.0228 - lr: 0.0010
+Epoch 169/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0221 - val_loss: 0.0226 - lr: 0.0010
+Epoch 170/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0221 - val_loss: 0.0227 - lr: 0.0010
+Epoch 171/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0220 - val_loss: 0.0237 - lr: 0.0010
+Epoch 172/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0219 - val_loss: 0.0223 - lr: 0.0010
+Epoch 173/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0217 - val_loss: 0.0223 - lr: 0.0010
+Epoch 174/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0212 - val_loss: 0.0220 - lr: 0.0010
+Epoch 175/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0213 - val_loss: 0.0219 - lr: 0.0010
+Epoch 176/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0215 - val_loss: 0.0224 - lr: 0.0010
+Epoch 177/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0210 - val_loss: 0.0216 - lr: 0.0010
+Epoch 178/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0212 - val_loss: 0.0220 - lr: 0.0010
+Epoch 179/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0208 - val_loss: 0.0220 - lr: 0.0010
+Epoch 180/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0209 - val_loss: 0.0214 - lr: 0.0010
+Epoch 181/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0204 - val_loss: 0.0212 - lr: 0.0010
+Epoch 182/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0207 - val_loss: 0.0232 - lr: 0.0010
+Epoch 183/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0208 - val_loss: 0.0207 - lr: 0.0010
+Epoch 184/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0204 - val_loss: 0.0207 - lr: 0.0010
+Epoch 185/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0200 - val_loss: 0.0207 - lr: 0.0010
+Epoch 186/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0199 - val_loss: 0.0205 - lr: 0.0010
+Epoch 187/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0198 - val_loss: 0.0210 - lr: 0.0010
+Epoch 188/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0196 - val_loss: 0.0208 - lr: 0.0010
+Epoch 189/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0195 - val_loss: 0.0207 - lr: 0.0010
+Epoch 190/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0191 - val_loss: 0.0204 - lr: 0.0010
+Epoch 191/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0190 - val_loss: 0.0199 - lr: 0.0010
+Epoch 192/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0190 - val_loss: 0.0201 - lr: 0.0010
+Epoch 193/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0188 - val_loss: 0.0198 - lr: 0.0010
+Epoch 194/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0187 - val_loss: 0.0196 - lr: 0.0010
+Epoch 195/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0188 - val_loss: 0.0199 - lr: 0.0010
+Epoch 196/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0182 - val_loss: 0.0194 - lr: 0.0010
+Epoch 197/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0187 - val_loss: 0.0190 - lr: 0.0010
+Epoch 198/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0185 - val_loss: 0.0190 - lr: 0.0010
+Epoch 199/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0184 - val_loss: 0.0186 - lr: 0.0010
+Epoch 200/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0181 - val_loss: 0.0186 - lr: 0.0010
+Epoch 201/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0179 - val_loss: 0.0183 - lr: 0.0010
+Epoch 202/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0179 - val_loss: 0.0183 - lr: 0.0010
+Epoch 203/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0178 - val_loss: 0.0181 - lr: 0.0010
+Epoch 204/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0177 - val_loss: 0.0181 - lr: 0.0010
+Epoch 205/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0175 - val_loss: 0.0182 - lr: 0.0010
+Epoch 206/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0171 - val_loss: 0.0179 - lr: 0.0010
+Epoch 207/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0174 - val_loss: 0.0182 - lr: 0.0010
+Epoch 208/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0168 - val_loss: 0.0178 - lr: 0.0010
+Epoch 209/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0171 - val_loss: 0.0188 - lr: 0.0010
+Epoch 210/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0170 - val_loss: 0.0174 - lr: 0.0010
+Epoch 211/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0167 - val_loss: 0.0175 - lr: 0.0010
+Epoch 212/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0167 - val_loss: 0.0177 - lr: 0.0010
+Epoch 213/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0162 - val_loss: 0.0172 - lr: 0.0010
+Epoch 214/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0163 - val_loss: 0.0177 - lr: 0.0010
+Epoch 215/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0162 - val_loss: 0.0171 - lr: 0.0010
+Epoch 216/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0162 - val_loss: 0.0171 - lr: 0.0010
+Epoch 217/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0159 - val_loss: 0.0168 - lr: 0.0010
+Epoch 218/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0158 - val_loss: 0.0170 - lr: 0.0010
+Epoch 219/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0157 - val_loss: 0.0165 - lr: 0.0010
+Epoch 220/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0153 - val_loss: 0.0174 - lr: 0.0010
+Epoch 221/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0154 - val_loss: 0.0164 - lr: 0.0010
+Epoch 222/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0154 - val_loss: 0.0169 - lr: 0.0010
+Epoch 223/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0151 - val_loss: 0.0161 - lr: 0.0010
+Epoch 224/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0153 - val_loss: 0.0168 - lr: 0.0010
+Epoch 225/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0152 - val_loss: 0.0158 - lr: 0.0010
+Epoch 226/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0150 - val_loss: 0.0165 - lr: 0.0010
+Epoch 227/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0149 - val_loss: 0.0161 - lr: 0.0010
+Epoch 228/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0147 - val_loss: 0.0164 - lr: 0.0010
+Epoch 229/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0146 - val_loss: 0.0163 - lr: 0.0010
+Epoch 230/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0147 - val_loss: 0.0154 - lr: 0.0010
+Epoch 231/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0147 - val_loss: 0.0164 - lr: 0.0010
+Epoch 232/500
+3/3 [==============================] - 0s 70ms/step - loss: 0.0146 - val_loss: 0.0152 - lr: 0.0010
+Epoch 233/500
+3/3 [==============================] - 0s 58ms/step - loss: 0.0146 - val_loss: 0.0173 - lr: 0.0010
+Epoch 234/500
+3/3 [==============================] - 0s 60ms/step - loss: 0.0142 - val_loss: 0.0151 - lr: 0.0010
+Epoch 235/500
+3/3 [==============================] - 0s 64ms/step - loss: 0.0144 - val_loss: 0.0158 - lr: 0.0010
+Epoch 236/500
+3/3 [==============================] - 0s 62ms/step - loss: 0.0142 - val_loss: 0.0150 - lr: 0.0010
+Epoch 237/500
+3/3 [==============================] - 0s 55ms/step - loss: 0.0139 - val_loss: 0.0154 - lr: 0.0010
+Epoch 238/500
+3/3 [==============================] - 0s 63ms/step - loss: 0.0138 - val_loss: 0.0152 - lr: 0.0010
+Epoch 239/500
+3/3 [==============================] - 0s 57ms/step - loss: 0.0138 - val_loss: 0.0155 - lr: 0.0010
+Epoch 240/500
+3/3 [==============================] - 0s 63ms/step - loss: 0.0137 - val_loss: 0.0147 - lr: 0.0010
+Epoch 241/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0136 - val_loss: 0.0148 - lr: 0.0010
+Epoch 242/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0135 - val_loss: 0.0149 - lr: 0.0010
+Epoch 243/500
+3/3 [==============================] - 0s 67ms/step - loss: 0.0135 - val_loss: 0.0153 - lr: 0.0010
+Epoch 244/500
+3/3 [==============================] - 0s 64ms/step - loss: 0.0135 - val_loss: 0.0144 - lr: 0.0010
+Epoch 245/500
+3/3 [==============================] - 0s 71ms/step - loss: 0.0132 - val_loss: 0.0148 - lr: 0.0010
+Epoch 246/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0132 - val_loss: 0.0141 - lr: 0.0010
+Epoch 247/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0132 - val_loss: 0.0143 - lr: 0.0010
+Epoch 248/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0132 - val_loss: 0.0138 - lr: 0.0010
+Epoch 249/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0130 - val_loss: 0.0144 - lr: 0.0010
+Epoch 250/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0129 - val_loss: 0.0141 - lr: 0.0010
+Epoch 251/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0130 - val_loss: 0.0138 - lr: 0.0010
+Epoch 252/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0128 - val_loss: 0.0140 - lr: 0.0010
+Epoch 253/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0125 - val_loss: 0.0136 - lr: 0.0010
+Epoch 254/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0124 - val_loss: 0.0142 - lr: 0.0010
+Epoch 255/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0124 - val_loss: 0.0133 - lr: 0.0010
+Epoch 256/500
+3/3 [==============================] - 0s 57ms/step - loss: 0.0125 - val_loss: 0.0156 - lr: 0.0010
+Epoch 257/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0125 - val_loss: 0.0130 - lr: 0.0010
+Epoch 258/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0125 - val_loss: 0.0143 - lr: 0.0010
+Epoch 259/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0121 - val_loss: 0.0133 - lr: 0.0010
+Epoch 260/500
+3/3 [==============================] - 0s 114ms/step - loss: 0.0120 - val_loss: 0.0133 - lr: 0.0010
+Epoch 261/500
+3/3 [==============================] - 0s 142ms/step - loss: 0.0120 - val_loss: 0.0135 - lr: 0.0010
+Epoch 262/500
+3/3 [==============================] - 0s 125ms/step - loss: 0.0121 - val_loss: 0.0131 - lr: 0.0010
+Epoch 263/500
+3/3 [==============================] - 0s 114ms/step - loss: 0.0118 - val_loss: 0.0148 - lr: 0.0010
+Epoch 264/500
+3/3 [==============================] - 0s 116ms/step - loss: 0.0120 - val_loss: 0.0127 - lr: 0.0010
+Epoch 265/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0118 - val_loss: 0.0144 - lr: 0.0010
+Epoch 266/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0118 - val_loss: 0.0126 - lr: 0.0010
+Epoch 267/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0115 - val_loss: 0.0126 - lr: 0.0010
+Epoch 268/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0116 - val_loss: 0.0126 - lr: 0.0010
+Epoch 269/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0115 - val_loss: 0.0127 - lr: 0.0010
+Epoch 270/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0115 - val_loss: 0.0122 - lr: 0.0010
+Epoch 271/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0114 - val_loss: 0.0139 - lr: 0.0010
+Epoch 272/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0114 - val_loss: 0.0119 - lr: 0.0010
+Epoch 273/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0112 - val_loss: 0.0126 - lr: 0.0010
+Epoch 274/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0110 - val_loss: 0.0122 - lr: 0.0010
+Epoch 275/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0110 - val_loss: 0.0126 - lr: 0.0010
+Epoch 276/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0108 - val_loss: 0.0123 - lr: 0.0010
+Epoch 277/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0109 - val_loss: 0.0121 - lr: 0.0010
+Epoch 278/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0109 - val_loss: 0.0117 - lr: 0.0010
+Epoch 279/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0111 - val_loss: 0.0125 - lr: 0.0010
+Epoch 280/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0109 - val_loss: 0.0113 - lr: 0.0010
+Epoch 281/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0108 - val_loss: 0.0126 - lr: 0.0010
+Epoch 282/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0108 - val_loss: 0.0120 - lr: 0.0010
+Epoch 283/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0105 - val_loss: 0.0127 - lr: 0.0010
+Epoch 284/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0105 - val_loss: 0.0116 - lr: 0.0010
+Epoch 285/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0103 - val_loss: 0.0119 - lr: 0.0010
+Epoch 286/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0102 - val_loss: 0.0141 - lr: 0.0010
+Epoch 287/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0105 - val_loss: 0.0123 - lr: 0.0010
+Epoch 288/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0103 - val_loss: 0.0125 - lr: 0.0010
+Epoch 289/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0102 - val_loss: 0.0114 - lr: 0.0010
+Epoch 290/500
+3/3 [==============================] - ETA: 0s - loss: 0.0099
+Epoch 290: ReduceLROnPlateau reducing learning rate to 0.00010000000474974513.
+3/3 [==============================] - 0s 46ms/step - loss: 0.0099 - val_loss: 0.0115 - lr: 0.0010
+Epoch 291/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0100 - val_loss: 0.0115 - lr: 1.0000e-04
+Epoch 292/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0099 - val_loss: 0.0115 - lr: 1.0000e-04
+Epoch 293/500
+3/3 [==============================] - 0s 52ms/step - loss: 0.0100 - val_loss: 0.0115 - lr: 1.0000e-04
+Epoch 294/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0098 - val_loss: 0.0114 - lr: 1.0000e-04
+Epoch 295/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0098 - val_loss: 0.0113 - lr: 1.0000e-04
+Epoch 296/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0100 - val_loss: 0.0112 - lr: 1.0000e-04
+Epoch 297/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0100 - val_loss: 0.0115 - lr: 1.0000e-04
+Epoch 298/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0099 - val_loss: 0.0119 - lr: 1.0000e-04
+Epoch 299/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0099 - val_loss: 0.0119 - lr: 1.0000e-04
+Epoch 300/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0098 - val_loss: 0.0115 - lr: 1.0000e-04
+Epoch 301/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0097 - val_loss: 0.0113 - lr: 1.0000e-04
+Epoch 302/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0099 - val_loss: 0.0114 - lr: 1.0000e-04
+Epoch 303/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0100 - val_loss: 0.0116 - lr: 1.0000e-04
+Epoch 304/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0098 - val_loss: 0.0118 - lr: 1.0000e-04
+Epoch 305/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0099 - val_loss: 0.0118 - lr: 1.0000e-04
+Epoch 306/500
+1/3 [=========&gt;....................] - ETA: 0s - loss: 0.0098
+Epoch 306: ReduceLROnPlateau reducing learning rate to 1.0000000474974514e-05.
+3/3 [==============================] - 0s 46ms/step - loss: 0.0099 - val_loss: 0.0117 - lr: 1.0000e-04
+Epoch 307/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0099 - val_loss: 0.0117 - lr: 1.0000e-05
+Epoch 308/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0097 - val_loss: 0.0117 - lr: 1.0000e-05
+Epoch 309/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0098 - val_loss: 0.0117 - lr: 1.0000e-05
+Epoch 310/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0100 - val_loss: 0.0116 - lr: 1.0000e-05
+Epoch 311/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0100 - val_loss: 0.0116 - lr: 1.0000e-05
+Epoch 312/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0098 - val_loss: 0.0116 - lr: 1.0000e-05
+Epoch 313/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0098 - val_loss: 0.0116 - lr: 1.0000e-05
+Epoch 314/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0100 - val_loss: 0.0116 - lr: 1.0000e-05
+Epoch 315/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0097 - val_loss: 0.0116 - lr: 1.0000e-05
+Epoch 316/500
+3/3 [==============================] - ETA: 0s - loss: 0.0096
+Epoch 316: ReduceLROnPlateau reducing learning rate to 1.0000000656873453e-06.
+3/3 [==============================] - 0s 45ms/step - loss: 0.0096 - val_loss: 0.0116 - lr: 1.0000e-05
+Epoch 316: early stopping
+</pre></div>
+</div>
+<img alt="../_images/d5921c70dfd5acac9a12683be1019c7816d793714858dda230d21bb9805862f3.png" src="../_images/d5921c70dfd5acac9a12683be1019c7816d793714858dda230d21bb9805862f3.png" />
+</div>
+</div>
+<section id="non-rolling-prediction">
+<h4>Non-Rolling Prediction<a class="headerlink" href="#non-rolling-prediction" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">non_rolling_prediction</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">scaler</span><span class="p">):</span>
+    <span class="n">yhat</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">yhat</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">yhat</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">yhat</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Predictions&quot;</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMSE: </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">non_rolling_prediction</span><span class="p">(</span><span class="n">lstm</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 362ms/step
+</pre></div>
+</div>
+<img alt="../_images/583354314d190ef362990f2fe93fecdc2b5a1e2f882fffcbd962eb5c78359092.png" src="../_images/583354314d190ef362990f2fe93fecdc2b5a1e2f882fffcbd962eb5c78359092.png" />
+</div>
+</div>
+</section>
+<section id="rolling-prediction">
+<h4>Rolling Prediction<a class="headerlink" href="#rolling-prediction" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_rolling_predictions</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">starting_input</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="n">scaler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make rolling predictions using the trained model.</span>
+
+<span class="sd">    :param model: The trained model.</span>
+<span class="sd">    :param starting_input: The initial input data (last known data points).</span>
+<span class="sd">    :param steps: Number of future time steps to predict.</span>
+<span class="sd">    :param scaler: The scaler used for data normalization.</span>
+<span class="sd">    :return: Predictions in original scale.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_seq</span> <span class="o">=</span> <span class="n">starting_input</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span><span class="p">):</span>
+        <span class="c1"># Reshape the input to the format the model expects</span>
+        <span class="n">reshaped_input</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">input_seq</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_seq</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># Make a prediction</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">reshaped_input</span><span class="p">)</span>
+
+        <span class="c1"># Append the prediction</span>
+        <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># Update the input sequence for the next prediction</span>
+        <span class="n">input_seq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">input_seq</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">prediction</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rolling_prediction</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">scaler</span><span class="p">):</span>
+    <span class="n">yhat</span> <span class="o">=</span> <span class="n">make_rolling_predictions</span><span class="p">(</span>
+        <span class="n">model</span><span class="p">,</span> <span class="n">scaled_data</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span> <span class="o">-</span> <span class="n">look_back</span> <span class="p">:</span> <span class="o">-</span><span class="mi">24</span><span class="p">],</span> <span class="mi">24</span><span class="p">,</span> <span class="n">scaler</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">yhat</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Predictions&quot;</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">yhat</span><span class="p">,</span> <span class="n">squared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMSE: </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rolling_prediction</span><span class="p">(</span><span class="n">lstm</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 35ms/step
+1/1 [==============================] - 0s 34ms/step
+1/1 [==============================] - 0s 36ms/step
+1/1 [==============================] - 0s 37ms/step
+1/1 [==============================] - 0s 40ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 31ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 32ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 25ms/step
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:matplotlib.legend:No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+</pre></div>
+</div>
+<img alt="../_images/c7f2035e9fca721693bd56a79787adbf93d38febcbe3e76283764d9e34687ec8.png" src="../_images/c7f2035e9fca721693bd56a79787adbf93d38febcbe3e76283764d9e34687ec8.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="lstm-with-attention-mechanism-model-building-and-training">
+<h3>LSTM with Attention Mechanism: Model Building and Training<a class="headerlink" href="#lstm-with-attention-mechanism-model-building-and-training" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model parameters</span>
+<span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">look_back</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">lstm_units</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">dropout_rate</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="c1"># Define the model</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">)</span>
+<span class="n">lstm_out</span><span class="p">,</span> <span class="n">state_h</span><span class="p">,</span> <span class="n">state_c</span> <span class="o">=</span> <span class="n">LSTM</span><span class="p">(</span><span class="n">lstm_units</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_state</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">))(</span>
+    <span class="n">inputs</span>
+<span class="p">)</span>
+<span class="n">attention</span> <span class="o">=</span> <span class="n">Attention</span><span class="p">()([</span><span class="n">lstm_out</span><span class="p">,</span> <span class="n">lstm_out</span><span class="p">])</span>
+<span class="n">context_vector</span> <span class="o">=</span> <span class="n">Concatenate</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)([</span><span class="n">attention</span><span class="p">,</span> <span class="n">lstm_out</span><span class="p">])</span>
+<span class="n">flat</span> <span class="o">=</span> <span class="n">Flatten</span><span class="p">()(</span><span class="n">context_vector</span><span class="p">)</span>
+<span class="c1"># flat = LayerNormalization()(flat)</span>
+<span class="n">dense</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">))(</span><span class="n">flat</span><span class="p">)</span>
+<span class="n">drop</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">dropout_rate</span><span class="p">)(</span><span class="n">dense</span><span class="p">)</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">))(</span><span class="n">drop</span><span class="p">)</span>
+
+<span class="n">rnn_attention</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">outputs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network_training</span><span class="p">(</span><span class="n">rnn_attention</span><span class="p">,</span> <span class="s2">&quot;RNN-Attention&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/500
+3/3 [==============================] - 3s 490ms/step - loss: 0.1359 - val_loss: 0.2688 - lr: 0.0010
+Epoch 2/500
+3/3 [==============================] - 0s 73ms/step - loss: 0.1155 - val_loss: 0.0958 - lr: 0.0010
+Epoch 3/500
+3/3 [==============================] - 0s 64ms/step - loss: 0.0904 - val_loss: 0.1024 - lr: 0.0010
+Epoch 4/500
+3/3 [==============================] - 0s 77ms/step - loss: 0.0813 - val_loss: 0.0789 - lr: 0.0010
+Epoch 5/500
+3/3 [==============================] - 0s 75ms/step - loss: 0.0689 - val_loss: 0.0954 - lr: 0.0010
+Epoch 6/500
+3/3 [==============================] - 0s 73ms/step - loss: 0.0641 - val_loss: 0.0700 - lr: 0.0010
+Epoch 7/500
+3/3 [==============================] - 0s 78ms/step - loss: 0.0553 - val_loss: 0.0601 - lr: 0.0010
+Epoch 8/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0530 - val_loss: 0.0567 - lr: 0.0010
+Epoch 9/500
+3/3 [==============================] - 0s 60ms/step - loss: 0.0475 - val_loss: 0.0522 - lr: 0.0010
+Epoch 10/500
+3/3 [==============================] - 0s 53ms/step - loss: 0.0430 - val_loss: 0.0547 - lr: 0.0010
+Epoch 11/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0403 - val_loss: 0.0463 - lr: 0.0010
+Epoch 12/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0368 - val_loss: 0.0420 - lr: 0.0010
+Epoch 13/500
+3/3 [==============================] - 0s 52ms/step - loss: 0.0361 - val_loss: 0.0396 - lr: 0.0010
+Epoch 14/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0324 - val_loss: 0.0381 - lr: 0.0010
+Epoch 15/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0313 - val_loss: 0.0361 - lr: 0.0010
+Epoch 16/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0278 - val_loss: 0.0343 - lr: 0.0010
+Epoch 17/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0282 - val_loss: 0.0335 - lr: 0.0010
+Epoch 18/500
+3/3 [==============================] - 0s 52ms/step - loss: 0.0257 - val_loss: 0.0308 - lr: 0.0010
+Epoch 19/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0257 - val_loss: 0.0295 - lr: 0.0010
+Epoch 20/500
+3/3 [==============================] - 0s 57ms/step - loss: 0.0239 - val_loss: 0.0299 - lr: 0.0010
+Epoch 21/500
+3/3 [==============================] - 0s 54ms/step - loss: 0.0235 - val_loss: 0.0274 - lr: 0.0010
+Epoch 22/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0212 - val_loss: 0.0256 - lr: 0.0010
+Epoch 23/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0194 - val_loss: 0.0252 - lr: 0.0010
+Epoch 24/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0195 - val_loss: 0.0270 - lr: 0.0010
+Epoch 25/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0199 - val_loss: 0.0235 - lr: 0.0010
+Epoch 26/500
+3/3 [==============================] - 0s 56ms/step - loss: 0.0174 - val_loss: 0.0219 - lr: 0.0010
+Epoch 27/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0172 - val_loss: 0.0226 - lr: 0.0010
+Epoch 28/500
+3/3 [==============================] - 0s 53ms/step - loss: 0.0164 - val_loss: 0.0226 - lr: 0.0010
+Epoch 29/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0162 - val_loss: 0.0198 - lr: 0.0010
+Epoch 30/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0152 - val_loss: 0.0193 - lr: 0.0010
+Epoch 31/500
+3/3 [==============================] - 0s 67ms/step - loss: 0.0163 - val_loss: 0.0222 - lr: 0.0010
+Epoch 32/500
+3/3 [==============================] - 0s 76ms/step - loss: 0.0143 - val_loss: 0.0182 - lr: 0.0010
+Epoch 33/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0142 - val_loss: 0.0178 - lr: 0.0010
+Epoch 34/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0158 - val_loss: 0.0186 - lr: 0.0010
+Epoch 35/500
+3/3 [==============================] - 0s 66ms/step - loss: 0.0132 - val_loss: 0.0217 - lr: 0.0010
+Epoch 36/500
+3/3 [==============================] - 0s 59ms/step - loss: 0.0130 - val_loss: 0.0161 - lr: 0.0010
+Epoch 37/500
+3/3 [==============================] - 0s 63ms/step - loss: 0.0120 - val_loss: 0.0157 - lr: 0.0010
+Epoch 38/500
+3/3 [==============================] - 0s 73ms/step - loss: 0.0121 - val_loss: 0.0191 - lr: 0.0010
+Epoch 39/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0114 - val_loss: 0.0184 - lr: 0.0010
+Epoch 40/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0108 - val_loss: 0.0162 - lr: 0.0010
+Epoch 41/500
+3/3 [==============================] - 0s 70ms/step - loss: 0.0111 - val_loss: 0.0145 - lr: 0.0010
+Epoch 42/500
+3/3 [==============================] - 0s 71ms/step - loss: 0.0104 - val_loss: 0.0160 - lr: 0.0010
+Epoch 43/500
+3/3 [==============================] - 0s 74ms/step - loss: 0.0106 - val_loss: 0.0180 - lr: 0.0010
+Epoch 44/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0099 - val_loss: 0.0135 - lr: 0.0010
+Epoch 45/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0128 - val_loss: 0.0134 - lr: 0.0010
+Epoch 46/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0106 - val_loss: 0.0195 - lr: 0.0010
+Epoch 47/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0097 - val_loss: 0.0140 - lr: 0.0010
+Epoch 48/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0106 - val_loss: 0.0124 - lr: 0.0010
+Epoch 49/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0091 - val_loss: 0.0161 - lr: 0.0010
+Epoch 50/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0086 - val_loss: 0.0125 - lr: 0.0010
+Epoch 51/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0089 - val_loss: 0.0119 - lr: 0.0010
+Epoch 52/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0076 - val_loss: 0.0128 - lr: 0.0010
+Epoch 53/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0087 - val_loss: 0.0116 - lr: 0.0010
+Epoch 54/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0090 - val_loss: 0.0134 - lr: 0.0010
+Epoch 55/500
+3/3 [==============================] - 0s 53ms/step - loss: 0.0081 - val_loss: 0.0113 - lr: 0.0010
+Epoch 56/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0084 - val_loss: 0.0124 - lr: 0.0010
+Epoch 57/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0079 - val_loss: 0.0178 - lr: 0.0010
+Epoch 58/500
+3/3 [==============================] - 0s 54ms/step - loss: 0.0077 - val_loss: 0.0105 - lr: 0.0010
+Epoch 59/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0079 - val_loss: 0.0131 - lr: 0.0010
+Epoch 60/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0081 - val_loss: 0.0117 - lr: 0.0010
+Epoch 61/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0085 - val_loss: 0.0102 - lr: 0.0010
+Epoch 62/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0077 - val_loss: 0.0175 - lr: 0.0010
+Epoch 63/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0076 - val_loss: 0.0102 - lr: 0.0010
+Epoch 64/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0074 - val_loss: 0.0096 - lr: 0.0010
+Epoch 65/500
+3/3 [==============================] - 0s 50ms/step - loss: 0.0075 - val_loss: 0.0219 - lr: 0.0010
+Epoch 66/500
+3/3 [==============================] - 0s 56ms/step - loss: 0.0077 - val_loss: 0.0100 - lr: 0.0010
+Epoch 67/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0080 - val_loss: 0.0132 - lr: 0.0010
+Epoch 68/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0088 - val_loss: 0.0115 - lr: 0.0010
+Epoch 69/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0073 - val_loss: 0.0099 - lr: 0.0010
+Epoch 70/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0077 - val_loss: 0.0200 - lr: 0.0010
+Epoch 71/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0083 - val_loss: 0.0122 - lr: 0.0010
+Epoch 72/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0068 - val_loss: 0.0094 - lr: 0.0010
+Epoch 73/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0075 - val_loss: 0.0131 - lr: 0.0010
+Epoch 74/500
+3/3 [==============================] - 0s 56ms/step - loss: 0.0078 - val_loss: 0.0114 - lr: 0.0010
+Epoch 75/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0075 - val_loss: 0.0087 - lr: 0.0010
+Epoch 76/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0076 - val_loss: 0.0084 - lr: 0.0010
+Epoch 77/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0065 - val_loss: 0.0109 - lr: 0.0010
+Epoch 78/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0069 - val_loss: 0.0110 - lr: 0.0010
+Epoch 79/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0057 - val_loss: 0.0087 - lr: 0.0010
+Epoch 80/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0062 - val_loss: 0.0082 - lr: 0.0010
+Epoch 81/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0053 - val_loss: 0.0138 - lr: 0.0010
+Epoch 82/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0061 - val_loss: 0.0071 - lr: 0.0010
+Epoch 83/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0056 - val_loss: 0.0084 - lr: 0.0010
+Epoch 84/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0075 - val_loss: 0.0145 - lr: 0.0010
+Epoch 85/500
+3/3 [==============================] - 0s 45ms/step - loss: 0.0061 - val_loss: 0.0068 - lr: 0.0010
+Epoch 86/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0064 - val_loss: 0.0099 - lr: 0.0010
+Epoch 87/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0053 - val_loss: 0.0075 - lr: 0.0010
+Epoch 88/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0057 - val_loss: 0.0074 - lr: 0.0010
+Epoch 89/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0064 - val_loss: 0.0097 - lr: 0.0010
+Epoch 90/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0066 - val_loss: 0.0062 - lr: 0.0010
+Epoch 91/500
+3/3 [==============================] - 0s 50ms/step - loss: 0.0070 - val_loss: 0.0133 - lr: 0.0010
+Epoch 92/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0056 - val_loss: 0.0060 - lr: 0.0010
+Epoch 93/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0048 - val_loss: 0.0177 - lr: 0.0010
+Epoch 94/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0063 - val_loss: 0.0076 - lr: 0.0010
+Epoch 95/500
+3/3 [==============================] - 0s 54ms/step - loss: 0.0060 - val_loss: 0.0088 - lr: 0.0010
+Epoch 96/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0063 - val_loss: 0.0095 - lr: 0.0010
+Epoch 97/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0061 - val_loss: 0.0060 - lr: 0.0010
+Epoch 98/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0066 - val_loss: 0.0139 - lr: 0.0010
+Epoch 99/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0058 - val_loss: 0.0057 - lr: 0.0010
+Epoch 100/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0060 - val_loss: 0.0115 - lr: 0.0010
+Epoch 101/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0057 - val_loss: 0.0082 - lr: 0.0010
+Epoch 102/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0050 - val_loss: 0.0054 - lr: 0.0010
+Epoch 103/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0060 - val_loss: 0.0124 - lr: 0.0010
+Epoch 104/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0054 - val_loss: 0.0052 - lr: 0.0010
+Epoch 105/500
+3/3 [==============================] - 0s 50ms/step - loss: 0.0053 - val_loss: 0.0051 - lr: 0.0010
+Epoch 106/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0052 - val_loss: 0.0218 - lr: 0.0010
+Epoch 107/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0051 - val_loss: 0.0053 - lr: 0.0010
+Epoch 108/500
+3/3 [==============================] - 0s 54ms/step - loss: 0.0068 - val_loss: 0.0070 - lr: 0.0010
+Epoch 109/500
+3/3 [==============================] - 0s 52ms/step - loss: 0.0056 - val_loss: 0.0174 - lr: 0.0010
+Epoch 110/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0051 - val_loss: 0.0053 - lr: 0.0010
+Epoch 111/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0059 - val_loss: 0.0075 - lr: 0.0010
+Epoch 112/500
+3/3 [==============================] - 0s 44ms/step - loss: 0.0049 - val_loss: 0.0133 - lr: 0.0010
+Epoch 113/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0047 - val_loss: 0.0062 - lr: 0.0010
+Epoch 114/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0048 - val_loss: 0.0063 - lr: 0.0010
+Epoch 115/500
+3/3 [==============================] - ETA: 0s - loss: 0.0058
+Epoch 115: ReduceLROnPlateau reducing learning rate to 0.00010000000474974513.
+3/3 [==============================] - 0s 46ms/step - loss: 0.0058 - val_loss: 0.0079 - lr: 0.0010
+Epoch 116/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0041 - val_loss: 0.0063 - lr: 1.0000e-04
+Epoch 117/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0046 - val_loss: 0.0059 - lr: 1.0000e-04
+Epoch 118/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0042 - val_loss: 0.0060 - lr: 1.0000e-04
+Epoch 119/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0044 - val_loss: 0.0065 - lr: 1.0000e-04
+Epoch 120/500
+3/3 [==============================] - 0s 54ms/step - loss: 0.0045 - val_loss: 0.0071 - lr: 1.0000e-04
+Epoch 121/500
+3/3 [==============================] - 0s 74ms/step - loss: 0.0045 - val_loss: 0.0071 - lr: 1.0000e-04
+Epoch 122/500
+3/3 [==============================] - 0s 77ms/step - loss: 0.0045 - val_loss: 0.0071 - lr: 1.0000e-04
+Epoch 123/500
+3/3 [==============================] - 0s 68ms/step - loss: 0.0037 - val_loss: 0.0066 - lr: 1.0000e-04
+Epoch 124/500
+3/3 [==============================] - 0s 72ms/step - loss: 0.0050 - val_loss: 0.0062 - lr: 1.0000e-04
+Epoch 125/500
+3/3 [==============================] - ETA: 0s - loss: 0.0042
+Epoch 125: ReduceLROnPlateau reducing learning rate to 1.0000000474974514e-05.
+3/3 [==============================] - 0s 73ms/step - loss: 0.0042 - val_loss: 0.0060 - lr: 1.0000e-04
+Epoch 125: early stopping
+</pre></div>
+</div>
+<img alt="../_images/d8d5481a6c2ae1d245f66e35fe5df7baae857107ea09a97f28ba26de53401042.png" src="../_images/d8d5481a6c2ae1d245f66e35fe5df7baae857107ea09a97f28ba26de53401042.png" />
+</div>
+</div>
+<section id="id1">
+<h4>Non-Rolling Prediction<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">non_rolling_prediction</span><span class="p">(</span><span class="n">rnn_attention</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 460ms/step
+</pre></div>
+</div>
+<img alt="../_images/f84f87fb03e9567aae3aceecaf3314b5f226482f690895b162d3284021297709.png" src="../_images/f84f87fb03e9567aae3aceecaf3314b5f226482f690895b162d3284021297709.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h4>Rolling Prediction<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rolling_prediction</span><span class="p">(</span><span class="n">rnn_attention</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 33ms/step
+1/1 [==============================] - 0s 42ms/step
+1/1 [==============================] - 0s 47ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 27ms/step
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:matplotlib.legend:No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+</pre></div>
+</div>
+<img alt="../_images/a317c2619e2ed6167091ae44a432b508aaae5bf1084dc923175cacff57c63c82.png" src="../_images/a317c2619e2ed6167091ae44a432b508aaae5bf1084dc923175cacff57c63c82.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="cnn-model-building-and-training">
+<h3>CNN Model Building and Training<a class="headerlink" href="#cnn-model-building-and-training" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cnn</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+
+<span class="c1"># Input layer - Convolutional layer</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">look_back</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span>
+
+<span class="c1"># Additional convolutional layer</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
+
+<span class="c1"># Max pooling layer</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling1D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Flatten layer to prepare data for Dense layer</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
+
+<span class="c1"># Dense layer for prediction</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">)))</span>
+<span class="n">cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network_training</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="s2">&quot;CNN&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/500
+3/3 [==============================] - 2s 100ms/step - loss: 0.1824 - val_loss: 0.2944 - lr: 0.0010
+Epoch 2/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.1279 - val_loss: 0.1975 - lr: 0.0010
+Epoch 3/500
+3/3 [==============================] - 0s 17ms/step - loss: 0.0987 - val_loss: 0.1225 - lr: 0.0010
+Epoch 4/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0772 - val_loss: 0.0856 - lr: 0.0010
+Epoch 5/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0726 - val_loss: 0.0943 - lr: 0.0010
+Epoch 6/500
+3/3 [==============================] - 0s 17ms/step - loss: 0.0754 - val_loss: 0.0921 - lr: 0.0010
+Epoch 7/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0705 - val_loss: 0.0796 - lr: 0.0010
+Epoch 8/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0648 - val_loss: 0.0769 - lr: 0.0010
+Epoch 9/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0619 - val_loss: 0.0793 - lr: 0.0010
+Epoch 10/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0609 - val_loss: 0.0785 - lr: 0.0010
+Epoch 11/500
+3/3 [==============================] - 0s 17ms/step - loss: 0.0589 - val_loss: 0.0731 - lr: 0.0010
+Epoch 12/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0559 - val_loss: 0.0674 - lr: 0.0010
+Epoch 13/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0537 - val_loss: 0.0641 - lr: 0.0010
+Epoch 14/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0516 - val_loss: 0.0625 - lr: 0.0010
+Epoch 15/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0500 - val_loss: 0.0602 - lr: 0.0010
+Epoch 16/500
+3/3 [==============================] - 0s 17ms/step - loss: 0.0481 - val_loss: 0.0576 - lr: 0.0010
+Epoch 17/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0461 - val_loss: 0.0556 - lr: 0.0010
+Epoch 18/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0446 - val_loss: 0.0537 - lr: 0.0010
+Epoch 19/500
+3/3 [==============================] - 0s 17ms/step - loss: 0.0430 - val_loss: 0.0516 - lr: 0.0010
+Epoch 20/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0414 - val_loss: 0.0499 - lr: 0.0010
+Epoch 21/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0399 - val_loss: 0.0486 - lr: 0.0010
+Epoch 22/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0385 - val_loss: 0.0467 - lr: 0.0010
+Epoch 23/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0371 - val_loss: 0.0447 - lr: 0.0010
+Epoch 24/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0358 - val_loss: 0.0433 - lr: 0.0010
+Epoch 25/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0345 - val_loss: 0.0420 - lr: 0.0010
+Epoch 26/500
+3/3 [==============================] - 0s 23ms/step - loss: 0.0333 - val_loss: 0.0404 - lr: 0.0010
+Epoch 27/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0321 - val_loss: 0.0390 - lr: 0.0010
+Epoch 28/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0310 - val_loss: 0.0379 - lr: 0.0010
+Epoch 29/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0299 - val_loss: 0.0366 - lr: 0.0010
+Epoch 30/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0289 - val_loss: 0.0348 - lr: 0.0010
+Epoch 31/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0279 - val_loss: 0.0337 - lr: 0.0010
+Epoch 32/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0270 - val_loss: 0.0319 - lr: 0.0010
+Epoch 33/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0260 - val_loss: 0.0314 - lr: 0.0010
+Epoch 34/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0251 - val_loss: 0.0307 - lr: 0.0010
+Epoch 35/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0243 - val_loss: 0.0299 - lr: 0.0010
+Epoch 36/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0235 - val_loss: 0.0278 - lr: 0.0010
+Epoch 37/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0228 - val_loss: 0.0264 - lr: 0.0010
+Epoch 38/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0220 - val_loss: 0.0264 - lr: 0.0010
+Epoch 39/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0213 - val_loss: 0.0260 - lr: 0.0010
+Epoch 40/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0207 - val_loss: 0.0250 - lr: 0.0010
+Epoch 41/500
+3/3 [==============================] - 0s 17ms/step - loss: 0.0200 - val_loss: 0.0224 - lr: 0.0010
+Epoch 42/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0193 - val_loss: 0.0221 - lr: 0.0010
+Epoch 43/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0187 - val_loss: 0.0226 - lr: 0.0010
+Epoch 44/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0181 - val_loss: 0.0219 - lr: 0.0010
+Epoch 45/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0176 - val_loss: 0.0196 - lr: 0.0010
+Epoch 46/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0171 - val_loss: 0.0197 - lr: 0.0010
+Epoch 47/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0165 - val_loss: 0.0196 - lr: 0.0010
+Epoch 48/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0161 - val_loss: 0.0185 - lr: 0.0010
+Epoch 49/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0156 - val_loss: 0.0178 - lr: 0.0010
+Epoch 50/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0152 - val_loss: 0.0173 - lr: 0.0010
+Epoch 51/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0147 - val_loss: 0.0174 - lr: 0.0010
+Epoch 52/500
+3/3 [==============================] - 0s 17ms/step - loss: 0.0144 - val_loss: 0.0168 - lr: 0.0010
+Epoch 53/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0140 - val_loss: 0.0160 - lr: 0.0010
+Epoch 54/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0136 - val_loss: 0.0156 - lr: 0.0010
+Epoch 55/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0133 - val_loss: 0.0157 - lr: 0.0010
+Epoch 56/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0129 - val_loss: 0.0154 - lr: 0.0010
+Epoch 57/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0126 - val_loss: 0.0144 - lr: 0.0010
+Epoch 58/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0123 - val_loss: 0.0143 - lr: 0.0010
+Epoch 59/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0120 - val_loss: 0.0143 - lr: 0.0010
+Epoch 60/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0117 - val_loss: 0.0143 - lr: 0.0010
+Epoch 61/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0114 - val_loss: 0.0136 - lr: 0.0010
+Epoch 62/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0112 - val_loss: 0.0134 - lr: 0.0010
+Epoch 63/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0109 - val_loss: 0.0132 - lr: 0.0010
+Epoch 64/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0107 - val_loss: 0.0126 - lr: 0.0010
+Epoch 65/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0104 - val_loss: 0.0123 - lr: 0.0010
+Epoch 66/500
+3/3 [==============================] - 0s 24ms/step - loss: 0.0102 - val_loss: 0.0127 - lr: 0.0010
+Epoch 67/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0100 - val_loss: 0.0120 - lr: 0.0010
+Epoch 68/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0097 - val_loss: 0.0118 - lr: 0.0010
+Epoch 69/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0095 - val_loss: 0.0116 - lr: 0.0010
+Epoch 70/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0093 - val_loss: 0.0113 - lr: 0.0010
+Epoch 71/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0091 - val_loss: 0.0114 - lr: 0.0010
+Epoch 72/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0089 - val_loss: 0.0115 - lr: 0.0010
+Epoch 73/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0088 - val_loss: 0.0109 - lr: 0.0010
+Epoch 74/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0086 - val_loss: 0.0103 - lr: 0.0010
+Epoch 75/500
+3/3 [==============================] - 0s 22ms/step - loss: 0.0084 - val_loss: 0.0107 - lr: 0.0010
+Epoch 76/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0083 - val_loss: 0.0104 - lr: 0.0010
+Epoch 77/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0081 - val_loss: 0.0100 - lr: 0.0010
+Epoch 78/500
+3/3 [==============================] - 0s 30ms/step - loss: 0.0079 - val_loss: 0.0095 - lr: 0.0010
+Epoch 79/500
+3/3 [==============================] - 0s 33ms/step - loss: 0.0078 - val_loss: 0.0101 - lr: 0.0010
+Epoch 80/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0076 - val_loss: 0.0101 - lr: 0.0010
+Epoch 81/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0075 - val_loss: 0.0093 - lr: 0.0010
+Epoch 82/500
+3/3 [==============================] - 0s 35ms/step - loss: 0.0074 - val_loss: 0.0093 - lr: 0.0010
+Epoch 83/500
+3/3 [==============================] - 0s 31ms/step - loss: 0.0072 - val_loss: 0.0094 - lr: 0.0010
+Epoch 84/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0071 - val_loss: 0.0095 - lr: 0.0010
+Epoch 85/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0070 - val_loss: 0.0087 - lr: 0.0010
+Epoch 86/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0068 - val_loss: 0.0093 - lr: 0.0010
+Epoch 87/500
+3/3 [==============================] - 0s 56ms/step - loss: 0.0067 - val_loss: 0.0089 - lr: 0.0010
+Epoch 88/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0066 - val_loss: 0.0086 - lr: 0.0010
+Epoch 89/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0065 - val_loss: 0.0087 - lr: 0.0010
+Epoch 90/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0064 - val_loss: 0.0085 - lr: 0.0010
+Epoch 91/500
+3/3 [==============================] - 0s 32ms/step - loss: 0.0063 - val_loss: 0.0084 - lr: 0.0010
+Epoch 92/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0062 - val_loss: 0.0081 - lr: 0.0010
+Epoch 93/500
+3/3 [==============================] - 0s 24ms/step - loss: 0.0061 - val_loss: 0.0083 - lr: 0.0010
+Epoch 94/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0060 - val_loss: 0.0081 - lr: 0.0010
+Epoch 95/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0059 - val_loss: 0.0080 - lr: 0.0010
+Epoch 96/500
+3/3 [==============================] - 0s 34ms/step - loss: 0.0058 - val_loss: 0.0081 - lr: 0.0010
+Epoch 97/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0057 - val_loss: 0.0075 - lr: 0.0010
+Epoch 98/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0056 - val_loss: 0.0079 - lr: 0.0010
+Epoch 99/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0055 - val_loss: 0.0076 - lr: 0.0010
+Epoch 100/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0054 - val_loss: 0.0072 - lr: 0.0010
+Epoch 101/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0053 - val_loss: 0.0079 - lr: 0.0010
+Epoch 102/500
+3/3 [==============================] - 0s 35ms/step - loss: 0.0053 - val_loss: 0.0074 - lr: 0.0010
+Epoch 103/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0053 - val_loss: 0.0065 - lr: 0.0010
+Epoch 104/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0051 - val_loss: 0.0081 - lr: 0.0010
+Epoch 105/500
+3/3 [==============================] - 0s 34ms/step - loss: 0.0051 - val_loss: 0.0077 - lr: 0.0010
+Epoch 106/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0050 - val_loss: 0.0062 - lr: 0.0010
+Epoch 107/500
+3/3 [==============================] - 0s 32ms/step - loss: 0.0049 - val_loss: 0.0074 - lr: 0.0010
+Epoch 108/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0048 - val_loss: 0.0073 - lr: 0.0010
+Epoch 109/500
+3/3 [==============================] - 0s 30ms/step - loss: 0.0047 - val_loss: 0.0064 - lr: 0.0010
+Epoch 110/500
+3/3 [==============================] - 0s 43ms/step - loss: 0.0047 - val_loss: 0.0069 - lr: 0.0010
+Epoch 111/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0046 - val_loss: 0.0067 - lr: 0.0010
+Epoch 112/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0045 - val_loss: 0.0066 - lr: 0.0010
+Epoch 113/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0045 - val_loss: 0.0066 - lr: 0.0010
+Epoch 114/500
+3/3 [==============================] - 0s 35ms/step - loss: 0.0044 - val_loss: 0.0061 - lr: 0.0010
+Epoch 115/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0044 - val_loss: 0.0067 - lr: 0.0010
+Epoch 116/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0043 - val_loss: 0.0062 - lr: 0.0010
+Epoch 117/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0042 - val_loss: 0.0063 - lr: 0.0010
+Epoch 118/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0042 - val_loss: 0.0064 - lr: 0.0010
+Epoch 119/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0041 - val_loss: 0.0059 - lr: 0.0010
+Epoch 120/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0041 - val_loss: 0.0067 - lr: 0.0010
+Epoch 121/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0040 - val_loss: 0.0059 - lr: 0.0010
+Epoch 122/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0040 - val_loss: 0.0057 - lr: 0.0010
+Epoch 123/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0039 - val_loss: 0.0064 - lr: 0.0010
+Epoch 124/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0039 - val_loss: 0.0061 - lr: 0.0010
+Epoch 125/500
+3/3 [==============================] - 0s 32ms/step - loss: 0.0038 - val_loss: 0.0055 - lr: 0.0010
+Epoch 126/500
+3/3 [==============================] - 0s 23ms/step - loss: 0.0038 - val_loss: 0.0062 - lr: 0.0010
+Epoch 127/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0037 - val_loss: 0.0054 - lr: 0.0010
+Epoch 128/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0037 - val_loss: 0.0054 - lr: 0.0010
+Epoch 129/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0036 - val_loss: 0.0061 - lr: 0.0010
+Epoch 130/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0036 - val_loss: 0.0055 - lr: 0.0010
+Epoch 131/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0035 - val_loss: 0.0053 - lr: 0.0010
+Epoch 132/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0035 - val_loss: 0.0057 - lr: 0.0010
+Epoch 133/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0035 - val_loss: 0.0055 - lr: 0.0010
+Epoch 134/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0034 - val_loss: 0.0053 - lr: 0.0010
+Epoch 135/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0034 - val_loss: 0.0057 - lr: 0.0010
+Epoch 136/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0034 - val_loss: 0.0053 - lr: 0.0010
+Epoch 137/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0033 - val_loss: 0.0061 - lr: 0.0010
+Epoch 138/500
+1/3 [=========&gt;....................] - ETA: 0s - loss: 0.0033
+Epoch 138: ReduceLROnPlateau reducing learning rate to 0.00010000000474974513.
+3/3 [==============================] - 0s 18ms/step - loss: 0.0033 - val_loss: 0.0055 - lr: 0.0010
+Epoch 139/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0032 - val_loss: 0.0054 - lr: 1.0000e-04
+Epoch 140/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-04
+Epoch 141/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0032 - val_loss: 0.0052 - lr: 1.0000e-04
+Epoch 142/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-04
+Epoch 143/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-04
+Epoch 144/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-04
+Epoch 145/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0032 - val_loss: 0.0054 - lr: 1.0000e-04
+Epoch 146/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0032 - val_loss: 0.0054 - lr: 1.0000e-04
+Epoch 147/500
+3/3 [==============================] - 0s 34ms/step - loss: 0.0032 - val_loss: 0.0054 - lr: 1.0000e-04
+Epoch 148/500
+3/3 [==============================] - 0s 20ms/step - loss: 0.0032 - val_loss: 0.0054 - lr: 1.0000e-04
+Epoch 149/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-04
+Epoch 150/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-04
+Epoch 151/500
+1/3 [=========&gt;....................] - ETA: 0s - loss: 0.0031
+Epoch 151: ReduceLROnPlateau reducing learning rate to 1.0000000474974514e-05.
+3/3 [==============================] - 0s 20ms/step - loss: 0.0032 - val_loss: 0.0052 - lr: 1.0000e-04
+Epoch 152/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0032 - val_loss: 0.0052 - lr: 1.0000e-05
+Epoch 153/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0052 - lr: 1.0000e-05
+Epoch 154/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0052 - lr: 1.0000e-05
+Epoch 155/500
+3/3 [==============================] - 0s 21ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-05
+Epoch 156/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-05
+Epoch 157/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-05
+Epoch 158/500
+3/3 [==============================] - 0s 18ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-05
+Epoch 159/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-05
+Epoch 160/500
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-05
+Epoch 161/500
+1/3 [=========&gt;....................] - ETA: 0s - loss: 0.0033
+Epoch 161: ReduceLROnPlateau reducing learning rate to 1.0000000656873453e-06.
+3/3 [==============================] - 0s 19ms/step - loss: 0.0032 - val_loss: 0.0053 - lr: 1.0000e-05
+Epoch 161: early stopping
+</pre></div>
+</div>
+<img alt="../_images/d722f5cbf050a11411a6cc177e134153ec50df5e10613d4d30fb931b0bad90d5.png" src="../_images/d722f5cbf050a11411a6cc177e134153ec50df5e10613d4d30fb931b0bad90d5.png" />
+</div>
+</div>
+<section id="id3">
+<h4>Non-Rolling Prediction<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">non_rolling_prediction</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 91ms/step
+</pre></div>
+</div>
+<img alt="../_images/c0c25128ff394e7abe4d0e453ead796770b323d8b78603dc27588d38ae00d230.png" src="../_images/c0c25128ff394e7abe4d0e453ead796770b323d8b78603dc27588d38ae00d230.png" />
+</div>
+</div>
+</section>
+<section id="id4">
+<h4>Rolling Prediction<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rolling_prediction</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 24ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 20ms/step
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:matplotlib.legend:No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+</pre></div>
+</div>
+<img alt="../_images/b836f1f1c4b99280c7317352df976c7004fed5b5c4811c513b16d9b12fd7b567.png" src="../_images/b836f1f1c4b99280c7317352df976c7004fed5b5c4811c513b16d9b12fd7b567.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="transformer-model-building-and-training">
+<h3>Transformer Model Building and Training<a class="headerlink" href="#transformer-model-building-and-training" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transformer Encoder Block</span>
+<span class="k">def</span> <span class="nf">transformer_encoder</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">head_size</span><span class="p">,</span> <span class="n">num_heads</span><span class="p">,</span> <span class="n">ff_dim</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="c1"># Normalization and Attention</span>
+    <span class="c1"># x = LayerNormalization()(inputs)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">MultiHeadAttention</span><span class="p">(</span><span class="n">key_dim</span><span class="o">=</span><span class="n">head_size</span><span class="p">,</span> <span class="n">num_heads</span><span class="o">=</span><span class="n">num_heads</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="n">dropout</span><span class="p">)(</span>
+        <span class="n">inputs</span><span class="p">,</span> <span class="n">inputs</span>
+    <span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">inputs</span>
+    <span class="c1"># res = LayerNormalization()(res)</span>
+
+    <span class="c1"># Feed Forward Part</span>
+    <span class="c1"># x = LayerNormalization()(res)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="n">ff_dim</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">dropout</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="n">inputs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="c1"># res = LayerNormalization()(res)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model parameters</span>
+<span class="n">ff_dim</span> <span class="o">=</span> <span class="mi">64</span>  <span class="c1"># Hidden layer size in feed forward network inside transformer</span>
+<span class="n">num_heads</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Number of attention heads</span>
+<span class="n">dropout_rate</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># Dropout rate</span>
+<span class="n">head_size</span> <span class="o">=</span> <span class="mi">64</span>  <span class="c1"># Attention head size</span>
+
+<span class="c1"># Model building</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">look_back</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">inputs</span>
+
+<span class="c1"># Transformer layers</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">transformer_encoder</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">head_size</span><span class="p">,</span> <span class="n">num_heads</span><span class="p">,</span> <span class="n">ff_dim</span><span class="p">,</span> <span class="n">dropout_rate</span><span class="p">)</span>
+
+<span class="c1"># Global Pooling and Output</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">GlobalAveragePooling1D</span><span class="p">(</span><span class="n">data_format</span><span class="o">=</span><span class="s2">&quot;channels_first&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">dropout_rate</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">kernel_regularizer</span><span class="o">=</span><span class="n">l2</span><span class="p">(</span><span class="n">l2_reg</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+
+
+
+<span class="c1"># Build the model</span>
+<span class="n">transformer</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network_training</span><span class="p">(</span><span class="n">transformer</span><span class="p">,</span> <span class="s2">&quot;Transformer&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/500
+3/3 [==============================] - 6s 719ms/step - loss: 0.0632 - val_loss: 0.1102 - lr: 0.0010
+Epoch 2/500
+3/3 [==============================] - 0s 31ms/step - loss: 0.0524 - val_loss: 0.0651 - lr: 0.0010
+Epoch 3/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0452 - val_loss: 0.0528 - lr: 0.0010
+Epoch 4/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0461 - val_loss: 0.0522 - lr: 0.0010
+Epoch 5/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0395 - val_loss: 0.0461 - lr: 0.0010
+Epoch 6/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0326 - val_loss: 0.0394 - lr: 0.0010
+Epoch 7/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0289 - val_loss: 0.0365 - lr: 0.0010
+Epoch 8/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0307 - val_loss: 0.0369 - lr: 0.0010
+Epoch 9/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0283 - val_loss: 0.0354 - lr: 0.0010
+Epoch 10/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0298 - val_loss: 0.0350 - lr: 0.0010
+Epoch 11/500
+3/3 [==============================] - 0s 24ms/step - loss: 0.0276 - val_loss: 0.0341 - lr: 0.0010
+Epoch 12/500
+3/3 [==============================] - 0s 24ms/step - loss: 0.0274 - val_loss: 0.0349 - lr: 0.0010
+Epoch 13/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0274 - val_loss: 0.0324 - lr: 0.0010
+Epoch 14/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0279 - val_loss: 0.0317 - lr: 0.0010
+Epoch 15/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0236 - val_loss: 0.0308 - lr: 0.0010
+Epoch 16/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0266 - val_loss: 0.0300 - lr: 0.0010
+Epoch 17/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0259 - val_loss: 0.0306 - lr: 0.0010
+Epoch 18/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0252 - val_loss: 0.0293 - lr: 0.0010
+Epoch 19/500
+3/3 [==============================] - 0s 32ms/step - loss: 0.0246 - val_loss: 0.0280 - lr: 0.0010
+Epoch 20/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0214 - val_loss: 0.0275 - lr: 0.0010
+Epoch 21/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0242 - val_loss: 0.0269 - lr: 0.0010
+Epoch 22/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0223 - val_loss: 0.0264 - lr: 0.0010
+Epoch 23/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0212 - val_loss: 0.0258 - lr: 0.0010
+Epoch 24/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0218 - val_loss: 0.0256 - lr: 0.0010
+Epoch 25/500
+3/3 [==============================] - 0s 33ms/step - loss: 0.0217 - val_loss: 0.0250 - lr: 0.0010
+Epoch 26/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0213 - val_loss: 0.0244 - lr: 0.0010
+Epoch 27/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0235 - val_loss: 0.0240 - lr: 0.0010
+Epoch 28/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0215 - val_loss: 0.0237 - lr: 0.0010
+Epoch 29/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0201 - val_loss: 0.0234 - lr: 0.0010
+Epoch 30/500
+3/3 [==============================] - 0s 32ms/step - loss: 0.0194 - val_loss: 0.0231 - lr: 0.0010
+Epoch 31/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0200 - val_loss: 0.0225 - lr: 0.0010
+Epoch 32/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0188 - val_loss: 0.0223 - lr: 0.0010
+Epoch 33/500
+3/3 [==============================] - 0s 30ms/step - loss: 0.0187 - val_loss: 0.0218 - lr: 0.0010
+Epoch 34/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0183 - val_loss: 0.0214 - lr: 0.0010
+Epoch 35/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0184 - val_loss: 0.0210 - lr: 0.0010
+Epoch 36/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0184 - val_loss: 0.0207 - lr: 0.0010
+Epoch 37/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0184 - val_loss: 0.0203 - lr: 0.0010
+Epoch 38/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0171 - val_loss: 0.0200 - lr: 0.0010
+Epoch 39/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0182 - val_loss: 0.0196 - lr: 0.0010
+Epoch 40/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0185 - val_loss: 0.0196 - lr: 0.0010
+Epoch 41/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0179 - val_loss: 0.0194 - lr: 0.0010
+Epoch 42/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0178 - val_loss: 0.0191 - lr: 0.0010
+Epoch 43/500
+3/3 [==============================] - 0s 30ms/step - loss: 0.0159 - val_loss: 0.0189 - lr: 0.0010
+Epoch 44/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0179 - val_loss: 0.0187 - lr: 0.0010
+Epoch 45/500
+3/3 [==============================] - 0s 34ms/step - loss: 0.0171 - val_loss: 0.0185 - lr: 0.0010
+Epoch 46/500
+3/3 [==============================] - 0s 33ms/step - loss: 0.0162 - val_loss: 0.0182 - lr: 0.0010
+Epoch 47/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0161 - val_loss: 0.0181 - lr: 0.0010
+Epoch 48/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0175 - val_loss: 0.0179 - lr: 0.0010
+Epoch 49/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0181 - val_loss: 0.0177 - lr: 0.0010
+Epoch 50/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0170 - val_loss: 0.0173 - lr: 0.0010
+Epoch 51/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0154 - val_loss: 0.0173 - lr: 0.0010
+Epoch 52/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0168 - val_loss: 0.0175 - lr: 0.0010
+Epoch 53/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0167 - val_loss: 0.0175 - lr: 0.0010
+Epoch 54/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0151 - val_loss: 0.0169 - lr: 0.0010
+Epoch 55/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0147 - val_loss: 0.0166 - lr: 0.0010
+Epoch 56/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0146 - val_loss: 0.0164 - lr: 0.0010
+Epoch 57/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0152 - val_loss: 0.0163 - lr: 0.0010
+Epoch 58/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0148 - val_loss: 0.0161 - lr: 0.0010
+Epoch 59/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0144 - val_loss: 0.0159 - lr: 0.0010
+Epoch 60/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0143 - val_loss: 0.0157 - lr: 0.0010
+Epoch 61/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0145 - val_loss: 0.0155 - lr: 0.0010
+Epoch 62/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0134 - val_loss: 0.0154 - lr: 0.0010
+Epoch 63/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0147 - val_loss: 0.0153 - lr: 0.0010
+Epoch 64/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0140 - val_loss: 0.0152 - lr: 0.0010
+Epoch 65/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0153 - val_loss: 0.0151 - lr: 0.0010
+Epoch 66/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0144 - val_loss: 0.0150 - lr: 0.0010
+Epoch 67/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0139 - val_loss: 0.0149 - lr: 0.0010
+Epoch 68/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0137 - val_loss: 0.0148 - lr: 0.0010
+Epoch 69/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0138 - val_loss: 0.0147 - lr: 0.0010
+Epoch 70/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0133 - val_loss: 0.0147 - lr: 0.0010
+Epoch 71/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0127 - val_loss: 0.0145 - lr: 0.0010
+Epoch 72/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0144 - val_loss: 0.0148 - lr: 0.0010
+Epoch 73/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0134 - val_loss: 0.0151 - lr: 0.0010
+Epoch 74/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0131 - val_loss: 0.0143 - lr: 0.0010
+Epoch 75/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0138 - val_loss: 0.0141 - lr: 0.0010
+Epoch 76/500
+3/3 [==============================] - 0s 30ms/step - loss: 0.0132 - val_loss: 0.0141 - lr: 0.0010
+Epoch 77/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0134 - val_loss: 0.0141 - lr: 0.0010
+Epoch 78/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0129 - val_loss: 0.0142 - lr: 0.0010
+Epoch 79/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0131 - val_loss: 0.0145 - lr: 0.0010
+Epoch 80/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0132 - val_loss: 0.0148 - lr: 0.0010
+Epoch 81/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0136 - val_loss: 0.0145 - lr: 0.0010
+Epoch 82/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0128 - val_loss: 0.0136 - lr: 0.0010
+Epoch 83/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0133 - val_loss: 0.0135 - lr: 0.0010
+Epoch 84/500
+3/3 [==============================] - 0s 30ms/step - loss: 0.0125 - val_loss: 0.0137 - lr: 0.0010
+Epoch 85/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0122 - val_loss: 0.0135 - lr: 0.0010
+Epoch 86/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0117 - val_loss: 0.0135 - lr: 0.0010
+Epoch 87/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0125 - val_loss: 0.0133 - lr: 0.0010
+Epoch 88/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0130 - val_loss: 0.0134 - lr: 0.0010
+Epoch 89/500
+3/3 [==============================] - 0s 30ms/step - loss: 0.0120 - val_loss: 0.0140 - lr: 0.0010
+Epoch 90/500
+3/3 [==============================] - 0s 24ms/step - loss: 0.0122 - val_loss: 0.0137 - lr: 0.0010
+Epoch 91/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0113 - val_loss: 0.0132 - lr: 0.0010
+Epoch 92/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0114 - val_loss: 0.0130 - lr: 0.0010
+Epoch 93/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0128 - val_loss: 0.0135 - lr: 0.0010
+Epoch 94/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0116 - val_loss: 0.0137 - lr: 0.0010
+Epoch 95/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0110 - val_loss: 0.0135 - lr: 0.0010
+Epoch 96/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0108 - val_loss: 0.0131 - lr: 0.0010
+Epoch 97/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0107 - val_loss: 0.0126 - lr: 0.0010
+Epoch 98/500
+3/3 [==============================] - 0s 31ms/step - loss: 0.0120 - val_loss: 0.0125 - lr: 0.0010
+Epoch 99/500
+3/3 [==============================] - 0s 31ms/step - loss: 0.0102 - val_loss: 0.0124 - lr: 0.0010
+Epoch 100/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0111 - val_loss: 0.0121 - lr: 0.0010
+Epoch 101/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0107 - val_loss: 0.0121 - lr: 0.0010
+Epoch 102/500
+3/3 [==============================] - 0s 35ms/step - loss: 0.0105 - val_loss: 0.0122 - lr: 0.0010
+Epoch 103/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0109 - val_loss: 0.0121 - lr: 0.0010
+Epoch 104/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0103 - val_loss: 0.0118 - lr: 0.0010
+Epoch 105/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0108 - val_loss: 0.0123 - lr: 0.0010
+Epoch 106/500
+3/3 [==============================] - 0s 24ms/step - loss: 0.0104 - val_loss: 0.0134 - lr: 0.0010
+Epoch 107/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0107 - val_loss: 0.0129 - lr: 0.0010
+Epoch 108/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0102 - val_loss: 0.0122 - lr: 0.0010
+Epoch 109/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0109 - val_loss: 0.0120 - lr: 0.0010
+Epoch 110/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0105 - val_loss: 0.0118 - lr: 0.0010
+Epoch 111/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0117 - val_loss: 0.0116 - lr: 0.0010
+Epoch 112/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0098 - val_loss: 0.0120 - lr: 0.0010
+Epoch 113/500
+3/3 [==============================] - 0s 33ms/step - loss: 0.0099 - val_loss: 0.0123 - lr: 0.0010
+Epoch 114/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0095 - val_loss: 0.0117 - lr: 0.0010
+Epoch 115/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0105 - val_loss: 0.0120 - lr: 0.0010
+Epoch 116/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0094 - val_loss: 0.0121 - lr: 0.0010
+Epoch 117/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0098 - val_loss: 0.0115 - lr: 0.0010
+Epoch 118/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0093 - val_loss: 0.0113 - lr: 0.0010
+Epoch 119/500
+3/3 [==============================] - 0s 35ms/step - loss: 0.0099 - val_loss: 0.0113 - lr: 0.0010
+Epoch 120/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0092 - val_loss: 0.0116 - lr: 0.0010
+Epoch 121/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0091 - val_loss: 0.0118 - lr: 0.0010
+Epoch 122/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0095 - val_loss: 0.0114 - lr: 0.0010
+Epoch 123/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0092 - val_loss: 0.0106 - lr: 0.0010
+Epoch 124/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0104 - val_loss: 0.0107 - lr: 0.0010
+Epoch 125/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0103 - val_loss: 0.0113 - lr: 0.0010
+Epoch 126/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0104 - val_loss: 0.0134 - lr: 0.0010
+Epoch 127/500
+3/3 [==============================] - 0s 33ms/step - loss: 0.0096 - val_loss: 0.0129 - lr: 0.0010
+Epoch 128/500
+3/3 [==============================] - 0s 40ms/step - loss: 0.0089 - val_loss: 0.0110 - lr: 0.0010
+Epoch 129/500
+3/3 [==============================] - 0s 50ms/step - loss: 0.0097 - val_loss: 0.0108 - lr: 0.0010
+Epoch 130/500
+3/3 [==============================] - 0s 50ms/step - loss: 0.0096 - val_loss: 0.0119 - lr: 0.0010
+Epoch 131/500
+3/3 [==============================] - 0s 37ms/step - loss: 0.0084 - val_loss: 0.0120 - lr: 0.0010
+Epoch 132/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0092 - val_loss: 0.0115 - lr: 0.0010
+Epoch 133/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0091 - val_loss: 0.0105 - lr: 0.0010
+Epoch 134/500
+3/3 [==============================] - 0s 38ms/step - loss: 0.0093 - val_loss: 0.0100 - lr: 0.0010
+Epoch 135/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0102 - val_loss: 0.0102 - lr: 0.0010
+Epoch 136/500
+3/3 [==============================] - 0s 46ms/step - loss: 0.0084 - val_loss: 0.0110 - lr: 0.0010
+Epoch 137/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0088 - val_loss: 0.0112 - lr: 0.0010
+Epoch 138/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0102 - val_loss: 0.0116 - lr: 0.0010
+Epoch 139/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0079 - val_loss: 0.0115 - lr: 0.0010
+Epoch 140/500
+3/3 [==============================] - 0s 36ms/step - loss: 0.0086 - val_loss: 0.0103 - lr: 0.0010
+Epoch 141/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0091 - val_loss: 0.0098 - lr: 0.0010
+Epoch 142/500
+3/3 [==============================] - 0s 41ms/step - loss: 0.0093 - val_loss: 0.0101 - lr: 0.0010
+Epoch 143/500
+3/3 [==============================] - 0s 49ms/step - loss: 0.0077 - val_loss: 0.0101 - lr: 0.0010
+Epoch 144/500
+3/3 [==============================] - 0s 39ms/step - loss: 0.0084 - val_loss: 0.0095 - lr: 0.0010
+Epoch 145/500
+3/3 [==============================] - 0s 47ms/step - loss: 0.0081 - val_loss: 0.0093 - lr: 0.0010
+Epoch 146/500
+3/3 [==============================] - 0s 55ms/step - loss: 0.0078 - val_loss: 0.0092 - lr: 0.0010
+Epoch 147/500
+3/3 [==============================] - 0s 51ms/step - loss: 0.0088 - val_loss: 0.0094 - lr: 0.0010
+Epoch 148/500
+3/3 [==============================] - 0s 42ms/step - loss: 0.0080 - val_loss: 0.0100 - lr: 0.0010
+Epoch 149/500
+3/3 [==============================] - 0s 48ms/step - loss: 0.0081 - val_loss: 0.0096 - lr: 0.0010
+Epoch 150/500
+3/3 [==============================] - 0s 31ms/step - loss: 0.0081 - val_loss: 0.0091 - lr: 0.0010
+Epoch 151/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0085 - val_loss: 0.0093 - lr: 0.0010
+Epoch 152/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0081 - val_loss: 0.0102 - lr: 0.0010
+Epoch 153/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0077 - val_loss: 0.0105 - lr: 0.0010
+Epoch 154/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0086 - val_loss: 0.0105 - lr: 0.0010
+Epoch 155/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0085 - val_loss: 0.0095 - lr: 0.0010
+Epoch 156/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0087 - val_loss: 0.0089 - lr: 0.0010
+Epoch 157/500
+3/3 [==============================] - 0s 31ms/step - loss: 0.0079 - val_loss: 0.0097 - lr: 0.0010
+Epoch 158/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0073 - val_loss: 0.0102 - lr: 0.0010
+Epoch 159/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0088 - val_loss: 0.0088 - lr: 0.0010
+Epoch 160/500
+3/3 [==============================] - 0s 24ms/step - loss: 0.0079 - val_loss: 0.0089 - lr: 0.0010
+Epoch 161/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0076 - val_loss: 0.0092 - lr: 0.0010
+Epoch 162/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0085 - val_loss: 0.0104 - lr: 0.0010
+Epoch 163/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0074 - val_loss: 0.0098 - lr: 0.0010
+Epoch 164/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0075 - val_loss: 0.0096 - lr: 0.0010
+Epoch 165/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0068 - val_loss: 0.0097 - lr: 0.0010
+Epoch 166/500
+1/3 [=========&gt;....................] - ETA: 0s - loss: 0.0071
+Epoch 166: ReduceLROnPlateau reducing learning rate to 0.00010000000474974513.
+3/3 [==============================] - 0s 29ms/step - loss: 0.0074 - val_loss: 0.0096 - lr: 0.0010
+Epoch 167/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0078 - val_loss: 0.0096 - lr: 1.0000e-04
+Epoch 168/500
+3/3 [==============================] - 0s 29ms/step - loss: 0.0080 - val_loss: 0.0095 - lr: 1.0000e-04
+Epoch 169/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0074 - val_loss: 0.0094 - lr: 1.0000e-04
+Epoch 170/500
+3/3 [==============================] - 0s 27ms/step - loss: 0.0068 - val_loss: 0.0093 - lr: 1.0000e-04
+Epoch 171/500
+3/3 [==============================] - 0s 34ms/step - loss: 0.0068 - val_loss: 0.0093 - lr: 1.0000e-04
+Epoch 172/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0075 - val_loss: 0.0093 - lr: 1.0000e-04
+Epoch 173/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0074 - val_loss: 0.0092 - lr: 1.0000e-04
+Epoch 174/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0076 - val_loss: 0.0093 - lr: 1.0000e-04
+Epoch 175/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0071 - val_loss: 0.0093 - lr: 1.0000e-04
+Epoch 176/500
+1/3 [=========&gt;....................] - ETA: 0s - loss: 0.0071
+Epoch 176: ReduceLROnPlateau reducing learning rate to 1.0000000474974514e-05.
+3/3 [==============================] - 0s 29ms/step - loss: 0.0076 - val_loss: 0.0092 - lr: 1.0000e-04
+Epoch 177/500
+3/3 [==============================] - 0s 28ms/step - loss: 0.0071 - val_loss: 0.0092 - lr: 1.0000e-05
+Epoch 178/500
+3/3 [==============================] - 0s 26ms/step - loss: 0.0073 - val_loss: 0.0092 - lr: 1.0000e-05
+Epoch 179/500
+3/3 [==============================] - 0s 25ms/step - loss: 0.0073 - val_loss: 0.0091 - lr: 1.0000e-05
+Epoch 179: early stopping
+</pre></div>
+</div>
+<img alt="../_images/8c67112e1fe9989301acb9bb5883ec6be4ffa0792797fca2868e4837a707e916.png" src="../_images/8c67112e1fe9989301acb9bb5883ec6be4ffa0792797fca2868e4837a707e916.png" />
+</div>
+</div>
+<section id="id5">
+<h4>Non-Rolling Prediction<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>  <span class="n">non_rolling_prediction</span><span class="p">(</span><span class="n">transformer</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 176ms/step
+</pre></div>
+</div>
+<img alt="../_images/9b388223d94173cc8d8eb8981f3ca7e1f75acc5615e7e76f10349609ec1fd8de.png" src="../_images/9b388223d94173cc8d8eb8981f3ca7e1f75acc5615e7e76f10349609ec1fd8de.png" />
+</div>
+</div>
+</section>
+<section id="id6">
+<h4>Rolling Prediction<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rolling_prediction</span><span class="p">(</span><span class="n">transformer</span><span class="p">,</span> <span class="n">scaler</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 28ms/step
+1/1 [==============================] - 0s 27ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 29ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 25ms/step
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:matplotlib.legend:No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+</pre></div>
+</div>
+<img alt="../_images/0713fad18ed4c750e9961828d269f7be43f3af8006a256b91e0aa4437ed2f1a0.png" src="../_images/0713fad18ed4c750e9961828d269f7be43f3af8006a256b91e0aa4437ed2f1a0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./samples"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="clustering.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cluster Analysis</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../project/project-overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Final Project Overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objective">Objective</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models-in-comparison">Models in Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approach">Approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-and-configuration">Importing Libraries and Configuration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-and-handling-time-series-in-pandas">Loading and Handling Time Series in Pandas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arima">ARIMA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-data-into-training-and-test-sets-for-arima">Splitting Data into Training and Test Sets for ARIMA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arima-model-experimentation">ARIMA Model Experimentation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks">Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-normalization-for-neural-network-experiments">Data Normalization for Neural Network Experiments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-dataset-for-neural-network-models">Preparing Dataset for Neural Network Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-data-for-neural-network-models">Splitting Data for Neural Network Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm-model-building-and-training">LSTM Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#non-rolling-prediction">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rolling-prediction">Rolling Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lstm-with-attention-mechanism-model-building-and-training">LSTM with Attention Mechanism: Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rolling Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn-model-building-and-training">CNN Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Rolling Prediction</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-model-building-and-training">Transformer Model Building and Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Non-Rolling Prediction</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Rolling Prediction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr.Yong Zhuang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
