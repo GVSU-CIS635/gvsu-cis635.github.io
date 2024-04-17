@@ -47,7 +47,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 11 (03/18) | Supervised & Unsupervised Learning<ul><li>[Slides](assets/pdf/supervised-unsupervised-learning.pdf)</li><li>[Video](https://youtu.be/hX2V98JBMbY)</li></ul>Clustering <ul><li>[Slides](assets/pdf/clustering.pdf)</li><li>[Video](https://youtu.be/qaaiHx3NK40)</li><li>[Code](samples/clustering.ipynb)</li></ul> |  |
 | 12 (03/25) | Neural Networks<ul><li>[Slides](assets/pdf/nn.pdf)</li><li>[Video](https://youtu.be/T8GeAOjbTWs)</li></ul>[HW 4](homeworks/4.md) | Understanding Deep Learning (Still) Requires Rethinking Generalization <ul><li>[Video](https://www.youtube.com/watch?v=O42vde4tbG0)</li><li>[Paper](https://dl.acm.org/doi/pdf/10.1145/3446776)</li></ul> |
 | 13 (04/01) | Convolutional Neural Networks<ul><li>[Slides](assets/pdf/cnn.pdf)</li><li>[Video](https://youtu.be/hOiHIAmQ-So)</li></ul> |  |
-| 14 (04/08) | Recurrent Neural Networks<ul><li>[Slides](assets/pdf/rnn.pdf)</li><li>[Video](https://youtu.be/EZcn1_2OVfk)</li></ul> Attention Mechanisms <ul><li>[Slides](assets/pdf/attention.pdf)</li></ul> |  |
+| 14 (04/08) | Recurrent Neural Networks<ul><li>[Slides](assets/pdf/rnn.pdf)</li><li>[Video](https://youtu.be/EZcn1_2OVfk)</li></ul> Attention Mechanisms <ul><li>[Slides](assets/pdf/attention.pdf)</li><li>[Video](https://youtu.be/IfskrOqqB4Q)</li></ul> |  |
 | 15 (04/15) | Transformer<ul><li>[Slides](assets/pdf/transformer.pdf)</li><li>[Code Example](samples/air_passenger_forecast.ipynb)</li></ul> [HW 5](homeworks/5.md) |  |
 | 16 (04/22) | [Project Presentation](#) |  |
 
