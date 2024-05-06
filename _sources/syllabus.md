@@ -34,6 +34,6 @@ There is no main textbook for the class. However, you may use materials from the
 
 | Week | Monday | Wednesday | Friday | Reading |
 | --- | --- | --- | --- | --- |
-| 1 (05/06) | [syllabus](assets/pdf/syllabus.pdf) | [Python](./python-resources.md) | [How to use Google Colab](https://www.geeksforgeeks.org/how-to-use-google-colab/) |  |
+| 1 (05/06) | [syllabus](assets/pdf/syllabus.pdf) / [video](https://youtu.be/568S6Evm6W4) | [Python](./python-resources.md) | [How to use Google Colab](https://www.geeksforgeeks.org/how-to-use-google-colab/) |  |
 
 <!-- Feature Extraction and Selection <ul><li>[Feature Extraction](#)</li><li>[Feature Selection](#)</li></ul> -->
