@@ -21,7 +21,7 @@ There is no main textbook for the class. However, you may use materials from the
 
 ## Course Assessment
 
-- Weekly reflections 10\%
+- Course reflections 10\%
 - Homework assignments 50\%
 - Course Project 40\%
 
