@@ -27,12 +27,6 @@ This project is team-based. You will need to set up your team, with each team al
 
 Your final project will count for 40% of your grade in this course:
 
-| Task             | Grade Part |
-| ---------------- | ---------- |
-| Project Proposal | 5%         |
-| Progress Report  | 15%        |
-| Final Report     | 20%        |
-
 > **Note:** You cannot use your homework extensions on project components.
 
 All components of your final project are subject to GVSU and the School of Computing’s academic honesty policies. Violations of these policies on your final project will likely result in failure from the course.
@@ -41,10 +35,9 @@ All components of your final project are subject to GVSU and the School of Compu
 
 | Week | Task |
 | --- | --- |
-| Week 8, 9 | Make groups & project proposal |
-| Week 10 | [Project proposal](./project-proposal.md) due (Monday, 03/11) |
-| Week 13 | [Progress report](./project-progress-report.md) due (Monday, 04/01) |
-| Week 16 | [Final report](./project-final-report.md) due (Monday, 04/22) |
+| Week 1, 2 | Make groups & [project proposal](./project-proposal.md) due (Monday, 05/17) |
+| Week 3, 4 | [Progress report](./project-progress-report.md) due (Monday, 05/31) |
+| Week 5, 6 | [Final report](./project-final-report.md) due (Monday, 06/14) |
 
 ## Possible project ideas
 

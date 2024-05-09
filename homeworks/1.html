@@ -165,6 +165,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../free-resources.html">Free Books and Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../weekly-readings.html">Weekly Resources</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/project-overview.html">Final Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-proposal.html">Final Project Proposal Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-progress-report.html">Final Project Progress Update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-final-report.html">Final Project Final Report</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -318,10 +325,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-attribute-descriptions">Part A. Attribute descriptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">Answer</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-attribute-descriptions">Part A. Attribute descriptions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b-thinking-about-common-data-mining-applications">Part B. Thinking about common data mining applications</a></li>
 </ul>
             </nav>
@@ -363,12 +367,12 @@ document.write(`
 <li><p>.pdf file with your responses</p></li>
 </ul>
 </section>
-<hr class="docutils" />
 <section id="formatting">
 <h3>Formatting<a class="headerlink" href="#formatting" title="Permalink to this heading">#</a></h3>
 <p>In the document that you turn in for this homework, include a heading for each Part (Part A, Part B). Ensure that you clearly indicate which question each of your responses are associated with.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="part-a-attribute-descriptions">
 <h2>Part A. Attribute descriptions<a class="headerlink" href="#part-a-attribute-descriptions" title="Permalink to this heading">#</a></h2>
 <p>The table below contains Student Information at a university. (<em>Note</em>: Only a subset of rows is displayed for brevity.)</p>
@@ -386,199 +390,227 @@ document.write(`
 <tr class="row-even"><td><p>1001</p></td>
 <td><p>Computer Science</p></td>
 <td><p>Freshman</p></td>
-<td><p>85</p></td>
+<td><p>85.5</p></td>
 <td><p>19</p></td>
 <td><p>90</p></td>
 </tr>
 <tr class="row-odd"><td><p>1002</p></td>
 <td><p>Mathematics</p></td>
 <td><p>Sophomore</p></td>
-<td><p>90</p></td>
+<td><p>90.2</p></td>
 <td><p>20</p></td>
 <td><p>95</p></td>
 </tr>
 <tr class="row-even"><td><p>1003</p></td>
 <td><p>Physics</p></td>
 <td><p>Junior</p></td>
-<td><p>75</p></td>
+<td><p>75.8</p></td>
 <td><p>21</p></td>
 <td><p>88</p></td>
 </tr>
 <tr class="row-odd"><td><p>1004</p></td>
 <td><p>Engineering</p></td>
 <td><p>Senior</p></td>
-<td><p>92</p></td>
+<td><p>92.6</p></td>
 <td><p>22</p></td>
 <td><p>80</p></td>
 </tr>
 <tr class="row-even"><td><p>1005</p></td>
 <td><p>Biology</p></td>
 <td><p>Freshman</p></td>
-<td><p>78</p></td>
+<td><p>78.5</p></td>
 <td><p>18</p></td>
 <td><p>85</p></td>
 </tr>
 <tr class="row-odd"><td><p>1006</p></td>
 <td><p>Computer Science</p></td>
 <td><p>Sophomore</p></td>
-<td><p>81</p></td>
+<td><p>81.3</p></td>
 <td><p>19</p></td>
 <td><p>87</p></td>
 </tr>
 <tr class="row-even"><td><p>1007</p></td>
 <td><p>Mathematics</p></td>
 <td><p>Junior</p></td>
-<td><p>88</p></td>
+<td><p>88.6</p></td>
 <td><p>20</p></td>
 <td><p>92</p></td>
 </tr>
 <tr class="row-odd"><td><p>1008</p></td>
 <td><p>Physics</p></td>
 <td><p>Senior</p></td>
-<td><p>73</p></td>
+<td><p>73.3</p></td>
 <td><p>21</p></td>
 <td><p>83</p></td>
 </tr>
 <tr class="row-even"><td><p>1009</p></td>
 <td><p>Engineering</p></td>
 <td><p>Freshman</p></td>
-<td><p>94</p></td>
+<td><p>94.3</p></td>
 <td><p>22</p></td>
 <td><p>81</p></td>
 </tr>
 <tr class="row-odd"><td><p>10010</p></td>
 <td><p>Biology</p></td>
 <td><p>Sophomore</p></td>
-<td><p>79</p></td>
+<td><p>79.6</p></td>
 <td><p>18</p></td>
 <td><p>86</p></td>
 </tr>
 <tr class="row-even"><td><p>10011</p></td>
 <td><p>Computer Science</p></td>
 <td><p>Junior</p></td>
-<td><p>84</p></td>
+<td><p>84.2</p></td>
 <td><p>19</p></td>
 <td><p>89</p></td>
 </tr>
 <tr class="row-odd"><td><p>10012</p></td>
 <td><p>Mathematics</p></td>
 <td><p>Senior</p></td>
-<td><p>91</p></td>
+<td><p>91.9</p></td>
 <td><p>20</p></td>
 <td><p>94</p></td>
 </tr>
 <tr class="row-even"><td><p>10013</p></td>
 <td><p>Physics</p></td>
 <td><p>Freshman</p></td>
-<td><p>76</p></td>
+<td><p>76.8</p></td>
 <td><p>21</p></td>
 <td><p>87</p></td>
 </tr>
 <tr class="row-odd"><td><p>10014</p></td>
 <td><p>Engineering</p></td>
 <td><p>Sophomore</p></td>
-<td><p>93</p></td>
+<td><p>93.2</p></td>
 <td><p>22</p></td>
 <td><p>79</p></td>
 </tr>
 <tr class="row-even"><td><p>10015</p></td>
 <td><p>Biology</p></td>
 <td><p>Junior</p></td>
-<td><p>77</p></td>
+<td><p>77.4</p></td>
 <td><p>18</p></td>
 <td><p>84</p></td>
 </tr>
 <tr class="row-odd"><td><p>10016</p></td>
 <td><p>Computer Science</p></td>
 <td><p>Senior</p></td>
-<td><p>82</p></td>
+<td><p>82.4</p></td>
 <td><p>19</p></td>
 <td><p>88</p></td>
 </tr>
 <tr class="row-even"><td><p>10017</p></td>
 <td><p>Mathematics</p></td>
 <td><p>Freshman</p></td>
-<td><p>89</p></td>
+<td><p>89.8</p></td>
 <td><p>20</p></td>
 <td><p>91</p></td>
 </tr>
 <tr class="row-odd"><td><p>10018</p></td>
 <td><p>Physics</p></td>
 <td><p>Sophomore</p></td>
-<td><p>74</p></td>
+<td><p>74.2</p></td>
 <td><p>21</p></td>
 <td><p>82</p></td>
 </tr>
 <tr class="row-even"><td><p>10019</p></td>
 <td><p>Engineering</p></td>
 <td><p>Junior</p></td>
-<td><p>95</p></td>
+<td><p>95.3</p></td>
 <td><p>22</p></td>
 <td><p>84</p></td>
 </tr>
 <tr class="row-odd"><td><p>10020</p></td>
 <td><p>Biology</p></td>
 <td><p>Senior</p></td>
-<td><p>80</p></td>
+<td><p>80.2</p></td>
 <td><p>18</p></td>
 <td><p>85</p></td>
 </tr>
 </tbody>
 </table>
-<p>Examine the dataset “University Student Information” provided above. For each of the six attributes (Student ID, Major, Class Standing, Test Score, Age, Attendance), identify and justify its type (nominal, ordinal, interval-scaled, or ratio-scaled)</p>
-<section id="answer">
-<h3>Answer<a class="headerlink" href="#answer" title="Permalink to this heading">#</a></h3>
+<p>Examine the dataset “University Student Information” provided above. For each of the six attributes (Student ID, Major, Class Standing, Test Score, Age, Attendance), identify and justify its type as either nominal, ordinal, interval-scaled, or ratio-scaled. Additionally, classify each attribute as either discrete or continuous. Complete the following table with your analysis:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>(nominal, ordinal, interval-scaled, or ratio-scaled)</p></th>
+<th class="head"><p>(discrete or continuous)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Student ID</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Major</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Class Standing</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Test Score</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Age</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Attendance (%)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<!-- ### Answer -->
 <!-- - **Student ID**: Norminal: does not have a quantitative value or order.
 - **Major**: Norminal: categories without any inherent order
 - **Class Standing**: Ordinal: Indicates a ranking or order
 - **Test Score**: Ratio-scaled: Has a true zero point (a score of 0 means no answers were correct). Differences and ratios are meaningful (a score of 80 is twice as much as a score of 40).
 - **Age**: Ratio-scaled: A quantitative measure with a meaningful zero point (age of 0). Differences and ratios are meaningful (a 20-year-old is twice as old as a 10-year-old).
 - **Attendance (%)**: Ratio-scalsed: it’s a quantitative measure with a true zero point (0% attendance means no attendance at all). Differences and ratios are meaningful. -->
-<ol class="arabic simple">
-<li><p><strong>Student ID</strong></p>
-<ul class="simple">
-<li><p><strong>Type</strong>: Nominal</p></li>
-<li><p><strong>Justification</strong>: It serves as a unique identifier without quantitative value or order.</p></li>
-</ul>
-</li>
-<li><p><strong>Major</strong></p>
-<ul class="simple">
-<li><p><strong>Type</strong>: Nominal</p></li>
-<li><p><strong>Justification</strong>: Represents categories (academic majors) that lack inherent order.</p></li>
-</ul>
-</li>
-<li><p><strong>Class Standing</strong></p>
-<ul class="simple">
-<li><p><strong>Type</strong>: Ordinal</p></li>
-<li><p><strong>Justification</strong>: Indicates a clear ranking or sequence (Freshman to Senior) without uniform intervals.</p></li>
-</ul>
-</li>
-<li><p><strong>Test Score</strong></p>
-<ul class="simple">
-<li><p><strong>Type</strong>: Ratio-scaled</p></li>
-<li><p><strong>Justification</strong>: Quantitative measure with a true zero point (0 indicating no correct answers). The differences and ratios are significant and interpretable (e.g., 80 is twice 40).</p></li>
-</ul>
-</li>
-<li><p><strong>Age</strong></p>
-<ul class="simple">
-<li><p><strong>Type</strong>: Ratio-scaled</p></li>
-<li><p><strong>Justification</strong>: A quantitative attribute with a meaningful zero (age 0). The differences and ratios are significant (e.g., a 20-year-old is twice as old as a 10-year-old).</p></li>
-</ul>
-</li>
-<li><p><strong>Attendance (%)</strong></p>
-<ul class="simple">
-<li><p><strong>Type</strong>: Ratio-scaled</p></li>
-<li><p><strong>Justification</strong>: Quantitative measure with a true zero point (0% indicating no attendance). Differences and ratios provide meaningful information.</p></li>
-</ul>
-</li>
-</ol>
-</section>
+<!-- 1. **Student ID**
+
+   - **Type**: Nominal
+   - **Justification**: It serves as a unique identifier without quantitative value or order.
+
+1. **Major**
+
+   - **Type**: Nominal
+   - **Justification**: Represents categories (academic majors) that lack inherent order.
+
+2. **Class Standing**
+
+   - **Type**: Ordinal
+   - **Justification**: Indicates a clear ranking or sequence (Freshman to Senior) without uniform intervals.
+
+3. **Test Score**
+
+   - **Type**: Ratio-scaled
+   - **Justification**: Quantitative measure with a true zero point (0 indicating no correct answers). The differences and ratios are significant and interpretable (e.g., 80 is twice 40).
+
+4. **Age**
+
+   - **Type**: Ratio-scaled
+   - **Justification**: A quantitative attribute with a meaningful zero (age 0). The differences and ratios are significant (e.g., a 20-year-old is twice as old as a 10-year-old).
+
+5. **Attendance (%)**
+   - **Type**: Ratio-scaled
+   - **Justification**: Quantitative measure with a true zero point (0% indicating no attendance). Differences and ratios provide meaningful information. -->
 </section>
 <section id="part-b-thinking-about-common-data-mining-applications">
 <h2>Part B. Thinking about common data mining applications<a class="headerlink" href="#part-b-thinking-about-common-data-mining-applications" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>This question asks you to think about clustering. Considering an average kitchen, identify 4 clusters of objects. Name them according to their utility. For example, if I were asked to identify 4 clusters in a sporting goods store, I might choose apparel (e.g., shoes, shirts), containers (e.g., backpacks, coolers), sports equipment (e.g., basketball, tennis racquets), and fishing (e.g., rods, lures).</p></li>
-<li><p>Pick one of the following forms of predictive modeling: regression, classification, or ranking. • Describe an application domain or a dataset where you think it would be useful to apply the chosen predictive modeling approach. • What attribute(s) would you be predicting? • What attributes would you use to make the prediction?</p></li>
+<li><p>This question asks you to think about clustering. Consider an average kitchen and identify four clusters of objects based on their utility. For instance, in a sporting goods store, possible clusters could include apparel (e.g., shoes, shirts), containers (e.g., backpacks, coolers), sports equipment (e.g., basketball, tennis racquets), and fishing gear (e.g., rods, lures). Name each kitchen cluster accordingly.</p></li>
+<li><p>Choose one of the following forms of predictive modeling: regression, classification, or ranking.</p>
+<ul class="simple">
+<li><p>Describe a specific application domain or dataset where your chosen predictive modeling approach would be beneficial.</p></li>
+<li><p>Identify which attribute(s) you would be predicting.</p></li>
+<li><p>List the attributes you would use to make this prediction.</p></li>
+</ul>
+</li>
 </ol>
 </section>
 </section>
@@ -634,10 +666,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-attribute-descriptions">Part A. Attribute descriptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">Answer</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-a-attribute-descriptions">Part A. Attribute descriptions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-b-thinking-about-common-data-mining-applications">Part B. Thinking about common data mining applications</a></li>
 </ul>
   </nav></div>
