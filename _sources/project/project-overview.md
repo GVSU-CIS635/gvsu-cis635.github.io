@@ -19,10 +19,6 @@ By the end of this project, you should be able to:
 - Get better at using data mining methods and tools.
 - Clearly explain your methods and results.
 
-## Groups
-
-This project is team-based. You will need to set up your team, with each team allowed to have up to 5 members.
-
 ## Grading
 
 Your final project will count for 40% of your grade in this course:
@@ -30,6 +26,25 @@ Your final project will count for 40% of your grade in this course:
 > **Note:** You cannot use your homework extensions on project components.
 
 All components of your final project are subject to GVSU and the School of Computing’s academic honesty policies. Violations of these policies on your final project will likely result in failure from the course.
+
+## Groups
+
+This project is team-based. You will need to set up your team, with each team allowed to have up to 5 members.
+
+## Preparation
+
+For the term project, we will use GitHub to manage the project's source files.
+
+1. Create a [GitHub account](https://github.com) if you don't have one.
+
+2. Accept your instructor's [GitHub project invitation](https://classroom.github.com/a/oi2-MbOt) to set up your project repository.
+
+   1. **Select Your Name:** ![select-name](../assets/img/project-selectname.jpg)
+   2. **Team Setup:**
+      1. If your team does not exist yet, create a new team.
+      2. If it already exists, join your existing team. ![create-team](../assets/img/project-createteam.jpg)
+   3. **Initialize Your Project Repository:** ![init-repo](../assets/img/project-initrepo.jpg)
+   4. **Push your Colab notebook to GitHub:** [Colab to GitHub](https://www.geeksforgeeks.org/how-to-upload-project-on-github-from-google-colab/?ref=ml_lbp)
 
 ## Project Schedule
 

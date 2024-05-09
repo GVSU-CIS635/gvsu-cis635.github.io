@@ -33,11 +33,7 @@ Organize your progress report into sections (one for each of the categories abov
 
 ## Delivery
 
-Submit your report through Blackboard. If your report is a `.pdf` file, attach it to the submission. If your report is a live webpage, include a (working) link.
-
-One submission per group. Include in the comments section of the assignment the names of the group members.
-
-As part of your report, you will need to include working links to your code and data (e.g., in a github repository).
+Please submit your report (in PDF format) to **Blackboard** and your team **GitHub repository**. One submission per group. Include in the comments section of the assignment the names of the group members.
 
 ## Grading
 

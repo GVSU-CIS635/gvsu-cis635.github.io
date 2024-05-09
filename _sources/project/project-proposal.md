@@ -105,6 +105,6 @@ I reserve the right to award flex points for exemplary work in any areas of this
 
 ### Delivery
 
-Please submit your team member list and project proposal (in PDF format) to Blackboard. Only one submission is required per team.
+Please submit your team member list and project proposal (in PDF format) to **Blackboard** and your team **GitHub repository**. Only one submission is required per team.
 
 All components of your final project are subject to GVSU and the School of Computing’s academic honesty policies. Violations of these policies may result in failure from the course. You will recieve no credit for a proposal that violates the academic honesty policy in any way.
