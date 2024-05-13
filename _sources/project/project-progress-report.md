@@ -1,4 +1,4 @@
-# Final Project Progress Update
+# Project Progress Update
 
 The project progress report is an essential part of your final project. This report is your opportunity to reflect on the work you've done so far, identify any challenges you've encountered, and plan your next steps. Regular progress updates help ensure consistent work on the project and reduce the likelihood of last-minute rushes.
 

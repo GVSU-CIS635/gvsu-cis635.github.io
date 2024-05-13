@@ -1,4 +1,4 @@
-# Final Project Proposal Guide
+# Project Proposal Guide
 
 Your project proposal is essential for two reasons:
 

@@ -1,4 +1,4 @@
-# Final Project Final Report
+# Project Final Report
 
 The documentation of your work is as crucial as building your data mining pipeline and generating results. If you don't effectively document your pipeline and your findings, and present them in an easily understandable format, the value of your work might not be fully recognized!
 

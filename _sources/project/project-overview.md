@@ -1,4 +1,4 @@
-# Final Project Overview
+# Project Overview
 
 In this data mining project, you'll pick an application area and set up a data mining pipeline for a specific problem in that area.
 
