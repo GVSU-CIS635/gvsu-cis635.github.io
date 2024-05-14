@@ -21,6 +21,7 @@
 - [Probability](https://www.cs.princeton.edu/courses/archive/spring07/cos424/scribe_notes/0208.pdf)
 - [NumPy Cheat Sheet](https://media.geeksforgeeks.org/wp-content/uploads/20240104182515/NumPy-Cheat-Sheet.pdf)[Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
 - [scikit-learn Cheat Sheet](https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html)</li><li>[matplotlib Cheat Sheet](https://matplotlib.org/cheatsheets/)
+- [Cars93 dataset](assets/data/cars93.csv)
 ```
 
 <!--
