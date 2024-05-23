@@ -41,9 +41,16 @@ Your progress report will be evaluated based on the following criteria, totaling
 
 | Item                                 | Points |
 | ------------------------------------ | ------ |
-| Coverage of Required Points Above    | 80     |
+| Coverage of Required Points Above    | 60     |
+| GitHub Repository Contribution       | 20     |
 | Overall Organization of the Document | 10     |
 | Formality and Clarity of Writing     | 10     |
+
+### GitHub Repository Contribution (20 points)
+
+- Regular and meaningful contributions to the project's GitHub repository.
+- Include clear commit messages and documentation of changes.
+- **Note:** If one team member's contribution is significantly less than other members, this member will lose these points.
 
 All components of your final project are subject to GVSU and the School of Computing’s academic honesty policies. Violations of these policies may result in failure from the course.
 
