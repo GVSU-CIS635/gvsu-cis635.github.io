@@ -62,7 +62,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'samples/feature_selection';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'samples/feature_selection_backup';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -225,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/GVSU-CIS635/gvsu-cis635.github.io/blob/gh-pages/_sources/samples/feature_selection.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/GVSU-CIS635/gvsu-cis635.github.io/blob/gh-pages/_sources/samples/feature_selection_backup.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -256,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/samples/feature_selection.ipynb" target="_blank"
+      <li><a href="../_sources/samples/feature_selection_backup.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,6 +355,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter">Filter</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-threshold">Variance Threshold</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fisher-score">Fisher Score</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper">Wrapper</a><ul class="nav section-nav flex-column">
@@ -383,6 +384,33 @@ document.write(`
 <p>In this tutorial, we’ll employ the Iris dataset to illustrate various feature selection methods. Follow the step-by-step instructions and execute the code snippets by pressing SHIFT+ENTER in each code cell.</p>
 <section id="importing-libraries-and-configuration">
 <h2>Importing Libraries and Configuration<a class="headerlink" href="#importing-libraries-and-configuration" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install skfeature-chappers
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting skfeature-chappers
+  Downloading skfeature_chappers-1.1.0-py3-none-any.whl (66 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/66.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">66.3/66.3 kB</span> <span class=" -Color -Color-Red">2.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: scikit-learn in /usr/local/lib/python3.10/dist-packages (from skfeature-chappers) (1.2.2)
+Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from skfeature-chappers) (2.0.3)
+Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from skfeature-chappers) (1.25.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas-&gt;skfeature-chappers) (2.8.2)
+Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas-&gt;skfeature-chappers) (2023.4)
+Requirement already satisfied: tzdata&gt;=2022.1 in /usr/local/lib/python3.10/dist-packages (from pandas-&gt;skfeature-chappers) (2024.1)
+Requirement already satisfied: scipy&gt;=1.3.2 in /usr/local/lib/python3.10/dist-packages (from scikit-learn-&gt;skfeature-chappers) (1.11.4)
+Requirement already satisfied: joblib&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from scikit-learn-&gt;skfeature-chappers) (1.4.0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /usr/local/lib/python3.10/dist-packages (from scikit-learn-&gt;skfeature-chappers) (3.4.0)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.8.2-&gt;pandas-&gt;skfeature-chappers) (1.16.0)
+Installing collected packages: skfeature-chappers
+Successfully installed skfeature-chappers-1.1.0
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -427,7 +455,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-debbbd2e-b54d-40b5-8ec6-40fdeb7bbe3a" class="colab-df-container">
+  <div id="df-229bc338-5c2c-40ef-84f3-9e39098cd0a4" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -524,7 +552,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-debbbd2e-b54d-40b5-8ec6-40fdeb7bbe3a')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-229bc338-5c2c-40ef-84f3-9e39098cd0a4')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -576,12 +604,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-debbbd2e-b54d-40b5-8ec6-40fdeb7bbe3a button.colab-df-convert');
+        document.querySelector('#df-229bc338-5c2c-40ef-84f3-9e39098cd0a4 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-debbbd2e-b54d-40b5-8ec6-40fdeb7bbe3a');
+        const element = document.querySelector('#df-229bc338-5c2c-40ef-84f3-9e39098cd0a4');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -601,8 +629,8 @@ document.write(`
   </div>
 
 
-<div id="df-1eabd94f-4c3b-4872-a17f-0c0567f53c05">
-  <button class="colab-df-quickchart" onclick="quickchart('df-1eabd94f-4c3b-4872-a17f-0c0567f53c05')"
+<div id="df-18e0e3b5-89eb-4a2b-adf9-aecff3791b53">
+  <button class="colab-df-quickchart" onclick="quickchart('df-18e0e3b5-89eb-4a2b-adf9-aecff3791b53')"
             title="Suggest charts"
             style="display:none;">
 
@@ -721,7 +749,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-1eabd94f-4c3b-4872-a17f-0c0567f53c05 button');
+        document.querySelector('#df-18e0e3b5-89eb-4a2b-adf9-aecff3791b53 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -754,7 +782,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-21a444e9-670a-4d62-a611-22c456ff1544" class="colab-df-container">
+  <div id="df-5480398b-5b4f-495e-bfe9-0de1b3eae93e" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -815,7 +843,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-21a444e9-670a-4d62-a611-22c456ff1544')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5480398b-5b4f-495e-bfe9-0de1b3eae93e')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -867,12 +895,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-21a444e9-670a-4d62-a611-22c456ff1544 button.colab-df-convert');
+        document.querySelector('#df-5480398b-5b4f-495e-bfe9-0de1b3eae93e button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-21a444e9-670a-4d62-a611-22c456ff1544');
+        const element = document.querySelector('#df-5480398b-5b4f-495e-bfe9-0de1b3eae93e');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -892,8 +920,8 @@ document.write(`
   </div>
 
 
-<div id="df-fb4ff442-c429-4cd9-8cdc-0627dcb5f4fe">
-  <button class="colab-df-quickchart" onclick="quickchart('df-fb4ff442-c429-4cd9-8cdc-0627dcb5f4fe')"
+<div id="df-70bb4400-e2c5-4411-99d6-7ef51d7b7825">
+  <button class="colab-df-quickchart" onclick="quickchart('df-70bb4400-e2c5-4411-99d6-7ef51d7b7825')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1012,7 +1040,288 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-fb4ff442-c429-4cd9-8cdc-0627dcb5f4fe button');
+        document.querySelector('#df-70bb4400-e2c5-4411-99d6-7ef51d7b7825 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+<section id="fisher-score">
+<h3>Fisher Score<a class="headerlink" href="#fisher-score" title="Permalink to this heading">#</a></h3>
+<p>The Fisher Score is a method used in feature selection to evaluate the discriminative power of features. It measures how well a feature can distinguish between different classes in the data. The higher the Fisher Score, the better the feature is at discrimination. Typically, you would select features with the highest Fisher Scores as they are considered most informative for the predictive model.</p>
+<p>The following code for how to use Fisher Score to select top 2 features</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skfeature.function.similarity_based</span> <span class="kn">import</span> <span class="n">fisher_score</span>
+<span class="n">ranked_indices</span> <span class="o">=</span> <span class="n">fisher_score</span><span class="o">.</span><span class="n">fisher_score</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;rank&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Feature ranking: </span><span class="si">{</span><span class="n">ranked_indices</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">iris_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">ranked_indices</span><span class="p">[:</span><span class="mi">2</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Feature ranking: [1 0 3 2]&#39;
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-97a044e6-ba2a-4f93-93b6-7abe84e737e8" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal width (cm)</th>
+      <th>sepal length (cm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.5</td>
+      <td>5.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3.0</td>
+      <td>4.9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.2</td>
+      <td>4.7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.1</td>
+      <td>4.6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.6</td>
+      <td>5.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-97a044e6-ba2a-4f93-93b6-7abe84e737e8')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-97a044e6-ba2a-4f93-93b6-7abe84e737e8 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-97a044e6-ba2a-4f93-93b6-7abe84e737e8');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-3d5a5586-243d-4e47-98bb-d77025472b2c">
+  <button class="colab-df-quickchart" onclick="quickchart('df-3d5a5586-243d-4e47-98bb-d77025472b2c')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-3d5a5586-243d-4e47-98bb-d77025472b2c button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1952,6 +2261,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter">Filter</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-threshold">Variance Threshold</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fisher-score">Fisher Score</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapper">Wrapper</a><ul class="nav section-nav flex-column">
