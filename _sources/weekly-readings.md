@@ -39,6 +39,7 @@
 
 ```{div} full-width
 - [A Practical Guide to Dimensionality Reduction Techniques](https://www.youtube.com/watch?v=ioXKxulmwVQ)
+- [Laplacian Score for Feature Selection](https://proceedings.neurips.cc/paper_files/paper/2005/file/b5b03f06271f8917685d14cea7c6c50a-Paper.pdf)
 ```
 
 <!--
