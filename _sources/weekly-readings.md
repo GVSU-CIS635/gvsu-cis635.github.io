@@ -42,10 +42,20 @@
 - [Laplacian Score for Feature Selection](https://proceedings.neurips.cc/paper_files/paper/2005/file/b5b03f06271f8917685d14cea7c6c50a-Paper.pdf)
 ```
 
+(content:references:w5)=
+
+## Week 5
+
+```{div} full-width
+- Understanding Deep Learning (Still) Requires Rethinking Generalization
+  - [video](https://www.youtube.com/watch?v=O42vde4tbG0)
+  - [paper](https://dl.acm.org/doi/pdf/10.1145/3446776)
+```
+
 <!--
 
 
-Understanding Deep Learning (Still) Requires Rethinking Generalization <ul><li>[Video](https://www.youtube.com/watch?v=O42vde4tbG0)</li><li>[Paper](https://dl.acm.org/doi/pdf/10.1145/3446776)
+Understanding Deep Learning (Still) Requires Rethinking Generalization <ul><li>[Video]()</li><li>[Paper]()
 
 
 - [How do I select features for Machine Learning?](https://www.youtube.com/watch?v=YaKMeAlHgqQ)
