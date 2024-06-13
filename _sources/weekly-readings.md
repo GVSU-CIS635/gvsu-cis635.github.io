@@ -57,5 +57,6 @@
 ## Week 6
 
 ```{div} full-width
+- [Model selection and training/validation/test sets](https://www.youtube.com/watch?v=MyBSkmUeIEs)
 - [Nuts and Bolts of Applying Deep Learning](https://www.youtube.com/watch?v=F1ka6a13S9I)
 ```
