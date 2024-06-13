@@ -52,16 +52,10 @@
   - [paper](https://dl.acm.org/doi/pdf/10.1145/3446776)
 ```
 
-<!--
+(content:references:w6)=
 
+## Week 6
 
-Understanding Deep Learning (Still) Requires Rethinking Generalization <ul><li>[Video]()</li><li>[Paper]()
-
-
-- [How do I select features for Machine Learning?](https://www.youtube.com/watch?v=YaKMeAlHgqQ)
-- [A Practical Guide to Dimensionality Reduction Techniques](https://www.youtube.com/watch?v=ioXKxulmwVQ)
-
-</li><li></li><li>[Crime Hotspots Forecasting](./assets/pdf/crime-hotspots-forecasting.pdf)
-
-
--->
+```{div} full-width
+- [Nuts and Bolts of Applying Deep Learning](https://www.youtube.com/watch?v=F1ka6a13S9I)
+```
