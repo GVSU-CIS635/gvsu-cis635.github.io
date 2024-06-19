@@ -44,3 +44,10 @@ For students interested in enhancing their Python skills, especially within the 
 - Access the entire book for free: [Applied Machine Learning in Python](https://amueller.github.io/aml/00-introduction/00-introduction.html)
 
 These resources are invaluable for our Knowledge Discovery and Data Mining class, ensuring you have a firm grasp on foundational Python concepts as well as advanced data science tools and techniques.
+
+### some papers
+
+- [1](assets/pdf/papers/1.pdf)
+- [2](assets/pdf/papers/2.pdf)
+- [3](assets/pdf/papers/3.pdf)
+- [4](assets/pdf/papers/4.pdf)
