@@ -9,9 +9,24 @@ to our Knowledge Discovery and Data mining course. In this course, we’ll delve
 - <i class="fa fa-envelope"></i> **E-mail:** [yong.zhuang@gvsu.edu](mailto:yong.zhuang@gvsu.edu)
 - <i class="fa fa-building"></i> **Office:** MAK D-2-234
 - <i class="fa fa-book"></i> **Course Page:** [Blackboard](https://lms.gvsu.edu/) & [Course Website](https://gvsu-cis635.github.io)
-- <i class="fa fa-chalkboard-teacher"></i> **Course Delivery:** Online, Asynchronously
 - <i class="fa fa-book-reader"></i> **Syllabus:** [View the syllabus here](assets/pdf/syllabus.pdf)
 - <i class="fa fa-video"></i> **Zoom:** [Meeting ID: 396 668 6420](https://gvsu-edu.zoom.us/j/3966686420?pwd=WGxpc0N4YWcvOU9aWGxWZGYxbXZUdz09), Password: 587684
+
+## Class Schedule
+
+### Section 01
+
+- **Class Time:** Tuesday 6:00 pm - 8:50 pm
+- **Room:** DCIH 507
+- **Midterm:** October 8 (Tuesday), 6:00 pm - 7:50 pm
+- **Final Exam:** December 10 (Tuesday), 6:00 pm - 7:50 pm
+
+### Section 03
+
+- **Class Time:** Monday 6:00 pm - 8:50 pm
+- **Room:** DCIH 303
+- **Midterm:** October 7 (Monday), 6:00 pm - 7:50 pm
+- **Final Exam:** December 9 (Monday), 6:00 pm - 7:50 pm
 
 ## Preference Books
 
@@ -19,24 +34,32 @@ There is no main textbook for the class. However, you may use materials from the
 
 - Data Mining Concepts and Techniques (4th Edition) by Jiawei Han, Jian Pei, and Hanghang Tong. Publication Date: 2023. (free at GVSU library)
 
-## Course Assessment
-
-- Course reflections 10\%
-- Homework assignments 50\%
-- Course Project 40\%
-
 <!-- Syllabus can be found [here](Syllabus_CIS635_F2023.pdf). -->
 <!-- <iframe src="assets/pdf/syllabus.pdf" style="width:100%; height:600px;" frameborder="0"></iframe> -->
 
 ## Tentative Schedule
 
+- **September 1–2, 2024 Labor Day Recess:** No classes!
+- **October 20–22, 2024 Fall Break:** No classes!
+- **November 27–December 1, 2024 Thanksgiving Recess:** No classes!
+
 - To execute the sample Jupyter Notebook code <i class="fa fa-code"></i>, click on the rocket icon <i class="fa fa-rocket" aria-hidden="true"></i> at the top of the page, which will open the notebook in Google Colab for interactive use.
 
-| Week | Monday | Wednesday | Friday | Reading & Homework |
-| --- | --- | --- | --- | --- |
-| 1 (05/06) | Syllabus <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/syllabus.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/568S6Evm6W4) | What is Data Mining <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/data-mining-intro.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/vLOU_C9U3TM) | Data Mining Tasks <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/data-mining-tasks.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/pPdu-E95Mng) | {ref}`resources <content:references:w1>` <br> [homework1](homeworks/1.md) <br> Term Project <br> [overview](./project/project-overview.md) <br> [proposal](./project/project-proposal.md) |
-| 2 (05/13) | Descriptive Statistics <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/data-exploration-descriptive-statistics.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/HDRjhgB6EN0) \| [<i class="fa fa-code"></i>](samples/descriptive_statistics.ipynb) | Data Visualization <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/data-exploration-data-visualization.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/VcuphW6n1Mo) | Cleaning & Integration <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/cleaning-Integration.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/9EBOeQA6LD0) \| [<i class="fa fa-code"></i>](https://gvsu-cis635.github.io/samples/cleaning-Integration.html) | {ref}`resources <content:references:w2>`<br> [homework2](homeworks/2.md) |
-| 3 (05/20) | Data Transformation <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/data-transformation.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/8fws0-6h52I) \| [<i class="fa fa-code"></i>](samples/data-transformation.ipynb) <br> Data Compression & <br> Sampling <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/data-compression-sampling.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/AgIVTNNNv_E) \| [<i class="fa fa-code"></i>](samples/data-compression-sampling.ipynb) | Similarity & Distance <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/similarity-distance.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/mthjj2VZD7E) | Feature Extraction <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/dimensionality-reduction-feature-extraction.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/Nh8q9mVgq14) \| [<i class="fa fa-code"></i>](samples/feature_extraction.ipynb) | {ref}`resources <content:references:w3>`<br> [homework3](homeworks/3.md) |
-| 4 (05/27) | Feature Selection <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/dimensionality-reduction-feature-selection.pdf) \| [<i class="fa fa-code"></i>](samples/feature_selection.ipynb) | Markov Blanket <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/markov-blanket-boundary.pdf)<br> Supervised & Unsupervised Learning <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/supervised-unsupervised-learning.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/hX2V98JBMbY) | Clustering <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/clustering.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/qaaiHx3NK40) \| [<i class="fa fa-code"></i>](samples/clustering.ipynb) | {ref}`resources <content:references:w4>` <br> [homework4](homeworks/4.md) |
-| 5 (06/03) | Neural Networks <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/nn.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/T8GeAOjbTWs) | CNN <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/cnn.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/hOiHIAmQ-So) | RNN <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/rnn.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/EZcn1_2OVfk) <br> Attention <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/attention.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/IfskrOqqB4Q) | {ref}`resources <content:references:w5>` <br> [homework5](homeworks/5.md) |
-| 6 (06/10) | Transformer <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/transformer.pdf) \| [<i class="fa-brands fa-youtube"></i>](https://youtu.be/dm10YEEUa0k) \| [<i class="fa fa-code"></i>](samples/air_passenger_forecast.ipynb) | Decision Tree <br> [<i class="fa-solid fa-file-pdf"></i>](assets/pdf/decision-tree.pdf) | Model Evaluation <br>[<i class="fa-solid fa-file-pdf"></i>](assets/pdf/evaluation-selection.pdf) | {ref}`resources <content:references:w6>` |
+| Week | Content | Reading & Homework |
+| --- | --- | --- |
+| 1 (08/26) | [Syllabus](assets/pdf/syllabus-intro.pdf) <br> [What is Data Mining](assets/pdf/data-mining-intro.pdf) <br> [Data Mining Tasks](assets/pdf/data-mining-tasks.pdf) | {ref}`resources <content:references:w1>` |
+| 2 (09/02) |  |  |
+| 3 (09/09) |  |  |
+| 4 (09/16) |  |  |
+| 5 (09/23) |  |  |
+| 6 (09/30) |  |  |
+| 7 (10/07) | Midterm Exam |  |
+| 8 (10/14) |  |  |
+| 9 (10/21) |  |  |
+| 10 (10/28) |  |  |
+| 11 (11/04) |  |  |
+| 12 (11/11) |  |  |
+| 13 (11/18) |  |  |
+| 14 (11/25) |  |  |
+| 15 (12/02) |  |  |
+| 16 (12/09) | Final Exam |  |
