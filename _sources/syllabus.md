@@ -8,6 +8,7 @@ to our Knowledge Discovery and Data mining course. In this course, we’ll delve
 
 - <i class="fa fa-envelope"></i> **E-mail:** [yong.zhuang@gvsu.edu](mailto:yong.zhuang@gvsu.edu)
 - <i class="fa fa-building"></i> **Office:** MAK D-2-234
+- <i class="fa fa-building"></i> **Office Hours:** Tuesday 4:00 pm - 6:00 pm, DCIH-540
 - <i class="fa fa-book"></i> **Course Page:** [Blackboard](https://lms.gvsu.edu/) & [Course Website](https://gvsu-cis635.github.io)
 - <i class="fa fa-book-reader"></i> **Syllabus:** [View the syllabus here](assets/pdf/syllabus.pdf)
 - <i class="fa fa-video"></i> **Zoom:** [Meeting ID: 396 668 6420](https://gvsu-edu.zoom.us/j/3966686420?pwd=WGxpc0N4YWcvOU9aWGxWZGYxbXZUdz09), Password: 587684
