@@ -49,14 +49,14 @@ There is no main textbook for the class. However, you may use materials from the
 | Week | Content | Reading & Homework |
 | --- | --- | --- |
 | 1 (08/26) | [Syllabus](assets/pdf/syllabus-intro.pdf) <br> [What is Data Mining](assets/pdf/data-mining-intro.pdf) <br> [Data Mining Tasks](assets/pdf/data-mining-tasks.pdf) | {ref}`resources <content:references:w1>` |
-| 2 (09/02) |  |  |
+| 2 (09/02) | Descriptive Statistics |  |
 | 3 (09/09) |  |  |
 | 4 (09/16) |  |  |
 | 5 (09/23) |  |  |
 | 6 (09/30) |  |  |
 | 7 (10/07) | Midterm Exam |  |
 | 8 (10/14) |  |  |
-| 9 (10/21) |  |  |
+| 9 (10/21) | Fall Break (No Class) |  |
 | 10 (10/28) |  |  |
 | 11 (11/04) |  |  |
 | 12 (11/11) |  |  |
