@@ -7,6 +7,7 @@
 ```{div} full-width
 - [What is Data Mining & Data Mining Tasks?](https://www.youtube.com/watch?v=7rs0i-9nOjo)
 - [How to use Google Colab](https://www.geeksforgeeks.org/how-to-use-google-colab/)
+- [Introduction to Python](samples/python.ipynb)
 ```
 
 (content:references:w2)=
@@ -14,7 +15,6 @@
 ## Week 2
 
 ```{div} full-width
-- [Introduction to Python](samples/python.ipynb)
 - [Introduction to Numpy](samples/numpy.ipynb)
 - [Introduction to Pandas](samples/pandas.ipynb)
 - [Math Essentials](https://courses.washington.edu/css490/2012.Winter/lecture_slides/02_math_essentials.pdf)
