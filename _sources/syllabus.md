@@ -48,9 +48,9 @@ There is no main textbook for the class. However, you may use materials from the
 
 | Week | Content | Reading |
 | --- | --- | --- |
-| 1 (08/26) | [Syllabus](assets/pdf/syllabus-intro.pdf) <br> [What is Data Mining](assets/pdf/data-mining-intro.pdf) <br> [Data Mining Tasks](assets/pdf/data-mining-tasks.pdf)<br> [<i class="fa fa-code"></i>Introduction to Python](samples/python.ipynb) | {ref}`resources <content:references:w1>` |
-| 2 (09/02) | [<i class="fa fa-code"></i>](samples/descriptive_statistics.ipynb), [Descriptive Statistics](assets/pdf/data-exploration-descriptive-statistics.pdf) <br> [Data Visualization](assets/pdf/data-exploration-data-visualization.pdf) <br> [<i class="fa fa-code"></i>Introduction to Numpy](samples/numpy.ipynb) <br> [<i class="fa fa-code"></i>Introduction to Pandas](samples/pandas.ipynb) | {ref}`resources <content:references:w2>` |
-| 3 (09/09) |  |  |
+| 1 (08/26) | Syllabus: [slides](assets/pdf/syllabus-intro.pdf) <br> What is Data Mining: [slides](assets/pdf/data-mining-intro.pdf) <br> Data Mining Tasks: [slides](assets/pdf/data-mining-tasks.pdf)<br> Introduction to Python: [<i class="fa fa-code"></i> code](samples/python.ipynb) | {ref}`resources <content:references:w1>` |
+| 2 (09/02) | Descriptive Statistics: [slides](assets/pdf/data-exploration-descriptive-statistics.pdf) \| [<i class="fa fa-code"></i> code](samples/descriptive_statistics.ipynb) <br> Data Visualization [slides](assets/pdf/data-exploration-data-visualization.pdf) <br>Introduction to Numpy: [<i class="fa fa-code"></i> code](samples/numpy.ipynb) <br> Introduction to Pandas: [<i class="fa fa-code"></i> code](samples/pandas.ipynb) | {ref}`resources <content:references:w2>` |
+| 3 (09/09) | Data Cleaning & Integration [slides](assets/pdf/cleaning-Integration.pdf) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Transformation <br> Data Compression & Sampling |  |
 | 4 (09/16) |  |  |
 | 5 (09/23) |  |  |
 | 6 (09/30) |  |  |
