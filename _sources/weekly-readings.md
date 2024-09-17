@@ -24,3 +24,12 @@
 - [scikit-learn Cheat Sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Scikit_Learn_Cheat_Sheet_Python.pdf)
 - [matplotlib Cheat Sheet](https://matplotlib.org/cheatsheets/)
 ```
+
+(content:references:w4)=
+
+## Week 4
+
+```{div} full-width
+- [Colab to GitHub](https://www.geeksforgeeks.org/how-to-upload-project-on-github-from-google-colab/?ref=ml_lbp)
+- [KL-Divergence](samples/kl-divergence)
+```
