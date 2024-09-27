@@ -32,4 +32,5 @@
 ```{div} full-width
 - [Colab to GitHub](https://www.geeksforgeeks.org/how-to-upload-project-on-github-from-google-colab/?ref=ml_lbp)
 - [KL-Divergence](samples/kl-divergence)
+- [Cars93 dataset](assets/data/cars93.csv)
 ```
