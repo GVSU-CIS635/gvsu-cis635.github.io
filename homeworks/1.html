@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; GVSU CIS 635 - KDD</title>
+    <title>Homework 1 &#8212; GVSU CIS 635 - KDD</title>
   
   
   
@@ -65,6 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'homeworks/1';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Weekly Resources" href="../weekly-readings.html" />
+    <link rel="prev" title="Welcome" href="../syllabus.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -160,7 +162,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homeworks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../weekly-readings.html">Weekly Resources</a></li>
 </ul>
@@ -310,7 +316,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Homework 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -319,9 +325,15 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data-set">About the data set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-attributes-in-the-dataset">The attributes in the dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-and-submission">Access and Submission</a></li>
 </ul>
-
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -332,7 +344,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="homework-1">
+<h1>Homework 1<a class="headerlink" href="#homework-1" title="Permalink to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<section id="about-the-data-set">
+<h3>About the data set<a class="headerlink" href="#about-the-data-set" title="Permalink to this heading">#</a></h3>
+<p>This homework aims to give you hands-on experience in various essential data preprocessing techniques. Using the <strong>California Housing Dataset</strong>, you will practice calculating descriptive statistics, cleaning data, normalizing and discretizing data, visualizing distributions, and calculating dissimilarity matrices.</p>
+</section>
+<section id="objectives">
+<h3>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Practice calculating descriptive statistics, handling missing values, and detecting duplicates.</p></li>
+<li><p>Learn how to normalize and discretize attributes.</p></li>
+<li><p>Visualize data distributions using histograms, box plots, and scatter plots.</p></li>
+<li><p>Compute dissimilarity matrices for nominal, ordinal, and mixed-type attributes.</p></li>
+</ul>
+</section>
+<section id="the-attributes-in-the-dataset">
+<h3>The attributes in the dataset<a class="headerlink" href="#the-attributes-in-the-dataset" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>longitude</strong>: Longitude coordinate of the block where the house is located.</p></li>
+<li><p><strong>latitude</strong>: Latitude coordinate of the block where the house is located.</p></li>
+<li><p><strong>housingMedianAge</strong>: Median age of houses within a block (years).</p></li>
+<li><p><strong>totalRooms</strong>: Total number of rooms within a block.</p></li>
+<li><p><strong>totalBedrooms</strong>: Total number of bedrooms within a block.</p></li>
+<li><p><strong>population</strong>: Total population of a block.</p></li>
+<li><p><strong>households</strong>: Total number of households within a block.</p></li>
+<li><p><strong>medianIncome</strong>: Median income for households in the block (in tens of thousands of dollars).</p></li>
+<li><p><strong>medianHouseValue</strong>: Median house value for households in a block (in US dollars).</p></li>
+<li><p><strong>oceanProximity</strong>: Proximity of the block to the ocean.</p></li>
+</ol>
+</section>
+<section id="access-and-submission">
+<h3>Access and Submission<a class="headerlink" href="#access-and-submission" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Accept your instructor’s invitation to the Google classroom via this <a class="reference external" href="https://classroom.google.com/c/NzE5MTI5NTc0NDI0?cjc=6xaewod">link</a>. <img alt="google_classroom" src="../_images/google_classroom.jpg" /></p></li>
+<li><p>After joining the classroom, you can begin your Homework through <a class="reference external" href="https://classroom.google.com/c/NzE5MTI5NTc0NDI0/a/NzE5MTI4NjYzMTQy/details">here</a>.</p></li>
+<li><p>Start your work by accessing the Colab file marked within the red box.</p></li>
+<li><p>Once you’ve completed the homework, click “Turn in” to submit.</p>
+<p><img alt="google_classroom" src="../_images/google_assignment.jpg" /></p>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>Note:</strong> You must <strong>‘Turn in’</strong> your notebook for this homework; otherwise, <strong>it will not be graded</strong>.</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -363,6 +423,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../syllabus.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../weekly-readings.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Weekly Resources</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -377,9 +455,15 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-data-set">About the data set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-attributes-in-the-dataset">The attributes in the dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-and-submission">Access and Submission</a></li>
 </ul>
-
+</li>
+</ul>
   </nav></div>
 
 </div></div>

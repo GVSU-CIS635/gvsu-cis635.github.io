@@ -34,3 +34,15 @@
 - [KL-Divergence](samples/kl-divergence)
 - [California Housing Prices Dataset](assets/data/housing.csv)
 ```
+
+(content:references:w6)=
+
+## Week 6
+
+```{div} full-width
+- [Homework 1](homeworks/1.md)
+  - [California Housing Prices Dataset](assets/data/housing.csv)
+- Project
+  - [Overview](project/project-overview.md)
+  - [Proposal](project/project-proposal.md)
+```

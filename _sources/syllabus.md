@@ -53,7 +53,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 3 (09/09) | Data Cleaning & Integration: [slides](assets/pdf/cleaning-Integration.pdf) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Transformation: [slides](assets/pdf/data-transformation.pdf) \| [<i class="fa fa-code"></i> code](samples/data-transformation.ipynb) <br> Data Compression & Sampling: [slides](assets/pdf/data-compression-sampling.pdf) \| [<i class="fa fa-code"></i> code](samples/data-compression-sampling.ipynb) |  |
 | 4 (09/16) | Object Analysis: Similarity and distance measures: [slides](assets/pdf/similarity-distance.pdf) | {ref}`resources <content:references:w4>` |
 | 5 (09/23) | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) <br> Feature Extraction: [slides] | {ref}`resources <content:references:w5>` |
-| 6 (09/30) | Feature Selection: [slides] |  |
+| 6 (09/30) | Feature Selection: [slides] | {ref}`resources <content:references:w6>` |
 | 7 (10/07) | Midterm Exam |  |
 | 8 (10/14) |  |  |
 | 9 (10/21) | Fall Break (No Class) |  |
