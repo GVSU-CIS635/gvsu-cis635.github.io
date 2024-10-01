@@ -40,6 +40,7 @@
 ## Week 6
 
 ```{div} full-width
+- [Midterm Exam Topics](exams/midterm-exam-topics.md)
 - [Homework 1](homeworks/1.md)
   - [California Housing Prices Dataset](assets/data/housing.csv)
 - Project
