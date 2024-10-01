@@ -51,8 +51,8 @@
 - [Word Embeddings](https://www.youtube.com/watch?v=wgfSDrqYMJ4)
 - [TF-IDF](https://medium.com/@abhishekjainindore24/tf-idf-in-nlp-term-frequency-inverse-document-frequency-e05b65932f1d)
 - [Word2vec Tutorial](https://www.tensorflow.org/text/tutorials/word2vec)
-- [word2vec Explained](https://arxiv.org/abs/1402.3722)
+- [Word2vec Explained](https://arxiv.org/abs/1402.3722)
 - [Distributed Representations of Words and Phrases and their Compositionality](https://arxiv.org/abs/1310.4546)
 - [Neural Word Embedding as Implicit Matrix Factorization](https://papers.nips.cc/paper_files/paper/2014/file/feab05aa91085b7a8012516bc3533958-Paper.pdf)
-- [word2vec Parameter Learning Explained](https://arxiv.org/abs/1411.2738)
+- [Word2vec Parameter Learning Explained](https://arxiv.org/abs/1411.2738)
 ```
