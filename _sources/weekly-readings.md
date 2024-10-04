@@ -56,3 +56,5 @@
 - [Neural Word Embedding as Implicit Matrix Factorization](https://papers.nips.cc/paper_files/paper/2014/file/feab05aa91085b7a8012516bc3533958-Paper.pdf)
 - [Word2vec Parameter Learning Explained](https://arxiv.org/abs/1411.2738)
 ```
+
+<!-- [Vector Auto Regression](https://www.youtube.com/watch?v=UQQHSbeIaB0) -->
