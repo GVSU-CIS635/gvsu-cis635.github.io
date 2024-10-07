@@ -54,7 +54,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 4 (09/16) | Object Analysis: Similarity and distance measures: [slides](assets/pdf/similarity-distance.pdf) | {ref}`resources <content:references:w4>` |
 | 5 (09/23) | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) | {ref}`resources <content:references:w5>` |
 | 6 (09/30) | Midterm Exam: [Topics](exams/midterm-exam-topics.md); [Practice](quizzes/4.md) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w6>` |
-| 7 (10/07) | Midterm Exam |  |
+| 7 (10/07) | [Midterm Exam](exams/midterm-exam.md) |  |
 | 8 (10/14) | Feature Selection: [slides] <br> Feature Extraction: [slides] |  |
 | 9 (10/21) | Fall Break (No Class) |  |
 | 10 (10/28) |  |  |
