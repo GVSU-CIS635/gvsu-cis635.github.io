@@ -2,7 +2,15 @@
 
 ---
 
-Our Midterm Exam will cover the following topics:
+## Overview
+
+Our midterm exam format will be similar to any quiz you take in this course. It is a big quiz covering all the topics we've learned. You'll have 1 hour and 50 minutes to complete the exam.
+
+> Important Note: You need to use your laptop or computer to finish the exam.
+
+## Topics Covered
+
+The midterm exam will include questions from the following topics:
 
 - **Knowledge Discovery Process**
 - **Attribute Types**: Nominal, Binary, Ordinal, Numeric, Discrete, Continuous
