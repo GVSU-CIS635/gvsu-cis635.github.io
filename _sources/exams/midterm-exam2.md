@@ -40,7 +40,7 @@
 
    **Your Answer:**
 
-6. Using the critical values in Table 1 for the χ² distribution and a significance level of 0.001, determine whether there is a significant relationship between the choice of cuisine and customer satisfaction.
+6. Using the critical values in Table 1 for the χ² distribution and a significance level of 0.01, determine whether there is a significant relationship between the choice of cuisine and customer satisfaction.
 
    - [ ] Yes
    - [ ] No
@@ -102,3 +102,21 @@
     | 5        | 7000                | 10                  |
 
     **Your Answer:**
+
+11. You are given the term frequency information for two different documents as follows:
+
+    - The term frequency vector of **Document A** is:
+
+    $$
+    \text{Document A} = \{\text{apple}: 4, \text{banana}: 4, \text{cherry}: 2, \text{pear}: 2\}
+    $$
+
+    - The term frequency vector of **Document B** is:
+
+    $$
+    \text{Document B} = \{\text{apple}: 6, \text{banana}: 2, \text{cherry}: 2, \text{orange}: 1\}
+    $$
+
+    You are applying Add-1 smoothing to handle the **zero probability problem**.
+
+    What are the smoothed probability distributions for Document A and Document B after applying Add-1 smoothing?
