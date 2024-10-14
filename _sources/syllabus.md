@@ -53,14 +53,14 @@ There is no main textbook for the class. However, you may use materials from the
 | 3 (09/09) | Data Cleaning & Integration: [slides](assets/pdf/cleaning-Integration.pdf) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Transformation: [slides](assets/pdf/data-transformation.pdf) \| [<i class="fa fa-code"></i> code](samples/data-transformation.ipynb) <br> Data Compression & Sampling: [slides](assets/pdf/data-compression-sampling.pdf) \| [<i class="fa fa-code"></i> code](samples/data-compression-sampling.ipynb) |  |
 | 4 (09/16) | Object Analysis: Similarity and distance measures: [slides](assets/pdf/similarity-distance.pdf) | {ref}`resources <content:references:w4>` |
 | 5 (09/23) | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) | {ref}`resources <content:references:w5>` |
-| 6 (09/30) | Midterm Exam: [Topics](exams/midterm-exam-topics.md); [Practice](quizzes/4.md) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w6>` |
-| 7 (10/07) | [Midterm Exam](exams/midterm-exam2.md) |  |
-| 8 (10/14) | Feature Selection: [slides] <br> Feature Extraction: [slides] |  |
+| 6 (09/30) | Midterm Exam: [topics](exams/midterm-exam-topics.md); [practice](quizzes/4.md) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w6>` |
+| 7 (10/07) | Midterm Exam: [questions](exams/midterm-exam2.md) |  |
+| 8 (10/14) | Feature Extraction: [slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf)\| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) |  |
 | 9 (10/21) | Fall Break (No Class) |  |
-| 10 (10/28) |  |  |
-| 11 (11/04) |  |  |
-| 12 (11/11) |  |  |
-| 13 (11/18) |  |  |
-| 14 (11/25) |  |  |
-| 15 (12/02) |  |  |
+| 10 (10/28) | Feature Selection: [slides] <br> Markov Blanket: [slides]<br> Linear, Logistic regression and Perceptron: [slides] <br> Lazy learning: [slides] |  |
+| 11 (11/04) | Bayesian classification: [slides] <br> Decision Tree: [slides] |  |
+| 12 (11/11) | Classifier Evaluation, Model Selection: [slides] <br> Ensemble Methods: [slides] |  |
+| 13 (11/18) | Clustering: [slides] <br> Neural Network: [slides] |  |
+| 14 (11/25) | CNN: [slides] <br> RNN: [slides] <br> Attention: [slides] <br> Transformer: [slides] |  |
+| 15 (12/02) | Project Presentation |  |
 | 16 (12/09) | Final Exam |  |
