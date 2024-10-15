@@ -55,9 +55,9 @@ There is no main textbook for the class. However, you may use materials from the
 | 5 (09/23) | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) | {ref}`resources <content:references:w5>` |
 | 6 (09/30) | Midterm Exam: [topics](exams/midterm-exam-topics.md); [practice](quizzes/4.md) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w6>` |
 | 7 (10/07) | Midterm Exam: [questions](exams/midterm-exam2.md) |  |
-| 8 (10/14) | Feature Extraction: [slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf)\| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) |  |
+| 8 (10/14) | Feature Extraction: [slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf)\| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) <br> Selection: [slides] <br> Markov Blanket: [slides] |  |
 | 9 (10/21) | Fall Break (No Class) |  |
-| 10 (10/28) | Feature Selection: [slides] <br> Markov Blanket: [slides]<br> Linear, Logistic regression and Perceptron: [slides] <br> Lazy learning: [slides] |  |
+| 10 (10/28) | Linear, Logistic regression and Perceptron: [slides] <br> Lazy learning: [slides] |  |
 | 11 (11/04) | Bayesian classification: [slides] <br> Decision Tree: [slides] |  |
 | 12 (11/11) | Classifier Evaluation, Model Selection: [slides] <br> Ensemble Methods: [slides] |  |
 | 13 (11/18) | Clustering: [slides] <br> Neural Network: [slides] |  |
