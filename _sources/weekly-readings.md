@@ -59,3 +59,11 @@
 ```
 
 <!-- [Vector Auto Regression](https://www.youtube.com/watch?v=UQQHSbeIaB0) DWT and then LSTM or others-->
+
+(content:references:w8)=
+
+## Week 8
+
+```{div} full-width
+- [Bayesian network](https://personal.utdallas.edu/~nrr150130/gmbook/bayes.html)
+```
