@@ -58,4 +58,4 @@
 - [Stemming vs. lemmatization](https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html)
 ```
 
-<!-- [Vector Auto Regression](https://www.youtube.com/watch?v=UQQHSbeIaB0) -->
+<!-- [Vector Auto Regression](https://www.youtube.com/watch?v=UQQHSbeIaB0) DWT and then LSTM or others-->
