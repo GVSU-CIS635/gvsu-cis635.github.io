@@ -6,9 +6,9 @@ You should not wait for my feedback on your progress update before resuming work
 
 ## Best Project Proposals
 
-- [Thematic and Argument Structure Analysis of Plato’s Republic Using Data Mining Techniques]()
+- [Thematic and Argument Structure Analysis of Plato’s Republic Using Data Mining Techniques](../assets/pdf/proposals/Plato-CIS635-Project.pdf)
 - [CREDIT CARD FRAUD DETECTION]()
-<!-- ../assets/pdf/proposals/Plato-CIS635-Project.pdf
+<!--
 ../assets/pdf/proposals/CreditCardFraudDetection.pdf -->
 
 ## Requirements
