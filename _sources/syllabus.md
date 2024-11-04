@@ -58,8 +58,8 @@ There is no main textbook for the class. However, you may use materials from the
 | 8 (10/14) | Feature Extraction: [slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf)\| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) <br> Feature Selection: [slides](assets/pdf/dimensionality-reduction-feature-selection.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_selection.ipynb) <br> Markov Blanket: [slides](assets/pdf/markov-blanket-boundary.pdf) | {ref}`resources <content:references:w8>` |
 | 9 (10/21) | Fall Break (No Class) |  |
 | 10 (10/28) | Decision Tree: [slides](assets/pdf/decision-tree.pdf) | {ref}`resources <content:references:w10>` |
-| 11 (11/04) | Bayesian classification: [slides] <br> Linear, Logistic regression and Perceptron: [slides] <br> Lazy learning: [slides] |  |
-| 12 (11/11) | Classifier Evaluation, Model Selection: [slides] <br> Ensemble Methods: [slides] |  |
+| 11 (11/04) | Classifier Evaluation, Model Selection: [slides](assets/pdf/evaluation-selection.pdf) <br> Bayesian classification: [slides](assets/pdf/bayesian-classification.pdf) |  |
+| 12 (11/11) | Linear, Logistic regression and Perceptron: [slides] <br> Lazy learning: [slides]<br> Ensemble Methods: [slides] |  |
 | 13 (11/18) | Clustering: [slides] <br> Neural Network: [slides] |  |
 | 14 (11/25) | CNN: [slides] <br> RNN: [slides] <br> Attention: [slides] <br> Transformer: [slides] |  |
 | 15 (12/02) | Project Presentation |  |
