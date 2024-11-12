@@ -59,8 +59,8 @@ There is no main textbook for the class. However, you may use materials from the
 | 9 (10/21) | Fall Break (No Class) |  |
 | 10 (10/28) | Decision Tree: [slides](assets/pdf/decision-tree.pdf) | {ref}`resources <content:references:w10>` |
 | 11 (11/04) | Classifier Evaluation, Model Selection: [slides](assets/pdf/evaluation-selection.pdf) <br> Bayesian classification: [slides](assets/pdf/bayesian-classification.pdf) |  |
-| 12 (11/11) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Ensemble Methods: [slides] |  |
-| 13 (11/18) | Clustering: [slides] <br> Neural Network: [slides] |  |
-| 14 (11/25) | CNN: [slides] <br> RNN: [slides] <br> Attention: [slides] <br> Transformer: [slides] |  |
+| 12 (11/11) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Clustering: [slides](assets/pdf/clustering.pdf) |  |
+| 13 (11/18) | Neural Network: [slides] <br> CNN: [slides] |  |
+| 14 (11/25) | RNN: [slides] <br> Attention: [slides] <br> Transformer: [slides] |  |
 | 15 (12/02) | Project Presentation |  |
 | 16 (12/09) | Final Exam |  |
