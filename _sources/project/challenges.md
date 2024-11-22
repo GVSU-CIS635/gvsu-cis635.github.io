@@ -58,7 +58,7 @@ Download the provided data set from the [challenge webpage](https://nij.ojp.gov/
   - Visualizations in **.png** or **.jpg** format.
   - A report in **PDF** format.
   - Your resume
-  - One page statement
+  - One page statement to descript your ... for the GA positions.
 
 ## Evaluation Criteria
 

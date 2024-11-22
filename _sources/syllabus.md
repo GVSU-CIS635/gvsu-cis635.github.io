@@ -61,6 +61,6 @@ There is no main textbook for the class. However, you may use materials from the
 | 11 (11/04) | Classifier Evaluation, Model Selection: [slides](assets/pdf/evaluation-selection.pdf) <br> Bayesian classification: [slides](assets/pdf/bayesian-classification.pdf) |  |
 | 12 (11/11) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Clustering: [slides](assets/pdf/clustering.pdf) |  |
 | 13 (11/18) | Neural Network: [slides](assets/pdf/nn.pdf) \| [video](https://youtu.be/T8GeAOjbTWs) <br> CNN: [slides](assets/pdf/cnn.pdf) \| [video](https://youtu.be/hOiHIAmQ-So) |  |
-| 14 (11/25) | RNN: [slides] <br> Attention: [slides] <br> Transformer: [slides] |  |
+| 14 (11/25) | RNN: [slides] \| [<i class="fa fa-code"></i> code](samples/air_passenger_forecast.ipynb) <br> Attention: [slides] <br> Transformer: [slides] |  |
 | 15 (12/02) | Project Presentation |  |
 | 16 (12/09) | Final Exam |  |

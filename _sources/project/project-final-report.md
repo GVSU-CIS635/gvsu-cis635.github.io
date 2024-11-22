@@ -2,6 +2,13 @@
 
 The documentation of your work is as crucial as building your data mining pipeline and generating results. If you don't effectively document your pipeline and your findings, and present them in an easily understandable format, the value of your work might not be fully recognized!
 
+## Best Project Progress Report
+
+- [Thematic and Argument Structure Analysis of Plato’s Republic Using Data Mining Techniques](../assets/pdf/projects/progress-report/Progress+Report.pdf.pdf)
+- [Predicting Cardiovascular Disease](../assets/pdf/projects/progress-report/CIS+635+Project+Progress+Report.pdf)
+- [Credit Card Fraud Detection](../assets/pdf/projects/progress-report/Credit_Fraud_Detection++Progress+Report.docx)
+- [House Prices Prediction](../assets/pdf/projects/progress-report/PROJECT+PROGRESS+REPORT.pdf)
+
 ## Format
 
 You are free to choose the format for your final report, but it must be well-organized, employ consistent formatting for citations/references, and include the required content (outlined below). Please note that I may not be able to respond to emails after 5:00 pm on the due date of your assignment.
