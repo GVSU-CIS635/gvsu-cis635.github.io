@@ -67,3 +67,25 @@
 ```{div} full-width
 - [Bayesian network](https://personal.utdallas.edu/~nrr150130/gmbook/bayes.html)
 ```
+
+(content:references:w13)=
+
+## Week 13
+
+```{div} full-width
+- Understanding Deep Learning (Still) Requires Rethinking Generalization
+  - [video](https://www.youtube.com/watch?v=O42vde4tbG0)
+  - [paper](https://dl.acm.org/doi/pdf/10.1145/3446776)
+```
+
+(content:references:w14)=
+
+## Week 14
+
+```{div} full-width
+- [Model selection and training/validation/test sets](https://www.youtube.com/watch?v=MyBSkmUeIEs)
+- [Nuts and Bolts of Applying Deep Learning](https://www.youtube.com/watch?v=F1ka6a13S9I)
+- [Transformers Explained Visually: Learn How LLM Transformer Models Work](https://www.youtube.com/watch?v=ECR4oAwocjs)
+- [The tool](https://poloclub.github.io/transformer-explainer/)
+- [The paper](https://arxiv.org/pdf/2408.04619)
+```

@@ -59,8 +59,8 @@ There is no main textbook for the class. However, you may use materials from the
 | 9 (10/21) | Fall Break (No Class) |  |
 | 10 (10/28) | Decision Tree: [slides](assets/pdf/decision-tree.pdf) | {ref}`resources <content:references:w10>` |
 | 11 (11/04) | Classifier Evaluation, Model Selection: [slides](assets/pdf/evaluation-selection.pdf) <br> Bayesian classification: [slides](assets/pdf/bayesian-classification.pdf) |  |
-| 12 (11/11) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Clustering: [slides](assets/pdf/clustering.pdf) |  |
-| 13 (11/18) | Neural Network: [slides](assets/pdf/nn.pdf) \| [video](https://youtu.be/T8GeAOjbTWs) <br> CNN: [slides](assets/pdf/cnn.pdf) \| [video](https://youtu.be/hOiHIAmQ-So) |  |
-| 14 (11/25) | RNN: [slides](assets/pdf/rnn.pdf) \| [video](https://youtu.be/EZcn1_2OVfk) \| [<i class="fa fa-code"></i> code](samples/air_passenger_forecast.ipynb) <br> Attention: [slides](assets/pdf/attention.pdf) \| [video](https://youtu.be/IfskrOqqB4Q) <br> Transformer: [slides](assets/pdf/transformer.pdf) \| [video](https://youtu.be/dm10YEEUa0k) |  |
-| 15 (12/02) | Project Presentation <br> Final Exam: [topics](exams/final-exam-topics.md); [practice](exams/final-exam-preparation) |  |
+| 12 (11/11) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Clustering: [slides](assets/pdf/clustering.pdf) | {ref}`resources <content:references:w12>` |
+| 13 (11/18) | Neural Network: [slides](assets/pdf/nn.pdf) \| [video](https://youtu.be/T8GeAOjbTWs) <br> CNN: [slides](assets/pdf/cnn.pdf) \| [video](https://youtu.be/hOiHIAmQ-So) | {ref}`resources <content:references:w13>` |
+| 14 (11/25) | RNN: [slides](assets/pdf/rnn.pdf) \| [video](https://youtu.be/EZcn1_2OVfk) \| [<i class="fa fa-code"></i> code](samples/air_passenger_forecast.ipynb) <br> Attention: [slides](assets/pdf/attention.pdf) \| [video](https://youtu.be/IfskrOqqB4Q) <br> Transformer: [slides](assets/pdf/transformer.pdf) \| [video](https://youtu.be/dm10YEEUa0k) | {ref}`resources <content:references:w14>` |
+| 15 (12/02) | Project Presentation <br> Final Exam: [topics](exams/final-exam-topics.md); [practice](exams/final-exam-preparation) | {ref}`resources <content:references:w15>` |
 | 16 (12/09) | Final Exam |  |
