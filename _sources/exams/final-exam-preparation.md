@@ -1,18 +1,35 @@
 # Exam Review Exercises
 
-1. Gini Impurity: Calculate the Gini impurity for a dataset $D$ with 40 instances of class A and 60 instances of class B.
+1. Consider a dataset D containing two classes, A and B, with the following distribution:
 
-   - $$Gini(D) = ... $$
+   - 40 instances belong to class A
+   - 60 instances belong to class B.
 
-2. Given the following dataset with two attributes (Feature1 and Feature2) and a class label, use the Naïve Bayes classifier to predict the class label of a new sample (Feature1 = 3, Feature2 = 7).
+   Calculate the Gini impurity for the dataset D:
 
-   | Feature1 | Feature2 | Class Label |
-   | -------- | -------- | ----------- |
-   | 1        | 5        | A           |
-   | 2        | 6        | A           |
-   | 3        | 8        | B           |
-   | 4        | 7        | B           |
-   | 2        | 5        | A           |
+   $$Gini(D) = ... $$
+
+2. Given the following dataset with two categorical attributes (Weather and Time of Day) and a class label, use the Naïve Bayes classifier to predict the class label of a new sample (Weather = Sunny, Time of Day = Evening).
+
+   | **Weather** | **Time of Day** | **Class Label (Go Outside)** |
+   | ----------- | --------------- | ---------------------------- |
+   | Sunny       | Morning         | Yes                          |
+   | Rainy       | Afternoon       | No                           |
+   | Cloudy      | Evening         | Yes                          |
+   | Sunny       | Evening         | No                           |
+   | Cloudy      | Morning         | Yes                          |
+   | Rainy       | Night           | No                           |
+   | Sunny       | Afternoon       | Yes                          |
+
+   <!-- $$
+   P_{Yes} &= \frac{4}{7}, P_{No} = \frac{3}{7}\\
+   P(Sunny|Yes) &= \frac{2}{4}, P(Evening|Yes) = \frac{1}{4}\\
+   P(Sunny|No) &= \frac{1}{3}, P(Evening|No) = \frac{1}{3}\\
+   P(Yes|Sunny,Evening) &= P(Sunny|Yes) \times P(Evening|Yes) \times P_{Yes} \\
+   &= \frac{2}{4} \times \frac{1}{4} \times \frac{4}{7} = \frac{1}{14}\\
+   P(No |Sunny,Evening) &= P(Sunny|No) \times P(Evening|No) \times P_{No} \\
+   &= \frac{1}{3} \times \frac{1}{3} \times \frac{3}{7} = \frac{1}{21}\\
+   $$ -->
 
 3. Given the following confusion matrix, calculate Precision, Recall, and F1 Score.
 

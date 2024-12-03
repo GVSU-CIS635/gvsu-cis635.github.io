@@ -380,45 +380,64 @@
   <section class="tex2jax_ignore mathjax_ignore" id="exam-review-exercises">
 <h1>Exam Review Exercises<a class="headerlink" href="#exam-review-exercises" title="Link to this heading">#</a></h1>
 <ol class="arabic">
-<li><p>Gini Impurity: Calculate the Gini impurity for a dataset <span class="math notranslate nohighlight">\(D\)</span> with 40 instances of class A and 60 instances of class B.</p>
-<ul>
-<li><div class="math notranslate nohighlight">
+<li><p>Consider a dataset D containing two classes, A and B, with the following distribution:</p>
+<ul class="simple">
+<li><p>40 instances belong to class A</p></li>
+<li><p>60 instances belong to class B.</p></li>
+</ul>
+<p>Calculate the Gini impurity for the dataset D:</p>
+<div class="math notranslate nohighlight">
 \[Gini(D) = ... \]</div>
 </li>
-</ul>
-</li>
-<li><p>Given the following dataset with two attributes (Feature1 and Feature2) and a class label, use the Naïve Bayes classifier to predict the class label of a new sample (Feature1 = 3, Feature2 = 7).</p>
+<li><p>Given the following dataset with two categorical attributes (Weather and Time of Day) and a class label, use the Naïve Bayes classifier to predict the class label of a new sample (Weather = Sunny, Time of Day = Evening).</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Feature1</p></th>
-<th class="head"><p>Feature2</p></th>
-<th class="head"><p>Class Label</p></th>
+<tr class="row-odd"><th class="head"><p><strong>Weather</strong></p></th>
+<th class="head"><p><strong>Time of Day</strong></p></th>
+<th class="head"><p><strong>Class Label (Go Outside)</strong></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>5</p></td>
-<td><p>A</p></td>
+<tr class="row-even"><td><p>Sunny</p></td>
+<td><p>Morning</p></td>
+<td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>6</p></td>
-<td><p>A</p></td>
+<tr class="row-odd"><td><p>Rainy</p></td>
+<td><p>Afternoon</p></td>
+<td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>8</p></td>
-<td><p>B</p></td>
+<tr class="row-even"><td><p>Cloudy</p></td>
+<td><p>Evening</p></td>
+<td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>7</p></td>
-<td><p>B</p></td>
+<tr class="row-odd"><td><p>Sunny</p></td>
+<td><p>Evening</p></td>
+<td><p>No</p></td>
 </tr>
-<tr class="row-even"><td><p>2</p></td>
-<td><p>5</p></td>
-<td><p>A</p></td>
+<tr class="row-even"><td><p>Cloudy</p></td>
+<td><p>Morning</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rainy</p></td>
+<td><p>Night</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>Sunny</p></td>
+<td><p>Afternoon</p></td>
+<td><p>Yes</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<!-- $$
+P_{Yes} &= \frac{4}{7}, P_{No} = \frac{3}{7}\\
+P(Sunny|Yes) &= \frac{2}{4}, P(Evening|Yes) = \frac{1}{4}\\
+P(Sunny|No) &= \frac{1}{3}, P(Evening|No) = \frac{1}{3}\\
+P(Yes|Sunny,Evening) &= P(Sunny|Yes) \times P(Evening|Yes) \times P_{Yes} \\
+&= \frac{2}{4} \times \frac{1}{4} \times \frac{4}{7} = \frac{1}{14}\\
+P(No |Sunny,Evening) &= P(Sunny|No) \times P(Evening|No) \times P_{No} \\
+&= \frac{1}{3} \times \frac{1}{3} \times \frac{3}{7} = \frac{1}{21}\\
+$$ -->
 </li>
 <li><p>Given the following confusion matrix, calculate Precision, Recall, and F1 Score.</p>
 <div class="pst-scrollable-table-container"><table class="table">
