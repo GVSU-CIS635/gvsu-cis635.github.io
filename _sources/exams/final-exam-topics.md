@@ -4,7 +4,7 @@
 
 ## Overview
 
-Our final exam format will be similar to any midterm you take in this course. It is a big quiz covering all the topics we've learned after midterm exam. You'll have 1 hour and 50 minutes to complete the exam.
+Our final exam format will be similar to the midterm exam. It is a big quiz covering all the topics we've learned after midterm exam. You'll have 1 hour and 50 minutes to complete the exam.
 
 > Important Note: You need to use your laptop or computer to finish the exam.
 
