@@ -35,19 +35,19 @@ There is no main textbook for the class. However, you may use materials from the
 
 | Week | Content | Reading |
 | --- | --- | --- |
-| 1 (01/06) | Syllabus: slides <br> What is Data Mining: slides <br> Data Mining Tasks: slides <br> Introduction to Python: code | Resources |
-| 2 (01/13) | Descriptive Statistics: slides \| code <br> Data Visualization: slides <br> Introduction to Numpy: code <br> Introduction to Pandas: code | Resources |
+| 1 (01/06) | [Syllabus](assets/pdf/syllabus.pdf) <br> What is Data Mining: [slides](assets/pdf/data-mining-intro.pdf) \| [video](https://youtu.be/vLOU_C9U3TM) <br> Data Mining Tasks: [slides](assets/pdf/data-mining-tasks.pdf) \| [video](https://youtu.be/pPdu-E95Mng)<br> Introduction to Python: [code](samples/python.ipynb) | {ref}`resources <content:references:w1>` |
+| 2 (01/13) | Descriptive Statistics: slides \| code <br> Data Visualization: slides <br> Introduction to Numpy: code <br> Introduction to Pandas: code | resources |
 | 3 (01/20) | Data Cleaning & Integration: slides \| code <br> Data Transformation: slides \| code <br> Data Compression & Sampling: slides \| code |  |
-| 4 (01/27) | Object Analysis: Similarity and distance measures: slides | Resources |
-| 5 (02/03) | Feature Analysis: Relationships: slides | Resources |
-| 6 (02/10) | Midterm Exam: topics; practice <br> Data Transformation II: slides | Resources |
-| 7 (02/17) | Midterm Exam: questions | Resources |
-| 8 (02/24) | Feature Extraction: slides \| code <br> Feature Selection: slides \| code <br> Markov Blanket: slides | Resources |
+| 4 (01/27) | Object Analysis: Similarity and distance measures: slides | resources |
+| 5 (02/03) | Feature Analysis: Relationships: slides | resources |
+| 6 (02/10) | Midterm Exam: topics; practice <br> Data Transformation II: slides | resources |
+| 7 (02/17) | Midterm Exam: questions | resources |
+| 8 (02/24) | Feature Extraction: slides \| code <br> Feature Selection: slides \| code <br> Markov Blanket: slides | resources |
 | 9 (03/03) | Fall Break (No Class) |  |
-| 10 (03/10) | Decision Tree: slides | Resources |
+| 10 (03/10) | Decision Tree: slides | resources |
 | 11 (03/17) | Classifier Evaluation, Model Selection: slides <br> Bayesian Classification: slides |  |
-| 12 (03/24) | Linear, Logistic Regression and Perceptron: slides <br> Lazy Learning: slides <br> Clustering: slides | Resources |
-| 13 (03/31) | Neural Network: slides \| video <br> CNN: slides \| video | Resources |
-| 14 (04/07) | RNN: slides \| video \| code <br> Attention: slides \| video <br> Transformer: slides \| video | Resources |
-| 15 (04/14) | Project Presentation <br> Final Exam: topics; practice | Resources |
+| 12 (03/24) | Linear, Logistic Regression and Perceptron: slides <br> Lazy Learning: slides <br> Clustering: slides | resources |
+| 13 (03/31) | Neural Network: slides \| video <br> CNN: slides \| video | resources |
+| 14 (04/07) | RNN: slides \| video \| code <br> Attention: slides \| video <br> Transformer: slides \| video | resources |
+| 15 (04/14) | Project Presentation <br> Final Exam: topics; practice | resources |
 | 16 (04/21) | Final Exam |  |
