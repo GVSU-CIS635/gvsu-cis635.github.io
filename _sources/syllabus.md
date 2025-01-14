@@ -36,7 +36,7 @@ There is no main textbook for the class. However, you may use materials from the
 | Week | Content | Reading |
 | --- | --- | --- |
 | 1 (01/06) | [Syllabus](assets/pdf/syllabus.pdf) <br> What is Data Mining: [slides](assets/pdf/data-mining-intro.pdf) \| [video](https://youtu.be/vLOU_C9U3TM) <br> Data Mining Tasks: [slides](assets/pdf/data-mining-tasks.pdf) \| [video](https://youtu.be/pPdu-E95Mng)<br> Introduction to Python: [code](samples/python.ipynb) | {ref}`resources <content:references:w1>` |
-| 2 (01/13) | Descriptive Statistics: slides \| code <br> Data Visualization: slides <br> Introduction to Numpy: code <br> Introduction to Pandas: code | resources |
+| 2 (01/13) | Descriptive Statistics: [slides](assets/pdf/data-exploration-descriptive-statistics.pdf) \| [code](samples/descriptive_statistics.ipynb) \| [video](https://youtu.be/HDRjhgB6EN0) <br> Data Visualization: [slides](assets/pdf/data-exploration-data-visualization.pdf) \| [video](https://youtu.be/VcuphW6n1Mo) <br> Introduction to Numpy: [code](samples/numpy.ipynb) <br> Introduction to Pandas: [code](samples/pandas.ipynb) | {ref}`resources <content:references:w2>` |
 | 3 (01/20) | Data Cleaning & Integration: slides \| code <br> Data Transformation: slides \| code <br> Data Compression & Sampling: slides \| code |  |
 | 4 (01/27) | Object Analysis: Similarity and distance measures: slides | resources |
 | 5 (02/03) | Feature Analysis: Relationships: slides | resources |
