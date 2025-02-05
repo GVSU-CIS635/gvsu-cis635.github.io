@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -173,6 +173,10 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../free-resources.html">Free Books and Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../weekly-readings.html">Weekly Resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homeworks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../homeworks/1.html">Homework 1</a></li>
 </ul>
 
     </div>
@@ -478,10 +482,10 @@ Size = 6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uniformly distributed random numbers:
-[0.88768701 0.92504741 0.04032423 0.64823233]
+[0.42323619 0.65470297 0.82018854 0.64196591]
 
 Normally distributed random numbers:
-[-0.35321522 -0.74999494  0.96528     0.86317611]
+[ 0.1590819   0.87961504  0.80138788 -0.6748812 ]
 
 Sequential integers with a custom step:
 [-5 -4 -3 -2 -1  0  1  2  3  4]
@@ -804,13 +808,13 @@ Exponential function: np.exp(z) = [1.21824940e+01 1.82683524e-01 2.71126389e+01 
 Sorted array: np.sort(z) = [-4.4 -1.7  2.5  3.3  5.1]
 
 Array a: [-2. -1.  0.  1.  2.]
-Array b: [0.61338453 0.28522359 0.56301202 0.1902317  0.21621623]
+Array b: [0.91692647 0.05756358 0.23672409 0.36143286 0.25144315]
 
-Element-wise addition: np.add(a, b) = [-1.38661547 -0.71477641  0.56301202  1.1902317   2.21621623]
-Element-wise subtraction: np.subtract(a, b) = [-2.61338453 -1.28522359 -0.56301202  0.8097683   1.78378377]
-Element-wise multiplication: np.multiply(a, b) = [-1.22676905 -0.28522359  0.          0.1902317   0.43243246]
-Element-wise division: np.divide(a, b) = [-3.26059742 -3.5060213   0.          5.25674756  9.24999942]
-Element-wise maximum: np.maximum(a, b) = [0.61338453 0.28522359 0.56301202 1.         2.        ]
+Element-wise addition: np.add(a, b) = [-1.08307353 -0.94243642  0.23672409  1.36143286  2.25144315]
+Element-wise subtraction: np.subtract(a, b) = [-2.91692647 -1.05756358 -0.23672409  0.63856714  1.74855685]
+Element-wise multiplication: np.multiply(a, b) = [-1.83385294 -0.05756358  0.          0.36143286  0.50288631]
+Element-wise division: np.divide(a, b) = [ -2.18119998 -17.37209474   0.           2.76676557   7.95408415]
+Element-wise maximum: np.maximum(a, b) = [0.91692647 0.05756358 0.23672409 1.         2.        ]
 
 Array z: [ 4.5 -2.3  1.1  3.8 -4.6]
 
@@ -868,52 +872,52 @@ Sum of elements: np.sum(z) = 2.5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random matrix A:
-[[-1.08197227 -1.20379096]
- [-1.05925715  0.16633077]
- [ 0.41541195 -1.53681394]]
+[[ 0.12364912  0.45023049]
+ [-0.03294381  1.53141353]
+ [ 0.96211416  0.73251315]]
 
 Transpose of A, A.T:
-[[-1.08197227 -1.05925715  0.41541195]
- [-1.20379096  0.16633077 -1.53681394]]
+[[ 0.12364912 -0.03294381  0.96211416]
+ [ 0.45023049  1.53141353  0.73251315]]
 
-Random vector z: [0.97269419 2.06921208]
+Random vector z: [-0.88093046 -0.66589986]
 
 Matrix-vector multiplication A.dot(z):
-[-3.54332694 -0.68615963 -2.77592517]
+[-0.40873469 -0.99074685 -1.33533608]
 
 Matrix-matrix product A.dot(A.T):
-[[ 2.61977667  0.94585938  1.40053852]
- [ 0.94585938  1.14969163 -0.69564753]
- [ 1.40053852 -0.69564753  2.53436417]]
+[[0.2179966  0.68541559 0.44876432]
+ [0.68541559 2.34631268 1.09008484]
+ [0.44876432 1.09008484 1.46223918]]
 
 A.T.dot(A):
-[[2.46525678 0.4878705 ]
- [0.4878705  3.83857569]]
+[[0.94203806 0.70998129]
+ [0.70998129 3.0845104 ]]
 
 Square matrix B:
-[[-0.21700722 -1.15430931 -0.98071183  0.24131799]
- [-0.34394326  1.54365863 -0.47979877  1.56763609]
- [ 2.06470736 -0.94334299  0.52781113  2.3601852 ]
- [ 0.82425594 -1.37302791  0.05758703 -0.66593759]]
+[[ 0.88312249  0.11428711 -0.90459897  0.25386933]
+ [ 0.88647375  0.04865138  1.49122024 -0.39294656]
+ [ 0.49448493 -0.69817182 -1.7266881  -1.17924338]
+ [-0.34551547  0.73433926  0.44777746 -1.91443295]]
 Inverse of B:
-[[-0.60797764  1.27493798 -0.19767834  2.08032313]
- [-0.54204093  0.910469   -0.28262729  0.94517429]
- [-0.1607404  -1.45839047  0.46956967 -1.82711373]
- [ 0.35116141 -0.42527788  0.37865221 -1.03350533]]
+[[ 0.60388558  0.46474743  0.06986756 -0.05834821]
+ [ 0.96755503 -0.35909553 -0.65931499  0.60813347]
+ [-0.34259131  0.37046751 -0.09589746 -0.06240016]
+ [ 0.18201586 -0.13496862 -0.28794005 -0.29314419]]
 
-Determinant of B: -3.544153233507477
+Determinant of B: -5.751754713622462
 Eigenvalues of B:
-[-0.84692688+0.j          0.31224471+1.69362526j  0.31224471-1.69362526j
-  1.41096242+0.j        ]
+[ 1.03803682+0.j         -0.83521477+1.40366003j -0.83521477-1.40366003j
+ -2.07695445+0.j        ]
 Eigenvectors of B:
-[[ 0.780345  +0.j         -0.15258471+0.48619622j -0.15258471-0.48619622j
-   0.14732431+0.j        ]
- [ 0.40277589+0.j          0.10063966+0.03949867j  0.10063966-0.03949867j
-   0.45099177+0.j        ]
- [-0.08852503+0.j          0.82766112+0.j          0.82766112-0.j
-  -0.84008747+0.j        ]
- [-0.47010274+0.j          0.09811287+0.18437352j  0.09811287-0.18437352j
-  -0.26297342+0.j        ]]
+[[-0.78273693+0.j         -0.26360139+0.09903416j -0.26360139-0.09903416j
+   0.17916178+0.j        ]
+ [-0.61851331+0.j          0.69404927+0.j          0.69404927-0.j
+  -0.45246739+0.j        ]
+ [ 0.04014468+0.j         -0.18243357+0.55252374j -0.18243357-0.55252374j
+   0.68223109+0.j        ]
+ [-0.05614791+0.j          0.27413984-0.15901261j  0.27413984+0.15901261j
+   0.54565104+0.j        ]]
 </pre></div>
 </div>
 </div>
