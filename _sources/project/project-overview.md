@@ -21,7 +21,7 @@ By the end of this project, you should be able to:
 
 ## Grading
 
-Your final project will count for 40% of your grade in this course:
+Your final project will count for 30% of your grade in this course:
 
 > **Note:** You cannot use your homework extensions on project components.
 
