@@ -40,7 +40,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 3 (01/20) | Data Cleaning & Integration: [slides](assets/pdf/cleaning-Integration.pdf) \| [video](https://youtu.be/9EBOeQA6LD0) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Transformation: [slides](assets/pdf/data-transformation.pdf) \| [video](https://youtu.be/8fws0-6h52I) \| [<i class="fa fa-code"></i> code](samples/data-transformation.ipynb) <br> Data Compression & Sampling: [slides](assets/pdf/data-compression-sampling.pdf) \| [video](https://youtu.be/AgIVTNNNv_E) \| [<i class="fa fa-code"></i> code](samples/data-compression-sampling.ipynb) | {ref}`resources <content:references:w3>` |
 | 4 (01/27) | Object Analysis: Similarity and distance measures: [slides](assets/pdf/similarity-distance.pdf) \| [video](https://youtu.be/bkcMCVe_fqw) | {ref}`resources <content:references:w4>` |
 | 5 (02/03) | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) | {ref}`resources <content:references:w5>` |
-| 6 (02/10) | Midterm Exam: topics; practice <br> Data Transformation II: slides | {ref}`resources <content:references:w6>` |
+| 6 (02/10) | Midterm Exam: [topics](exams/midterm-exam-topics.md) \| [practice](quizzes/4.md) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w6>` |
 | 7 (02/17) | Midterm Exam: questions | resources |
 | 8 (02/24) | Feature Extraction: slides \| code <br> Feature Selection: slides \| code <br> Markov Blanket: slides | resources |
 | 9 (03/03) | Fall Break (No Class) |  |
