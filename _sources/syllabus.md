@@ -34,7 +34,7 @@ There is no main textbook for the class. However, you may use materials from the
 - To execute the sample Jupyter Notebook code <i class="fa fa-code"></i>, click on the rocket icon <i class="fa fa-rocket" aria-hidden="true"></i> at the top of the page, which will open the notebook in Google Colab for interactive use.
 
 | Week | Content | Reading |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | 1 (01/06) | [Syllabus](assets/pdf/syllabus.pdf) <br> What is Data Mining: [slides](assets/pdf/data-mining-intro.pdf) \| [video](https://youtu.be/vLOU_C9U3TM) <br> Data Mining Tasks: [slides](assets/pdf/data-mining-tasks.pdf) \| [video](https://youtu.be/pPdu-E95Mng)<br> Introduction to Python: [code](samples/python.ipynb) | {ref}`resources <content:references:w1>` |
 | 2 (01/13) | Descriptive Statistics: [slides](assets/pdf/data-exploration-descriptive-statistics.pdf) \| [code](samples/descriptive_statistics.ipynb) \| [video](https://youtu.be/HDRjhgB6EN0) <br> Data Visualization: [slides](assets/pdf/data-exploration-data-visualization.pdf) \| [video](https://youtu.be/VcuphW6n1Mo) <br> Introduction to Numpy: [code](samples/numpy.ipynb) <br> Introduction to Pandas: [code](samples/pandas.ipynb) | {ref}`resources <content:references:w2>` |
 | 3 (01/20) | Data Cleaning & Integration: [slides](assets/pdf/cleaning-Integration.pdf) \| [video](https://youtu.be/9EBOeQA6LD0) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Transformation: [slides](assets/pdf/data-transformation.pdf) \| [video](https://youtu.be/8fws0-6h52I) \| [<i class="fa fa-code"></i> code](samples/data-transformation.ipynb) <br> Data Compression & Sampling: [slides](assets/pdf/data-compression-sampling.pdf) \| [video](https://youtu.be/AgIVTNNNv_E) \| [<i class="fa fa-code"></i> code](samples/data-compression-sampling.ipynb) | {ref}`resources <content:references:w3>` |
@@ -44,7 +44,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 7 (02/17) | Midterm Exam: questions | resources |
 | 8 (02/24) | Feature Extraction: slides \| code <br> Feature Selection: slides \| code <br> Markov Blanket: slides | resources |
 | 9 (03/03) | Fall Break (No Class) |  |
-| 10 (03/10) | Decision Tree: slides | resources |
+| 10 (03/10) | Decision Tree: slides | resources | 1 |
 | 11 (03/17) | Classifier Evaluation, Model Selection: slides <br> Bayesian Classification: slides |  |
 | 12 (03/24) | Linear, Logistic Regression and Perceptron: slides <br> Lazy Learning: slides <br> Clustering: slides | resources |
 | 13 (03/31) | Neural Network: slides \| video <br> CNN: slides \| video | resources |
