@@ -42,7 +42,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 5 (02/03) | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) | {ref}`resources <content:references:w5>` |
 | 6 (02/10) | Midterm Exam: [topics](exams/midterm-exam-topics.md) \| [practice](quizzes/4.md) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w6>` |
 | 7 (02/17) | Midterm Exam: questions | resources |
-| 8 (02/24) | Feature Extraction: slides \| code <br> Feature Selection: slides \| code <br> Markov Blanket: slides | resources |
+| 8 (02/24) | Feature Extraction: [slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) <br> Feature Selection: [slides](assets/pdf/dimensionality-reduction-feature-selection.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_selection.ipynb) <br> Markov Blanket: [slides](assets/pdf/markov-blanket-boundary.pdf) | {ref}`resources <content:references:w8>` |
 | 9 (03/03) | Fall Break (No Class) | resources |
 | 10 (03/10) | Decision Tree: slides | resources |
 | 11 (03/17) | Classifier Evaluation, Model Selection: slides <br> Bayesian Classification: slides |  |
