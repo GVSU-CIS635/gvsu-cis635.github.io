@@ -44,10 +44,10 @@ There is no main textbook for the class. However, you may use materials from the
 | 7 (02/17) | Midterm Exam: questions | resources |
 | 8 (02/24) | Feature Extraction: [slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) \| [video](https://youtu.be/Nh8q9mVgq14) <br> Feature Selection: [slides](assets/pdf/dimensionality-reduction-feature-selection.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_selection.ipynb) <br> Markov Blanket: [slides](assets/pdf/markov-blanket-boundary.pdf) | {ref}`resources <content:references:w8>` |
 | 9 (03/03) | Spring Break (No Class) | resources |
-| 10 (03/10) | Decision Tree: slides | resources |
-| 11 (03/17) | Classifier Evaluation, Model Selection: slides <br> Bayesian Classification: slides |  |
-| 12 (03/24) | Linear, Logistic Regression and Perceptron: slides <br> Lazy Learning: slides <br> Clustering: slides | resources |
-| 13 (03/31) | Neural Network: slides \| video <br> CNN: slides \| video | resources |
-| 14 (04/07) | RNN: slides \| video \| code <br> Attention: slides \| video <br> Transformer: slides \| video | resources |
+| 10 (03/10) | Decision Tree: [slides](assets/pdf/decision-tree.pdf) | {ref}`resources <content:references:w10>` |
+| 11 (03/17) | Classifier Evaluation, Model Selection: slides <br> Bayesian Classification: slides | {ref}`resources <content:references:w11>` |
+| 12 (03/24) | Linear, Logistic Regression and Perceptron: slides <br> Lazy Learning: slides <br> Clustering: slides | {ref}`resources <content:references:w12>` |
+| 13 (03/31) | Neural Network: slides \| video <br> CNN: slides \| video | {ref}`resources <content:references:w13>` |
+| 14 (04/07) | RNN: slides \| video \| code <br> Attention: slides \| video <br> Transformer: slides \| video | {ref}`resources <content:references:w14>` |
 | 15 (04/14) | Project Presentation <br> Final Exam: topics; practice | resources |
 | 16 (04/21) | Final Exam |  |
