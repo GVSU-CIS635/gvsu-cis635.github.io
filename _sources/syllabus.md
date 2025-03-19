@@ -17,8 +17,8 @@ to our **Knowledge Discovery and Data mining**(KDD) course. In this course, weâ€
 
 ### Section 03
 
-- **Midterm:** February 17 (Monday), 6:00 pm - 7:50 pm
-- **Final Exam:** April 21 (Monday), 6:00 pm - 7:50 pm
+- **Midterm:** The week starting Monday, February 17
+- **Final Exam:** The week starting Monday, April 21
 
 ## Preference Books
 
