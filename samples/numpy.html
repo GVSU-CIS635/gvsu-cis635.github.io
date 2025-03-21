@@ -177,11 +177,14 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homeworks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../homeworks/1.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeworks/2.html">Homework 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project/project-overview.html">Project Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../project/project-proposal.html">Project Proposal Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-progress-report.html">Project Progress Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/challenges.html">Task: Crime Forecasting</a></li>
 </ul>
 
     </div>
@@ -487,10 +490,10 @@ Size = 6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uniformly distributed random numbers:
-[0.47132302 0.24572494 0.17383788 0.39109833]
+[0.75431607 0.75126554 0.57976726 0.59457093]
 
 Normally distributed random numbers:
-[-1.00108862  0.43606478 -0.25508953 -0.14489715]
+[ 0.56902297 -0.33810814 -1.20356697 -0.89987424]
 
 Sequential integers with a custom step:
 [-5 -4 -3 -2 -1  0  1  2  3  4]
@@ -813,13 +816,13 @@ Exponential function: np.exp(z) = [1.21824940e+01 1.82683524e-01 2.71126389e+01 
 Sorted array: np.sort(z) = [-4.4 -1.7  2.5  3.3  5.1]
 
 Array a: [-2. -1.  0.  1.  2.]
-Array b: [0.25548457 0.84904138 0.23556852 0.25472306 0.47490943]
+Array b: [0.2876667  0.99585259 0.1751277  0.15929656 0.13255723]
 
-Element-wise addition: np.add(a, b) = [-1.74451543 -0.15095862  0.23556852  1.25472306  2.47490943]
-Element-wise subtraction: np.subtract(a, b) = [-2.25548457 -1.84904138 -0.23556852  0.74527694  1.52509057]
-Element-wise multiplication: np.multiply(a, b) = [-0.51096913 -0.84904138  0.          0.25472306  0.94981886]
-Element-wise division: np.divide(a, b) = [-7.82826151 -1.1777989   0.          3.92583218  4.2113293 ]
-Element-wise maximum: np.maximum(a, b) = [0.25548457 0.84904138 0.23556852 1.         2.        ]
+Element-wise addition: np.add(a, b) = [-1.7123333  -0.00414741  0.1751277   1.15929656  2.13255723]
+Element-wise subtraction: np.subtract(a, b) = [-2.2876667  -1.99585259 -0.1751277   0.84070344  1.86744277]
+Element-wise multiplication: np.multiply(a, b) = [-0.57533339 -0.99585259  0.          0.15929656  0.26511446]
+Element-wise division: np.divide(a, b) = [-6.95249057 -1.00416468  0.          6.27759964 15.08782295]
+Element-wise maximum: np.maximum(a, b) = [0.2876667  0.99585259 0.1751277  1.         2.        ]
 
 Array z: [ 4.5 -2.3  1.1  3.8 -4.6]
 
@@ -877,47 +880,52 @@ Sum of elements: np.sum(z) = 2.5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random matrix A:
-[[ 1.06896118 -0.34279871]
- [ 0.47047939  0.47684224]
- [-0.10572487 -1.84480366]]
+[[ 0.63011074  1.06471229]
+ [ 0.27501719  1.09643634]
+ [ 0.25169939 -0.00244075]]
 
 Transpose of A, A.T:
-[[ 1.06896118  0.47047939 -0.10572487]
- [-0.34279871  0.47684224 -1.84480366]]
+[[ 0.63011074  0.27501719  0.25169939]
+ [ 1.06471229  1.09643634 -0.00244075]]
 
-Random vector z: [-1.67183925  0.52162764]
+Random vector z: [-0.78818305 -0.66841524]
 
 Matrix-vector multiplication A.dot(z):
-[-1.96594454 -0.53783183 -0.78554559]
+[-1.20831252 -0.94963865 -0.19675376]
 
 Matrix-matrix product A.dot(A.T):
-[[ 1.26018897  0.33946331  0.51938053]
- [ 0.33946331  0.44872938 -0.92942168]
- [ 0.51938053 -0.92942168  3.4144783 ]]
+[[1.5306518  1.34068053 0.15599979]
+ [1.34068053 1.27780711 0.06654553]
+ [0.15599979 0.06654553 0.06335854]]
 
 A.T.dot(A):
-[[1.37520662 0.05294756]
- [0.05294756 3.74819002]]
+[[0.53602658 0.97181115]
+ [0.97181115 2.33579087]]
 
 Square matrix B:
-[[ 1.22286494 -0.32464125 -0.78539472  1.38480568]
- [-2.57559232  1.23339338  0.37289954  0.11110802]
- [ 0.86794831 -0.14762746 -1.4467353   0.50985978]
- [-0.26730046  0.32404775  0.55769723 -0.42137445]]
+[[ 0.21818368  0.28590907  1.29165165  0.5179809 ]
+ [ 0.16228485  1.44110438  1.75188765 -0.395841  ]
+ [ 2.33978569 -0.45683281 -0.00649663 -0.49805206]
+ [-1.04426474  1.75376458 -1.6638435  -1.0948618 ]]
 Inverse of B:
-[[ 0.36625331 -0.26466573  0.3186939   1.51948552]
- [ 0.56272131  0.2674391   0.94369492  3.06170999]
- [ 0.43656815 -0.10199774 -0.77178743  0.47398678]
- [ 0.77821933  0.23856323 -0.49791468 -0.35521337]]
+[[ 0.79617039 -0.32893385  0.49637277  0.26979394]
+ [ 1.39161355 -0.36405311  0.20620061  0.69619539]
+ [-0.65983726  0.62520165 -0.18456832 -0.45424811]
+ [ 2.4724726  -1.21952115  0.13734661  0.63480549]]
 
-Determinant of B: 1.3175036573365237
+Determinant of B: -4.89318244778019
 Eigenvalues of B:
-[ 1.58846166  0.93732461 -1.20061307 -0.73702464]
+[ 1.87134824+0.j          0.46351712+0.97582419j  0.46351712-0.97582419j
+ -2.24045285+0.j        ]
 Eigenvectors of B:
-[[ 0.13634885 -0.12535281 -0.50208799 -0.51911697]
- [-0.9760041  -0.96700155 -0.46166192 -0.68107931]
- [ 0.05976753 -0.03267378 -0.58518142 -0.13514856]
- [-0.15891139 -0.21937888  0.43856427  0.49838078]]
+[[-0.39977028+0.j         -0.16403918+0.04952578j -0.16403918-0.04952578j
+  -0.41974056+0.j        ]
+ [-0.85564089+0.j         -0.43736652-0.39708038j -0.43736652+0.39708038j
+  -0.17288024+0.j        ]
+ [-0.22685781+0.j          0.31746971-0.02662807j  0.31746971+0.02662807j
+   0.55897162+0.j        ]
+ [-0.23790317+0.j         -0.72123503+0.j         -0.72123503-0.j
+   0.69388833+0.j        ]]
 </pre></div>
 </div>
 </div>
