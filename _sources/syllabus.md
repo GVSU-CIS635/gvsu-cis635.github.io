@@ -46,7 +46,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 9 (03/03) | Spring Break (No Class) | resources |
 | 10 (03/10) | Decision Tree: [slides](assets/pdf/decision-tree.pdf) | {ref}`resources <content:references:w10>` |
 | 11 (03/17) | Classifier Evaluation, Model Selection: [slides](assets/pdf/evaluation-selection.pdf) <br> Bayesian Classification: [slides](assets/pdf/bayesian-classification.pdf) <br> Quiz 5 – Due: 03/26 | {ref}`resources <content:references:w11>` |
-| 12 (03/24) | Linear, Logistic Regression and Perceptron: slides <br> Lazy Learning: slides <br> Clustering: slides | {ref}`resources <content:references:w12>` |
+| 12 (03/24) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Clustering: [slides](assets/pdf/clustering.pdf)\| [video](https://youtu.be/qaaiHx3NK40) | {ref}`resources <content:references:w12>` |
 | 13 (03/31) | Neural Network: slides \| video <br> CNN: slides \| video | {ref}`resources <content:references:w13>` |
 | 14 (04/07) | RNN: slides \| video \| code <br> Attention: slides \| video <br> Transformer: slides \| video | {ref}`resources <content:references:w14>` |
 | 15 (04/14) | Project Presentation <br> Final Exam: topics; practice | resources |
