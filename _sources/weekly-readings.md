@@ -68,6 +68,14 @@
 - [Bayesian network](https://personal.utdallas.edu/~nrr150130/gmbook/bayes.html)
 ```
 
+(content:references:w12)=
+
+## Week 12
+
+```{div} full-width
+- [What is Back Propagation?](https://www.youtube.com/watch?v=S5AGN9XfPK4)
+```
+
 (content:references:w13)=
 
 ## Week 13
@@ -76,6 +84,10 @@
 - Understanding Deep Learning (Still) Requires Rethinking Generalization
   - [video](https://www.youtube.com/watch?v=O42vde4tbG0)
   - [paper](https://dl.acm.org/doi/pdf/10.1145/3446776)
+  - [Understanding Long Short-Term Memory Networks (LSTMs) - Chris Olah](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+  - [The Illustrated Transformer - Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
+  - [Attention is all you need](https://arxiv.org/abs/1706.03762)
+
 ```
 
 (content:references:w14)=
