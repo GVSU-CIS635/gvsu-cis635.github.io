@@ -49,5 +49,5 @@ There is no main textbook for the class. However, you may use materials from the
 | 12 (03/24) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Clustering: [slides](assets/pdf/clustering.pdf) \| [video](https://youtu.be/qaaiHx3NK40) | {ref}`resources <content:references:w12>` |
 | 13 (03/31) | Neural Network: [slides](assets/pdf/nn.pdf) \| [video](https://youtu.be/T8GeAOjbTWs) <br> CNN: [slides](assets/pdf/cnn.pdf) \| [video](https://youtu.be/hOiHIAmQ-So) | {ref}`resources <content:references:w13>` |
 | 14 (04/07) | RNN: [slides](assets/pdf/rnn.pdf) \| [video](https://youtu.be/EZcn1_2OVfk)<br> Attention: [slides](assets/pdf/attention.pdf) \| [video](https://youtu.be/IfskrOqqB4Q) <br> Transformer: [slides](assets/pdf/transformer.pdf) \| [video](https://youtu.be/dm10YEEUa0k) \| [<i class="fa fa-code"></i> code](samples/air_passenger_forecast.ipynb) | {ref}`resources <content:references:w14>` |
-| 15 (04/14) | Project Presentation <br> Final Exam: topics; practice | resources |
+| 15 (04/14) | Project Presentation <br> Final Exam: [topics](exams/final-exam-topics.md) \| [practice](exams/final-exam-preparation) | resources |
 | 16 (04/21) | Final Exam |  |
