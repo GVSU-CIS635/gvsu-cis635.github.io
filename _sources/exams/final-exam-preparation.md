@@ -9,6 +9,8 @@
 
    $$Gini(D) = ... $$
 
+   <!-- 1 - (40/100)^2 - (60/100)^2 = 0.48 -->
+
 2. Given the following dataset with two categorical attributes (Weather and Time of Day) and a class label, use the Naïve Bayes classifier to predict the class label of a new sample (Weather = Sunny, Time of Day = Evening).
 
    | **Weather** | **Time of Day** | **Class Label (Go Outside)** |
@@ -66,7 +68,37 @@
    - **Round 1:** Merge the closest pair A and B into a cluster.
    - **Round 2:** Apply Single Linkage, Average Linkage, and Complete Linkage to determine the next merge. For each linkage method, identify the next cluster merge and explain how the choice of linkage affects the clustering result.
 
+     <!-- **Single Linkage**:
+
+     - After merging A and B, we calculate the minimum distance between the new cluster (AB) and other clusters.
+     - Distances: (AB)-C: 3.16, (AB)-D: 5, (AB)-E: 6.32, CD: 4.12. CE:3.26, DE: 5.39
+     - Result: Merge (AB) and C.
+
+     - **Average Linkage**:
+
+       - For average linkage, calculate the average distance between the new cluster (AB) and other clusters.
+       - Distances: (AB)-C: (4.12 + 3.16) / 2 = 3.64, (AB)-D: (7.07 + 5.00) /2 =6.035, (AB)-E: (7.00 + 6.32)/2 = 6.66, CD: 4.12. CE:3.26, DE: 5.39
+       - Result: Merge C and E.
+
+     - **Complete Linkage**:
+       - For complete linkage, calculate the maximum distance between the new cluster (AB) and other clusters.
+       - Distances: (AB)-C: 4.12, (AB)-D: 7.07, (AB)-E: 7.00, CD: 4.12. CE:3.26, DE: 5.39
+       - Result: Merge C and E. -->
+
 6. Consider a Convolutional Neural Network (CNN) layer that receives an input volume of size 128x65x3 (width x height x depth). If this layer uses 12 filters of size 5x5x3 with a stride of 3 and padding 3.
 
    - Calculate the output volume size of this layer.
    - The number of parameters in this layer.
+
+   <!-- - Calculate the output volume size of this layer.
+
+     $$
+     &\frac{128+6-5}{3}+1 = 44\\
+     &\frac{65+6-5}{3}+1 = 23\\
+     $$
+
+     output volume size = $44\times 23\times 12$.
+
+   - Calculate the number of parameters in this layer, considering both the weights and biases.
+
+     number of parameters = $\left((5\times 5\times 3)+1\right)\times 12 = 912$ -->
