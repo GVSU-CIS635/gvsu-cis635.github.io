@@ -6,11 +6,10 @@
 
    Given the following distribution of classes within the subsets of attribute $A$:
 
-   | Attribute $A$ | Instances of Class $X$ | Instances of Class $Y$ | total |
-   | ------------- | ---------------------- | ---------------------- | ----- |
-   | $a_1$         | 20                     | 30                     | _50_  |
-   | $a_2$         | 15                     | 35                     | _50_  |
-   | total         | _35_                   | _65_                   | _100_ |
+   | Attribute $A$ | Instances of Class $X$ | Instances of Class $Y$ |
+   | ------------- | ---------------------- | ---------------------- |
+   | $a_1$         | 20                     | 30                     |
+   | $a_2$         | 15                     | 35                     |
 
    - Calculate $Gini(D)$ using the provided data.
 
