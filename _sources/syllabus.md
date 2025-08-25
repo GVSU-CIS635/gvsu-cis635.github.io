@@ -48,7 +48,7 @@ There is no main textbook for the class. However, you may use materials from the
 
 | Week | Content | Reading |
 | --- | --- | --- |
-| 1. 08/25 | [Syllabus](assets/pdf/syllabus-intro.pdf), What is Data Mining, Data Mining Tasks, <br> Introduction to Python: [code](samples/python.ipynb) |  |
+| 1. 08/25 | [Syllabus](assets/pdf/syllabus-intro.pdf), What is Data Mining, Data Mining Tasks, <br> Introduction to Python: [code](samples/python.ipynb) | {ref}`resources <content:references:w1>` |
 | 2. 09/01 | Descriptive Statistics, Data Visualization, Introduction to NumPy and Pandas |  |
 | 3. 09/08 | Data Cleaning & Integration, Data Transformation, Data Compression & Sampling |  |
 | 4. 09/15 | Similarity and Distance Measures |  |
