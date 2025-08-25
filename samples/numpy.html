@@ -174,19 +174,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../free-resources.html">Free Books and Articles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../weekly-readings.html">Weekly Resources</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homeworks</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample Code</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homeworks/1.html">Homework 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homeworks/2.html">Homework 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homeworks/3.html">Homework 3</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../project/project-overview.html">Project Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/project-proposal.html">Project Proposal Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/project-progress-report.html">Project Progress Report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/project-final-report.html">Project Final Report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../project/challenges.html">Task: Crime Forecasting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Introduction to Python</a></li>
 </ul>
 
     </div>
@@ -492,10 +482,10 @@ Size = 6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uniformly distributed random numbers:
-[0.39591115 0.36709992 0.55659577 0.56889963]
+[0.07101873 0.20373812 0.62919494 0.19313393]
 
 Normally distributed random numbers:
-[-1.12448484 -1.75597869 -0.70779256 -0.22205479]
+[ 1.14549225 -1.6732867   0.84031137 -0.97025055]
 
 Sequential integers with a custom step:
 [-5 -4 -3 -2 -1  0  1  2  3  4]
@@ -818,13 +808,13 @@ Exponential function: np.exp(z) = [1.21824940e+01 1.82683524e-01 2.71126389e+01 
 Sorted array: np.sort(z) = [-4.4 -1.7  2.5  3.3  5.1]
 
 Array a: [-2. -1.  0.  1.  2.]
-Array b: [0.51224953 0.46271901 0.67527709 0.6415085  0.0118122 ]
+Array b: [0.00734031 0.67355429 0.76947562 0.20450548 0.97010403]
 
-Element-wise addition: np.add(a, b) = [-1.48775047 -0.53728099  0.67527709  1.6415085   2.0118122 ]
-Element-wise subtraction: np.subtract(a, b) = [-2.51224953 -1.46271901 -0.67527709  0.3584915   1.9881878 ]
-Element-wise multiplication: np.multiply(a, b) = [-1.02449906 -0.46271901  0.          0.6415085   0.02362439]
-Element-wise division: np.divide(a, b) = [ -3.90434718  -2.16113878   0.           1.55882581 169.31652642]
-Element-wise maximum: np.maximum(a, b) = [0.51224953 0.46271901 0.67527709 1.         2.        ]
+Element-wise addition: np.add(a, b) = [-1.99265969 -0.32644571  0.76947562  1.20450548  2.97010403]
+Element-wise subtraction: np.subtract(a, b) = [-2.00734031 -1.67355429 -0.76947562  0.79549452  1.02989597]
+Element-wise multiplication: np.multiply(a, b) = [-0.01468062 -0.67355429  0.          0.20450548  1.94020805]
+Element-wise division: np.divide(a, b) = [-272.46807948   -1.48466133    0.            4.88984463    2.06163458]
+Element-wise maximum: np.maximum(a, b) = [0.00734031 0.67355429 0.76947562 1.         2.        ]
 
 Array z: [ 4.5 -2.3  1.1  3.8 -4.6]
 
@@ -882,52 +872,52 @@ Sum of elements: np.sum(z) = 2.5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random matrix A:
-[[ 0.28981895  0.07727174]
- [ 0.16631152  1.44620734]
- [-0.34689874  0.35076048]]
+[[-1.84655196  0.04673481]
+ [ 2.32675816  0.50156401]
+ [ 1.01207268 -1.03552755]]
 
 Transpose of A, A.T:
-[[ 0.28981895  0.16631152 -0.34689874]
- [ 0.07727174  1.44620734  0.35076048]]
+[[-1.84655196  2.32675816  1.01207268]
+ [ 0.04673481  0.50156401 -1.03552755]]
 
-Random vector z: [-0.47046493  0.04874463]
+Random vector z: [-0.11753267 -0.7367823 ]
 
 Matrix-vector multiplication A.dot(z):
-[-0.13258307 -0.00774889  0.18030138]
+[ 0.1825968  -0.64301359  0.64400677]
 
 Matrix-matrix product A.dot(A.T):
-[[ 0.08996595  0.15995119 -0.07343396]
- [ 0.15995119  2.11917519  0.44957913]
- [-0.07343396  0.44957913  0.24337165]]
+[[ 3.41193829 -4.27303934 -1.91723999]
+ [-4.27303934  5.66536999  1.83546502]
+ [-1.91723999  1.83546502  2.09660843]]
 
 A.T.dot(A):
-[[0.23199328 0.14123739]
- [0.14123739 2.22051951]]
+[[9.8478488  0.03269075]
+ [0.03269075 1.32606791]]
 
 Square matrix B:
-[[-1.72292888  0.98959157  0.70769872 -0.84603348]
- [ 0.52683155 -0.56854281  0.02950835  0.28093564]
- [-0.22432955  1.76899462  0.12286362 -0.30401368]
- [ 0.55374889 -0.00507599  0.82779746 -1.05828807]]
+[[ 0.39411618  0.52489416 -0.02456062  0.57088976]
+ [-1.93114786  1.75221561 -0.65362453  0.51966259]
+ [-0.6513191   1.75223895 -1.47575983  1.79896522]
+ [-0.68380797  0.90031765 -0.43628221  0.44115856]]
 Inverse of B:
-[[-0.44706619  0.2326002   0.32578315  0.32555986]
- [-0.02155429  0.3170635   0.67898383 -0.09365152]
- [ 1.15929747  4.10803497  0.67168913 -0.02921107]
- [ 0.67298359  3.33350975  0.69260735 -0.79697305]]
+[[ -0.21896018  -3.16262871  -1.06684406   8.35916526]
+ [  0.16097361  -2.87711276  -1.61175635   9.75323547]
+ [  2.56121537   4.07980091   0.6160755  -10.63243549]
+ [  1.86499525   5.00416281   2.24490488 -15.19564466]]
 
-Determinant of B: -0.889580527673561
+Determinant of B: 0.11747487941750721
 Eigenvalues of B:
-[ 0.44772238+0.j         -1.49391189+0.81316319j -1.49391189-0.81316319j
- -0.68679474+0.j        ]
+[ 1.00444007+1.18918069j  1.00444007-1.18918069j -0.8393908 +0.j
+ -0.05775882+0.j        ]
 Eigenvectors of B:
-[[ 0.18142329+0.j         -0.23646964+0.59953388j -0.23646964-0.59953388j
-  -0.37052008+0.j        ]
- [ 0.25747335+0.j          0.14071072-0.22524417j  0.14071072+0.22524417j
-  -0.18381953+0.j        ]
- [ 0.80240484+0.j         -0.18365148+0.23726873j -0.18365148-0.23726873j
-   0.56656601+0.j        ]
- [ 0.50689204+0.j          0.65121616+0.j          0.65121616-0.j
-   0.71269082+0.j        ]]
+[[ 0.15168183-0.3452258j   0.15168183+0.3452258j   0.11670117+0.j
+  -0.3617618 +0.j        ]
+ [ 0.65064181+0.j          0.65064181-0.j         -0.12068527+0.j
+  -0.38408294+0.j        ]
+ [ 0.53971822-0.21330118j  0.53971822+0.21330118j -0.96869799+0.j
+   0.53186676+0.j        ]
+ [ 0.30627389-0.06229094j  0.30627389+0.06229094j -0.18286638+0.j
+   0.66236429+0.j        ]]
 </pre></div>
 </div>
 </div>

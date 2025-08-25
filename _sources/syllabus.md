@@ -8,17 +8,26 @@ to our **Knowledge Discovery and Data mining**(KDD) course. In this course, weâ€
 
 - <i class="fa fa-envelope"></i> **E-mail:** [yong.zhuang@gvsu.edu](mailto:yong.zhuang@gvsu.edu)
 - <i class="fa fa-building"></i> **Office:** MAK D-2-234
-- <i class="fa fa-building"></i> **Office Hours:** Monday 3:00 pm - 5:00 pm, remote (Zoom)
+- <i class="fa fa-building"></i> **Office Hours:** Tuesday 3:00 pm - 5:00 pm, MAK D-2-234
 - <i class="fa fa-book"></i> **Course Page:** [Blackboard](https://lms.gvsu.edu/) & [Course Website](https://gvsu-cis635.github.io)
 - <i class="fa fa-book-reader"></i> **Syllabus:** [View the syllabus here](assets/pdf/syllabus.pdf)
 - <i class="fa fa-video"></i> **Zoom:** [Meeting ID: 396 668 6420](https://gvsu-edu.zoom.us/j/3966686420?pwd=WGxpc0N4YWcvOU9aWGxWZGYxbXZUdz09), Password: 587684
 
 ## Class Schedule
 
-### Section 03
+### Section 01
 
-- **Midterm:** The week starting Monday, February 17
-- **Final Exam:** The week starting Monday, April 21
+- **Class Time:** Tuesday 6:00 pm - 8:50 pm
+- **Room:** Pew Campus | DeVos Center | Room 210A
+- **Midterm:** October 7 (Tuesday), 6:00 pm - 7:15 pm
+- **Final Exam:** December 9 (Tuesday), 6:00 pm - 7:50 pm
+
+### Section 02
+
+- **Class Time:** Monday, Wednesday 4:30 pm - 5:45 pm
+- **Room:** Pew Campus | DeVos Center | Room 210A
+- **Midterm:** October 6 (Monday), 4:30 pm - 5:45 pm
+- **Final Exam:** December 10 (Wednesday), 4:00 pm - 5:50 pm
 
 ## Preference Books
 
@@ -31,23 +40,27 @@ There is no main textbook for the class. However, you may use materials from the
 
 ## Tentative Schedule
 
+- **August 31 - September 1, 2025 Labor Day Recess:** No classes!
+- **October 19-21, 2025 Fall Break:** No classes!
+- **November 26-30, 2025 Thanksgiving Recess:** No classes!
+
 - To execute the sample Jupyter Notebook code <i class="fa fa-code"></i>, click on the rocket icon <i class="fa fa-rocket" aria-hidden="true"></i> at the top of the page, which will open the notebook in Google Colab for interactive use.
 
 | Week | Content | Reading |
 | --- | --- | --- |
-| 1 (01/06) | [Syllabus](assets/pdf/syllabus.pdf) <br> What is Data Mining: [slides](assets/pdf/data-mining-intro.pdf) \| [video](https://youtu.be/vLOU_C9U3TM) <br> Data Mining Tasks: [slides](assets/pdf/data-mining-tasks.pdf) \| [video](https://youtu.be/pPdu-E95Mng)<br> Introduction to Python: [code](samples/python.ipynb) | {ref}`resources <content:references:w1>` |
-| 2 (01/13) | Descriptive Statistics: [slides](assets/pdf/data-exploration-descriptive-statistics.pdf) \| [code](samples/descriptive_statistics.ipynb) \| [video](https://youtu.be/HDRjhgB6EN0) <br> Data Visualization: [slides](assets/pdf/data-exploration-data-visualization.pdf) \| [video](https://youtu.be/VcuphW6n1Mo) <br> Introduction to Numpy: [code](samples/numpy.ipynb) <br> Introduction to Pandas: [code](samples/pandas.ipynb) | {ref}`resources <content:references:w2>` |
-| 3 (01/20) | Data Cleaning & Integration: [slides](assets/pdf/cleaning-Integration.pdf) \| [video](https://youtu.be/9EBOeQA6LD0) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Transformation: [slides](assets/pdf/data-transformation.pdf) \| [video](https://youtu.be/8fws0-6h52I) \| [<i class="fa fa-code"></i> code](samples/data-transformation.ipynb) <br> Data Compression & Sampling: [slides](assets/pdf/data-compression-sampling.pdf) \| [video](https://youtu.be/AgIVTNNNv_E) \| [<i class="fa fa-code"></i> code](samples/data-compression-sampling.ipynb) | {ref}`resources <content:references:w3>` |
-| 4 (01/27) | Object Analysis: Similarity and distance measures: [slides](assets/pdf/similarity-distance.pdf) \| [video](https://youtu.be/bkcMCVe_fqw) | {ref}`resources <content:references:w4>` |
-| 5 (02/03) | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) | {ref}`resources <content:references:w5>` |
-| 6 (02/10) | Midterm Exam: [topics](exams/midterm-exam-topics.md) \| [practice](quizzes/4.md) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w6>` |
-| 7 (02/17) | Midterm Exam: questions | resources |
-| 8 (02/24) | Feature Extraction: [slides](assets/pdf/dimensionality-reduction-feature-extraction.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) \| [video](https://youtu.be/Nh8q9mVgq14) <br> Feature Selection: [slides](assets/pdf/dimensionality-reduction-feature-selection.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_selection.ipynb) <br> Markov Blanket: [slides](assets/pdf/markov-blanket-boundary.pdf) | {ref}`resources <content:references:w8>` |
-| 9 (03/03) | Spring Break (No Class) | resources |
-| 10 (03/10) | Decision Tree: [slides](assets/pdf/decision-tree.pdf) | {ref}`resources <content:references:w10>` |
-| 11 (03/17) | Classifier Evaluation, Model Selection: [slides](assets/pdf/evaluation-selection.pdf) <br> Bayesian Classification: [slides](assets/pdf/bayesian-classification.pdf) <br> Quiz 5 â€“ Due: 03/26 | {ref}`resources <content:references:w11>` |
-| 12 (03/24) | Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) <br> Clustering: [slides](assets/pdf/clustering.pdf) \| [video](https://youtu.be/qaaiHx3NK40) | {ref}`resources <content:references:w12>` |
-| 13 (03/31) | Neural Network: [slides](assets/pdf/nn.pdf) \| [video](https://youtu.be/T8GeAOjbTWs) <br> CNN: [slides](assets/pdf/cnn.pdf) \| [video](https://youtu.be/hOiHIAmQ-So) | {ref}`resources <content:references:w13>` |
-| 14 (04/07) | RNN: [slides](assets/pdf/rnn.pdf) \| [video](https://youtu.be/EZcn1_2OVfk)<br> Attention: [slides](assets/pdf/attention.pdf) \| [video](https://youtu.be/IfskrOqqB4Q) <br> Transformer: [slides](assets/pdf/transformer.pdf) \| [video](https://youtu.be/dm10YEEUa0k) \| [<i class="fa fa-code"></i> code](samples/air_passenger_forecast.ipynb) | {ref}`resources <content:references:w14>` |
-| 15 (04/14) | Project Presentation <br> Final Exam: [topics](exams/final-exam-topics.md) \| [practice](exams/final-exam-preparation) | resources |
-| 16 (04/21) | Final Exam |  |
+| 1. 08/25 | [Syllabus](assets/pdf/syllabus-intro.pdf), What is Data Mining, Data Mining Tasks, <br> Introduction to Python: [code](samples/python.ipynb) |  |
+| 2. 09/01 | Descriptive Statistics, Data Visualization, Introduction to NumPy and Pandas |  |
+| 3. 09/08 | Data Cleaning & Integration, Data Transformation, Data Compression & Sampling |  |
+| 4. 09/15 | Similarity and Distance Measures |  |
+| 5. 09/22 | Feature Analysis: Relationships |  |
+| 6. 09/29 | Midterm Topics and Practice, Data Transformation II |  |
+| 7. 10/06 | **Midterm Exam** |  |
+| 8. 10/13 | Feature Extraction, Feature Selection, Markov Blanket |  |
+| 9. 10/20 | **Fall Break (No Class for Section 1)**, TBD for section 2 |  |
+| 10. 10/27 | Decision Tree |  |
+| 11. 11/03 | Classifier Evaluation, Model Selection, Bayesian Classification |  |
+| 12. 11/10 | Linear/Logistic Regression, Perceptron, Lazy Learning, Clustering |  |
+| 13. 11/17 | Neural Network, CNN |  |
+| 14. 11/24 | RNN, Attention, Transformer |  |
+| 15. 12/01 | Project Presentation, Final Exam Topics and Practice |  |
+| 16. 12/08 | **Final Exam** |  |
