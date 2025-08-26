@@ -1,0 +1,70 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book #jb-article
+root: syllabus
+parts:
+  #   - caption: Midterm Exam
+  #     chapters:
+  #     - file: midterm-exam-topics
+  #     - file: midterm-exam-answers
+
+  #   - caption: Final Exam
+  #     chapters:
+  #     - file: final-exam-topics
+  #     - file: final-exam-preparation
+  #     - file: final-exam-answer
+  - caption: Resources
+    chapters:
+      - file: free-resources
+      - file: weekly-readings
+  #     - file: additional-references.md
+  #     - file: kl-divergence
+  #     - file: arima
+  #     - file: air-passenger-forecast
+  # - caption: Homeworks
+  #   numbered: false
+  #   chapters:
+  #     - file: homeworks/1
+  #     - file: homeworks/2
+  #     - file: homeworks/3
+  #     - file: homeworks/4
+  # - file: homeworks/5
+  #     - file: assignment2
+  #     - file: assignment2-answer
+  #     - file: assignment3
+  #     - file: assignment3-answer
+  #     - file: assignment4
+  #     - file: sample-code
+  # - caption: Quizzes
+  #   numbered: false
+  #   chapters:
+  #     - file: quizzes/1
+  #     - file: quizzes/4
+  - caption: Sample Code
+    chapters:
+      - file: samples/python.ipynb
+  # - file: samples/numpy.ipynb
+  # - file: samples/pandas.ipynb
+  # - file: samples/descriptive_statistics.ipynb
+  # - file: samples/cleaning-Integration.ipynb
+  # - file: samples/data-transformation.ipynb
+  # - file: samples/data-compression-sampling.ipynb
+  # - file: samples/feature_extraction.ipynb
+  # - file: samples/feature_selection.ipynb
+  # - file: samples/clustering.ipynb
+  # - file: samples/air_passenger_forecast.ipynb
+  # - file: samples/data-exploration.ipynb
+  # - file: samples/preprocessing.ipynb
+  # - file: samples/regression.ipynb
+  # - file: samples/classification.ipynb
+  # - file: samples/cluster.ipynb
+  # - file: samples/anomaly-detection.ipynb
+  # - file: CSIT440_python_example_inClass.ipynb
+  # - caption: Term Project
+  #   chapters:
+  #     - file: project/project-overview
+  #     - file: project/project-proposal
+  #     - file: project/project-progress-report
+  #     - file: project/project-final-report #project-final-report
+  #     - file: project/challenges
