@@ -22,7 +22,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/GVSU-CIS371/gvsu-cis371.github.io # Online location of your book
+  url: https://github.com/GVSU-CIS635/gvsu-cis635.github.io # Online location of your book
   path_to_book: book # Optional path to your book, relative to the repository root
   branch: main # Which branch of the repository should be used when creating links (optional)
 
@@ -36,6 +36,7 @@ html:
   use_fullscreen_button: false
   use_pageview_button: false
   use_sphinx_button: false
+
   favicon: https://www.gvsu.edu/cms4/asset/94807988-C47A-2A7B-05628C365AC3C2FA/gvsu_avatar_3[1678817053].jpg
 launch_buttons:
   notebook_interface: classic # The interface interactive links will activate ["classic", "jupyterlab"]
