@@ -49,7 +49,7 @@ There is no main textbook for the class. However, you may use materials from the
 | Week | Content | Reading |
 | --- | --- | --- |
 | 1. 08/25 | [Syllabus](assets/pdf/syllabus-intro.pdf)<br> What is Data Mining: [slides](assets/pdf/data-mining-intro.pdf) <br> Data Mining Tasks: [slides](assets/pdf/data-mining-tasks.pdf) <br> Introduction to Python: [code](samples/python.ipynb) <br> Quiz 1 | {ref}`resources <content:references:w1>` |
-| 2. 09/01 | Descriptive Statistics, Data Visualization, Introduction to NumPy and Pandas <br> Quiz 2 |  |
+| 2. 09/01 | Descriptive Statistics: [slides](assets/pdf/data-exploration-descriptive-statistics.pdf) \| [code](samples/descriptive_statistics.ipynb) <br> Data Visualization: [slides](assets/pdf/data-exploration-data-visualization.pdf) <br> Introduction to Numpy: [code](samples/numpy.ipynb) <br> Introduction to Pandas: [code](samples/pandas.ipynb) <br> Quiz 2 | {ref}`resources <content:references:w2>` |
 | 3. 09/08 | Data Cleaning & Integration, Data Transformation, Data Compression & Sampling <br> Quiz 3 |  |
 | 4. 09/15 | Similarity and Distance Measures <br> Homework 1 |  |
 | 5. 09/22 | Feature Analysis: Relationships |  |
