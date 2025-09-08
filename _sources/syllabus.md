@@ -50,7 +50,7 @@ There is no main textbook for the class. However, you may use materials from the
 | --- | --- | --- |
 | 1. 08/25 | [Syllabus](assets/pdf/syllabus-intro.pdf)<br> What is Data Mining: [slides](assets/pdf/data-mining-intro.pdf) <br> Data Mining Tasks: [slides](assets/pdf/data-mining-tasks.pdf) <br> Introduction to Python: [code](samples/python.ipynb) <br> Quiz 1 | {ref}`resources <content:references:w1>` |
 | 2. 09/01 | Descriptive Statistics: [slides](assets/pdf/data-exploration-descriptive-statistics.pdf) \| [code](samples/descriptive_statistics.ipynb) <br> Data Visualization: [slides](assets/pdf/data-exploration-data-visualization.pdf) <br> Introduction to Numpy: [code](samples/numpy.ipynb) <br> Introduction to Pandas: [code](samples/pandas.ipynb) <br> Quiz 2 | {ref}`resources <content:references:w2>` |
-| 3. 09/08 | Data Cleaning & Integration, Data Transformation, Data Compression & Sampling <br> Quiz 3 |  |
+| 3. 09/08 | Data Cleaning & Integration: [slides](assets/pdf/cleaning-Integration.pdf) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Compression & Sampling: [slides](assets/pdf/data-compression-sampling.pdf) <br> Data Transformation <br> Quiz 3 | {ref}`resources <content:references:w3>` |
 | 4. 09/15 | Similarity and Distance Measures <br> Homework 1 |  |
 | 5. 09/22 | Feature Analysis: Relationships |  |
 | 6. 09/29 | Midterm Topics and Practice, Data Transformation II |  |
