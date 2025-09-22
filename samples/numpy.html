@@ -1,72 +1,74 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Introduction to Numpy &#8212; GVSU CIS 635 - KDD</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'samples/numpy';</script>
-    <link rel="shortcut icon" href="https://www.gvsu.edu/cms4/asset/94807988-C47A-2A7B-05628C365AC3C2FA/gvsu_avatar_3[1678817053].jpg"/>
+    <link rel="icon" href="https://www.gvsu.edu/cms4/asset/94807988-C47A-2A7B-05628C365AC3C2FA/gvsu_avatar_3[1678817053].jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Pandas" href="pandas.html" />
+    <link rel="prev" title="Introduction to Python" href="python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -74,23 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -98,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -106,16 +100,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -128,9 +131,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../syllabus.html">
+  
   
   
   
@@ -140,12 +147,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="GVSU CIS 635 - KDD - Home"/>
+    <img src="../_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="GVSU CIS 635 - KDD - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -161,8 +175,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../weekly-readings.html">Weekly Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample Code</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python.html">Introduction to Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptive_statistics.html">Descriptive Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleaning-Integration.html">Data Preprocessing I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-transformation.html">Data Preprocessing II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compression-sampling.html">Data Preprocessing III</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/project-overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-proposal.html">Project Proposal Guide</a></li>
 </ul>
 
     </div>
@@ -178,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -187,14 +212,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -219,14 +244,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/GVSU-CIS635/gvsu-cis635.github.io/blob/main/book/samples/numpy.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -300,26 +325,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -366,17 +385,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-numpy">
-<h1>Introduction to Numpy<a class="headerlink" href="#introduction-to-numpy" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-numpy">
+<h1>Introduction to Numpy<a class="headerlink" href="#introduction-to-numpy" title="Link to this heading">#</a></h1>
 <p><strong>Objective</strong>: Gain practical skills in manipulating and analyzing data using Numpy, one of Python’s most powerful libraries for data science.</p>
 <p>This tutorial includes step-by-step examples to familiarize you with the essential functionalities of Numpy. Each example is designed to demonstrate key concepts and techniques for data analysis. To execute the code, select the cell and press SHIFT-ENTER.</p>
-<div class="section" id="what-is-numpy">
-<h2>What is Numpy?<a class="headerlink" href="#what-is-numpy" title="Permalink to this heading">#</a></h2>
+<section id="what-is-numpy">
+<h2>What is Numpy?<a class="headerlink" href="#what-is-numpy" title="Link to this heading">#</a></h2>
 <p>Numpy, short for ‘Numerical Python’, is a fundamental package for scientific computing in Python. It provides powerful support for large, multi-dimensional array and matrix data structures and offers a wide range of mathematical functions to operate on these arrays.</p>
-<div class="section" id="creating-ndarray">
-<h3>Creating ndarray<a class="headerlink" href="#creating-ndarray" title="Permalink to this heading">#</a></h3>
+<section id="creating-ndarray">
+<h3>Creating ndarray<a class="headerlink" href="#creating-ndarray" title="Link to this heading">#</a></h3>
 <p>The primary data structure in Numpy is the ndarray, a multi-dimensional array offering fast and efficient array operations. This section will demonstrate how to create ndarrays from lists and tuples, highlighting the ease of transitioning from Python’s standard data structures to Numpy’s array-oriented computing approach. You’ll learn how to create both one-dimensional and multi-dimensional arrays, serving as the foundation for more complex numerical computations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -432,8 +451,8 @@ Size = 6
 </div>
 </div>
 </div>
-<div class="section" id="the-following-examples-utilize-numpy-functions-to-create-arrays-with-random-values-integers-in-a-range-reshaped-matrices-and-equally-spaced-values-in-specified-intervals">
-<h4>The following examples utilize numpy functions to create arrays with random values, integers in a range, reshaped matrices, and equally spaced values in specified intervals.<a class="headerlink" href="#the-following-examples-utilize-numpy-functions-to-create-arrays-with-random-values-integers-in-a-range-reshaped-matrices-and-equally-spaced-values-in-specified-intervals" title="Permalink to this heading">#</a></h4>
+<section id="the-following-examples-utilize-numpy-functions-to-create-arrays-with-random-values-integers-in-a-range-reshaped-matrices-and-equally-spaced-values-in-specified-intervals">
+<h4>The following examples utilize numpy functions to create arrays with random values, integers in a range, reshaped matrices, and equally spaced values in specified intervals.<a class="headerlink" href="#the-following-examples-utilize-numpy-functions-to-create-arrays-with-random-values-integers-in-a-range-reshaped-matrices-and-equally-spaced-values-in-specified-intervals" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Uniformly distributed random numbers:&quot;</span><span class="p">)</span>
@@ -458,10 +477,10 @@ Size = 6
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uniformly distributed random numbers:
-[0.07239911 0.47638573 0.39611558 0.80290384]
+[0.23202502 0.9856551  0.79635074 0.20869494]
 
 Normally distributed random numbers:
-[-0.3538283  -0.86480035  1.34965225 -1.23163304]
+[ 0.30419614  1.19773595  0.13920363 -0.01607627]
 
 Sequential integers with a custom step:
 [-5 -4 -3 -2 -1  0  1  2  3  4]
@@ -481,9 +500,9 @@ Logarithmically spaced values:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-following-examples-show-how-to-create-matrices-filled-with-zeros-or-ones-and-an-identity-matrix-using-numpy-functions">
-<h4>The following examples show how to create matrices filled with zeros or ones and an identity matrix using numpy functions.<a class="headerlink" href="#the-following-examples-show-how-to-create-matrices-filled-with-zeros-or-ones-and-an-identity-matrix-using-numpy-functions" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="the-following-examples-show-how-to-create-matrices-filled-with-zeros-or-ones-and-an-identity-matrix-using-numpy-functions">
+<h4>The following examples show how to create matrices filled with zeros or ones and an identity matrix using numpy functions.<a class="headerlink" href="#the-following-examples-show-how-to-create-matrices-filled-with-zeros-or-ones-and-an-identity-matrix-using-numpy-functions" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrix filled with zeros:&quot;</span><span class="p">)</span>
@@ -518,10 +537,10 @@ Identity matrix:
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="element-wise-operations-in-numpy">
-<h3>Element-wise Operations in Numpy<a class="headerlink" href="#element-wise-operations-in-numpy" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="element-wise-operations-in-numpy">
+<h3>Element-wise Operations in Numpy<a class="headerlink" href="#element-wise-operations-in-numpy" title="Link to this heading">#</a></h3>
 <p>Numpy enables efficient element-wise operations on ndarrays using standard arithmetic operators. These operations allow for concise and fast manipulation of array data, as each element is processed in parallel. This section demonstrates how to perform common arithmetic operations like addition, subtraction, multiplication, and division on an element-by-element basis in numpy arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,9 +591,9 @@ b ** c = [               25             50625         244140625     225187539062
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="indexing-and-slicing-in-numpy-arrays">
-<h3>Indexing and Slicing in Numpy Arrays<a class="headerlink" href="#indexing-and-slicing-in-numpy-arrays" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="indexing-and-slicing-in-numpy-arrays">
+<h3>Indexing and Slicing in Numpy Arrays<a class="headerlink" href="#indexing-and-slicing-in-numpy-arrays" title="Link to this heading">#</a></h3>
 <p>Within a Numpy array, a variety of methods are available for selecting specific elements or subsets. It’s important to note that when you assign an array or its part to a new variable, it creates a reference to the original array, not a separate copy. To create an actual copy of an array, you must explicitly use the .copy() function to avoid unintended changes to the original data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,8 +631,8 @@ a remains unchanged = [ 10  11 999 999 999  15  16  17  18  19]
 </div>
 </div>
 </div>
-<div class="section" id="the-following-example-contrasts-how-element-retrieval-varies-between-a-standard-python-list-and-a-numpy-ndarray-highlighting-the-unique-capabilities-and-syntax-used-in-numpy">
-<h4>The following example contrasts how element retrieval varies between a standard Python list and a numpy ndarray, highlighting the unique capabilities and syntax used in numpy.<a class="headerlink" href="#the-following-example-contrasts-how-element-retrieval-varies-between-a-standard-python-list-and-a-numpy-ndarray-highlighting-the-unique-capabilities-and-syntax-used-in-numpy" title="Permalink to this heading">#</a></h4>
+<section id="the-following-example-contrasts-how-element-retrieval-varies-between-a-standard-python-list-and-a-numpy-ndarray-highlighting-the-unique-capabilities-and-syntax-used-in-numpy">
+<h4>The following example contrasts how element retrieval varies between a standard Python list and a numpy ndarray, highlighting the unique capabilities and syntax used in numpy.<a class="headerlink" href="#the-following-example-contrasts-how-element-retrieval-varies-between-a-standard-python-list-and-a-numpy-ndarray-highlighting-the-unique-capabilities-and-syntax-used-in-numpy" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a new 2D list</span>
@@ -656,9 +675,9 @@ myNew2dArray[:2, 1:] =
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-following-examples-illustrate-how-to-use-boolean-indexing-to-select-elements-from-a-numpy-array">
-<h4>The following examples illustrate how to use boolean indexing to select elements from a numpy array<a class="headerlink" href="#the-following-examples-illustrate-how-to-use-boolean-indexing-to-select-elements-from-a-numpy-array" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="the-following-examples-illustrate-how-to-use-boolean-indexing-to-select-elements-from-a-numpy-array">
+<h4>The following examples illustrate how to use boolean indexing to select elements from a numpy array<a class="headerlink" href="#the-following-examples-illustrate-how-to-use-boolean-indexing-to-select-elements-from-a-numpy-array" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a different numpy 2D array</span>
@@ -688,9 +707,9 @@ Elements in the first row less than 13:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="more-indexing-examples">
-<h4>More indexing examples.<a class="headerlink" href="#more-indexing-examples" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="more-indexing-examples">
+<h4>More indexing examples.<a class="headerlink" href="#more-indexing-examples" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a numpy 2D array with a different shape</span>
@@ -735,10 +754,10 @@ Selected Elements: [20 18 13 11 12]
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="numpy-arithmetic-and-statistical-functions">
-<h3>Numpy Arithmetic and Statistical Functions<a class="headerlink" href="#numpy-arithmetic-and-statistical-functions" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="numpy-arithmetic-and-statistical-functions">
+<h3>Numpy Arithmetic and Statistical Functions<a class="headerlink" href="#numpy-arithmetic-and-statistical-functions" title="Link to this heading">#</a></h3>
 <p>The following examples illustrate the use of numpy functions for basic arithmetic operations on arrays and performing common statistical calculations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -784,13 +803,13 @@ Exponential function: np.exp(z) = [1.21824940e+01 1.82683524e-01 2.71126389e+01 
 Sorted array: np.sort(z) = [-4.4 -1.7  2.5  3.3  5.1]
 
 Array a: [-2. -1.  0.  1.  2.]
-Array b: [0.89387329 0.54879748 0.45214747 0.11909754 0.9866667 ]
+Array b: [0.67123193 0.83078361 0.4949503  0.84699551 0.77841965]
 
-Element-wise addition: np.add(a, b) = [-1.10612671 -0.45120252  0.45214747  1.11909754  2.9866667 ]
-Element-wise subtraction: np.subtract(a, b) = [-2.89387329 -1.54879748 -0.45214747  0.88090246  1.0133333 ]
-Element-wise multiplication: np.multiply(a, b) = [-1.78774658 -0.54879748  0.          0.11909754  1.97333339]
-Element-wise division: np.divide(a, b) = [-2.23745359 -1.82216579  0.          8.39647918  2.02702696]
-Element-wise maximum: np.maximum(a, b) = [0.89387329 0.54879748 0.45214747 1.         2.        ]
+Element-wise addition: np.add(a, b) = [-1.32876807 -0.16921639  0.4949503   1.84699551  2.77841965]
+Element-wise subtraction: np.subtract(a, b) = [-2.67123193 -1.83078361 -0.4949503   0.15300449  1.22158035]
+Element-wise multiplication: np.multiply(a, b) = [-1.34246386 -0.83078361  0.          0.84699551  1.55683929]
+Element-wise division: np.divide(a, b) = [-2.97959604 -1.20368287  0.          1.1806438   2.56930822]
+Element-wise maximum: np.maximum(a, b) = [0.67123193 0.83078361 0.4949503  1.         2.        ]
 
 Array z: [ 4.5 -2.3  1.1  3.8 -4.6]
 
@@ -803,9 +822,9 @@ Sum of elements: np.sum(z) = 2.5
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="numpy-linear-algebra">
-<h3>Numpy linear algebra<a class="headerlink" href="#numpy-linear-algebra" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="numpy-linear-algebra">
+<h3>Numpy linear algebra<a class="headerlink" href="#numpy-linear-algebra" title="Link to this heading">#</a></h3>
 <p>The following examples illustrate various linear algebra operations in numpy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -848,61 +867,59 @@ Sum of elements: np.sum(z) = 2.5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random matrix A:
-[[ 2.39319753  0.44491731]
- [-0.47381425 -1.5185755 ]
- [ 1.04365372 -0.87075914]]
+[[ 0.44460762  0.24025008]
+ [ 0.63189399  1.93397873]
+ [-0.06139517  0.40474055]]
 
 Transpose of A, A.T:
-[[ 2.39319753 -0.47381425  1.04365372]
- [ 0.44491731 -1.5185755  -0.87075914]]
+[[ 0.44460762  0.63189399 -0.06139517]
+ [ 0.24025008  1.93397873  0.40474055]]
 
-Random vector z: [-0.18825912 -0.37760109]
+Random vector z: [-0.25029379 -1.47136263]
 
 Matrix-vector multiplication A.dot(z):
-[-0.61854253  0.66261562  0.13232227]
+[-0.46477751 -3.00374317 -0.58015328]
 
 Matrix-matrix product A.dot(A.T):
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 5.92534581 -1.80957163  2.11025369]
- [-1.80957163  2.53057149  0.82781549]
- [ 2.11025369  0.82781549  1.84743458]]
+[[0.25539603 0.74558343 0.06994219]
+ [0.74558343 4.13956376 0.74396437]
+ [0.06994219 0.74396437 0.16758428]]
 
 A.T.dot(A):
-[[7.04110744 0.87552671]
- [0.87552671 3.26224444]]
+[[0.60073531 1.30403744]
+ [1.30403744 3.96180875]]
 
 Square matrix B:
-[[-0.13884909  0.68764503 -0.70535504 -1.12275994]
- [ 0.54450762 -1.46813336  2.05777475 -0.94077304]
- [ 0.32789733 -0.00214379  0.81392886 -0.11225733]
- [-0.02897246 -1.21514337  0.43524972 -0.50102783]]
+[[-1.16031047  1.20905595  0.027533   -0.60026946]
+ [-1.53072262 -0.64602105 -0.16843002  0.17351147]
+ [-1.73905308  0.3710992   0.43350042  0.0264479 ]
+ [-1.00476533 -0.67985001 -0.08198182 -0.18758618]]
 Inverse of B:
-[[  2.09242226 -24.47207601  47.28395886  30.66777871]
- [ -0.1203622    4.29952091  -7.72728993  -6.072099  ]
- [ -0.93127045   9.80141452 -17.76075733 -12.33771432]
- [ -0.63808928  -0.49788691   0.57774823   0.23943421]]
+[[-0.14665223 -0.42009147 -0.14244016  0.06062772]
+ [ 0.46654861  0.44000685 -0.06579825 -1.09522393]
+ [-0.95801637 -2.15949958  1.77802109  1.31883355]
+ [-0.4866674   1.59923501  0.22435807 -2.26268806]]
 
-Determinant of B: -0.059320269705756164
+Determinant of B: -0.6020642419740603
 Eigenvalues of B:
-[-2.09239268+0.j          1.09710968+0.j         -0.14939921+0.05933725j
- -0.14939921-0.05933725j]
+[-0.68217233+1.1439769j -0.68217233-1.1439769j -0.68878614+0.j
+  0.49271352+0.j       ]
 Eigenvectors of B:
-[[ 0.07292011+0.j          0.36608878+0.j          0.93217987+0.j
-   0.93217987-0.j        ]
- [ 0.79399732+0.j          0.65527142+0.j         -0.16221565-0.00262006j
-  -0.16221565+0.00262006j]
- [ 0.01566239+0.j          0.55875122+0.j         -0.30450347-0.02300574j
-  -0.30450347+0.02300574j]
- [ 0.60332877+0.j         -0.35269738+0.j          0.10070797-0.03641691j
-   0.10070797+0.03641691j]]
+[[-0.04154104+0.39407643j -0.04154104-0.39407643j -0.11255529+0.j
+  -0.04966549+0.j        ]
+ [-0.61586064+0.j         -0.61586064-0.j         -0.47679644+0.j
+  -0.07600157+0.j        ]
+ [-0.23591984+0.37751493j -0.23591984-0.37751493j  0.00379193+0.j
+   0.99543755+0.j        ]
+ [-0.46717163-0.2174138j  -0.46717163+0.2174138j  -0.87176951+0.j
+   0.02934596+0.j        ]]
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -929,23 +946,39 @@ Eigenvectors of B:
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
+    <a class="left-prev"
+       href="python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Pandas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -991,6 +1024,7 @@ By Dr.Yong Zhuang
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2025.
@@ -1017,8 +1051,8 @@ By Dr.Yong Zhuang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

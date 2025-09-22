@@ -1,73 +1,73 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Welcome &#8212; GVSU CIS 635 - KDD</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus';</script>
-    <link rel="shortcut icon" href="https://www.gvsu.edu/cms4/asset/94807988-C47A-2A7B-05628C365AC3C2FA/gvsu_avatar_3[1678817053].jpg"/>
+    <link rel="icon" href="https://www.gvsu.edu/cms4/asset/94807988-C47A-2A7B-05628C365AC3C2FA/gvsu_avatar_3[1678817053].jpg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Free Books and Articles" href="free-resources.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,23 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -99,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,16 +99,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -129,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="#">
+  
   
   
   
@@ -141,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="GVSU CIS 635 - KDD - Home"/>
+    <img src="_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="GVSU CIS 635 - KDD - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -164,6 +178,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample Code</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="samples/python.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/numpy.html">Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/pandas.html">Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/descriptive_statistics.html">Descriptive Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/cleaning-Integration.html">Data Preprocessing I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/data-transformation.html">Data Preprocessing II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples/compression-sampling.html">Data Preprocessing III</a></li>
 </ul>
 
     </div>
@@ -179,7 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -188,14 +208,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -270,26 +290,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -327,13 +341,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
+<h1>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
 <p>to our <strong>Knowledge Discovery and Data mining</strong>(KDD) course. In this course, we’ll delve into the world of data mining, uncovering valuable insights from vast datasets. Explore techniques for identifying meaningful patterns, correlations, and trends, and apply them to real-world and synthetic data. Topics encompass all stages of knowledge discovery, from association rules to cluster analysis, classification, and regression. Through hands-on coding, students will implement essential data mining algorithms and use existing tools to expand their skill set in practical applications</p>
-<div class="section" id="course-information">
-<h2>Course Information<a class="headerlink" href="#course-information" title="Permalink to this heading">#</a></h2>
+<section id="course-information">
+<h2>Course Information<a class="headerlink" href="#course-information" title="Link to this heading">#</a></h2>
 <p><strong>Instructor:</strong> Dr. Yong Zhuang</p>
 <ul class="simple">
 <li><p><i class="fa fa-envelope"></i> <strong>E-mail:</strong> <a class="reference external" href="mailto:yong&#46;zhuang&#37;&#52;&#48;gvsu&#46;edu">yong<span>&#46;</span>zhuang<span>&#64;</span>gvsu<span>&#46;</span>edu</a></p></li>
@@ -343,46 +357,46 @@ document.write(`
 <li><p><i class="fa fa-book-reader"></i> <strong>Syllabus:</strong> <a class="reference download internal" download="" href="_downloads/79cea6be8182bafb3a909799f9b692fd/syllabus.pdf"><span class="xref download myst">View the syllabus here</span></a></p></li>
 <li><p><i class="fa fa-video"></i> <strong>Zoom:</strong> <a class="reference external" href="https://gvsu-edu.zoom.us/j/3966686420?pwd=WGxpc0N4YWcvOU9aWGxWZGYxbXZUdz09">Meeting ID: 396 668 6420</a>, Password: 587684</p></li>
 </ul>
-</div>
-<div class="section" id="class-schedule">
-<h2>Class Schedule<a class="headerlink" href="#class-schedule" title="Permalink to this heading">#</a></h2>
-<div class="section" id="section-01">
-<h3>Section 01<a class="headerlink" href="#section-01" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="class-schedule">
+<h2>Class Schedule<a class="headerlink" href="#class-schedule" title="Link to this heading">#</a></h2>
+<section id="section-01">
+<h3>Section 01<a class="headerlink" href="#section-01" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Class Time:</strong> Tuesday 6:00 pm - 8:50 pm</p></li>
 <li><p><strong>Room:</strong> Pew Campus | DeVos Center | Room 210A</p></li>
 <li><p><strong>Midterm:</strong> October 7 (Tuesday), 6:00 pm - 7:15 pm</p></li>
 <li><p><strong>Final Exam:</strong> December 9 (Tuesday), 6:00 pm - 7:50 pm</p></li>
 </ul>
-</div>
-<div class="section" id="section-02">
-<h3>Section 02<a class="headerlink" href="#section-02" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="section-02">
+<h3>Section 02<a class="headerlink" href="#section-02" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Class Time:</strong> Monday, Wednesday 4:30 pm - 5:45 pm</p></li>
 <li><p><strong>Room:</strong> Pew Campus | DeVos Center | Room 210A</p></li>
 <li><p><strong>Midterm:</strong> October 6 (Monday), 4:30 pm - 5:45 pm</p></li>
 <li><p><strong>Final Exam:</strong> December 10 (Wednesday), 4:00 pm - 5:50 pm</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="preference-books">
-<h2>Preference Books<a class="headerlink" href="#preference-books" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="preference-books">
+<h2>Preference Books<a class="headerlink" href="#preference-books" title="Link to this heading">#</a></h2>
 <p>There is no main textbook for the class. However, you may use materials from the following books as a reference. Lecture slides and additional reading materials will be provided on the class website.</p>
 <ul class="simple">
 <li><p>Data Mining Concepts and Techniques (4th Edition) by Jiawei Han, Jian Pei, and Hanghang Tong. Publication Date: 2023. (free at GVSU library)</p></li>
 </ul>
 <!-- Syllabus can be found [here](Syllabus_CIS635_F2023.pdf). -->
 <!-- <iframe src="assets/pdf/syllabus.pdf" style="width:100%; height:600px;" frameborder="0"></iframe> -->
-</div>
-<div class="section" id="tentative-schedule">
-<h2>Tentative Schedule<a class="headerlink" href="#tentative-schedule" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="tentative-schedule">
+<h2>Tentative Schedule<a class="headerlink" href="#tentative-schedule" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>August 31 - September 1, 2025 Labor Day Recess:</strong> No classes!</p></li>
 <li><p><strong>October 19-21, 2025 Fall Break:</strong> No classes!</p></li>
 <li><p><strong>November 26-30, 2025 Thanksgiving Recess:</strong> No classes!</p></li>
 <li><p>To execute the sample Jupyter Notebook code <i class="fa fa-code"></i>, click on the rocket icon <i class="fa fa-rocket" aria-hidden="true"></i> at the top of the page, which will open the notebook in Google Colab for interactive use.</p></li>
 </ul>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Week</p></th>
 <th class="head"><p>Content</p></th>
@@ -391,28 +405,28 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1. 08/25</p></td>
-<td><p><a class="reference download internal" download="" href="_downloads/6a81a370e1e10cf52edbbd71d45a2704/syllabus-intro.pdf"><span class="xref download myst">Syllabus</span></a><br> What is Data Mining: <a class="reference download internal" download="" href="_downloads/5ad40a4d9b476af424470661da0085de/data-mining-intro.pdf"><span class="xref download myst">slides</span></a> <br> Data Mining Tasks: <a class="reference download internal" download="" href="_downloads/9feee33f026aca143ccf78d2a0d3db40/data-mining-tasks.pdf"><span class="xref download myst">slides</span></a> <br> Introduction to Python: <a class="reference internal" href="samples/python.html"><span class="doc std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Quiz 1</p></td>
+<td><p><a class="reference download internal" download="" href="_downloads/6a81a370e1e10cf52edbbd71d45a2704/syllabus-intro.pdf"><span class="xref download myst">Syllabus</span></a><br> What is Data Mining: <a class="reference download internal" download="" href="_downloads/5ad40a4d9b476af424470661da0085de/data-mining-intro.pdf"><span class="xref download myst">slides</span></a> <br> Data Mining Tasks: <a class="reference download internal" download="" href="_downloads/9feee33f026aca143ccf78d2a0d3db40/data-mining-tasks.pdf"><span class="xref download myst">slides</span></a> <br> Introduction to Python: <a class="reference internal" href="samples/python.html"><span class="std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Quiz 1</p></td>
 <td><p><a class="reference internal" href="weekly-readings.html#content-references-w1"><span class="std std-ref">resources</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>2. 09/01</p></td>
-<td><p>Descriptive Statistics: <a class="reference download internal" download="" href="_downloads/75352d2734044d543a6b30af80053bec/data-exploration-descriptive-statistics.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="samples/descriptive-statistics.html"><span class="doc std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Data Visualization: <a class="reference download internal" download="" href="_downloads/feb6632751305fba811e7eb22d65f467/data-exploration-data-visualization.pdf"><span class="xref download myst">slides</span></a> <br> Introduction to Numpy: <a class="reference internal" href="samples/numpy.html"><span class="doc std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Introduction to Pandas: <a class="reference internal" href="samples/pandas.html"><span class="doc std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Quiz 2</p></td>
-<td><p><span class="xref std std-ref">resources</span></p></td>
+<td><p>Descriptive Statistics: <a class="reference download internal" download="" href="_downloads/75352d2734044d543a6b30af80053bec/data-exploration-descriptive-statistics.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="#samples/descriptive-statistics.ipynb"><span class="xref myst"><i class="fa fa-code"></i> code</span></a> <br> Data Visualization: <a class="reference download internal" download="" href="_downloads/feb6632751305fba811e7eb22d65f467/data-exploration-data-visualization.pdf"><span class="xref download myst">slides</span></a> <br> Introduction to Numpy: <a class="reference internal" href="samples/numpy.html"><span class="std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Introduction to Pandas: <a class="reference internal" href="samples/pandas.html"><span class="std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Quiz 2</p></td>
+<td><p><a class="reference internal" href="weekly-readings.html#content-references-w2"><span class="std std-ref">resources</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>3. 09/08</p></td>
-<td><p>Data Cleaning &amp; Integration: <a class="reference download internal" download="" href="_downloads/81e00be616f2dd7c5c48fba3da80bf7e/cleaning-Integration.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="samples/cleaning-Integration.html"><span class="doc std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Data Compression &amp; Sampling: <a class="reference download internal" download="" href="_downloads/8cd349e1e4f9bac5ff8cb410333dd18d/data-compression-sampling.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="samples/compression-sampling.html"><span class="doc std std-doc"><i class="fa fa-code"></i> code</span></a><br> Data Transformation <a class="reference download internal" download="" href="_downloads/2ace368568c451d5e1415522ec3d6866/data-transformation.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="samples/data-transformation-I.html"><span class="doc std std-doc"><i class="fa fa-code"></i> code</span></a><br> Quiz 3</p></td>
+<td><p>Data Cleaning &amp; Integration: <a class="reference download internal" download="" href="_downloads/81e00be616f2dd7c5c48fba3da80bf7e/cleaning-Integration.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="samples/cleaning-Integration.html"><span class="std std-doc"><i class="fa fa-code"></i> code</span></a> <br> Data Compression &amp; Sampling: <a class="reference download internal" download="" href="_downloads/8cd349e1e4f9bac5ff8cb410333dd18d/data-compression-sampling.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="samples/compression-sampling.html"><span class="std std-doc"><i class="fa fa-code"></i> code</span></a><br> Data Transformation <a class="reference download internal" download="" href="_downloads/2ace368568c451d5e1415522ec3d6866/data-transformation.pdf"><span class="xref download myst">slides</span></a> | <a class="reference internal" href="#samples/data-transformation-I.ipynb"><span class="xref myst"><i class="fa fa-code"></i> code</span></a><br> Quiz 3</p></td>
 <td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>4. 09/15</p></td>
-<td><p>Similarity and Distance Measures: <a class="reference download internal" download="" href="_downloads/0ef38e4307063f5b2b3d9c10a47d9a92/similarity-distance.pdf"><span class="xref download myst">slides</span></a>  <br> <a class="reference download internal" download="" href="_downloads/cbdbd448a2884edab50a2bc50eb89749/housing.csv"><span class="xref download myst">Homework 1</span></a></p></td>
-<td><p></p></td>
+<td><p>Similarity and Distance Measures: <a class="reference download internal" download="" href="_downloads/0ef38e4307063f5b2b3d9c10a47d9a92/similarity-distance.pdf"><span class="xref download myst">slides</span></a> <br> <a class="reference download internal" download="" href="_downloads/cbdbd448a2884edab50a2bc50eb89749/housing.csv"><span class="xref download myst">Homework 1</span></a></p></td>
+<td><p><a class="reference internal" href="weekly-readings.html#content-references-w4"><span class="std std-ref">resources</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>5. 09/22</p></td>
-<td><p>Feature Analysis: Relationships</p></td>
-<td><p></p></td>
+<td><p>Feature Analysis: Relationships: <a class="reference download internal" download="" href="_downloads/a5a88039d63fc7afbebb2c9f1e0c0d0a/feature-relationships.pdf"><span class="xref download myst">slides</span></a></p></td>
+<td><p><a class="reference internal" href="weekly-readings.html#content-references-w5"><span class="std std-ref">resources</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>6. 09/29</p></td>
 <td><p>Midterm Topics and Practice, Data Transformation II</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-even"><td><p>7. 10/06</p></td>
 <td><p><strong>Midterm Exam</strong></p></td>
@@ -420,35 +434,35 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p>8. 10/13</p></td>
 <td><p>Feature Extraction, Feature Selection, Markov Blanket</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-even"><td><p>9. 10/20</p></td>
 <td><p><strong>Fall Break (No Class for Section 1)</strong>, TBD for section 2</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>10. 10/27</p></td>
 <td><p>Decision Tree</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-even"><td><p>11. 11/03</p></td>
 <td><p>Classifier Evaluation, Model Selection, Bayesian Classification</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>12. 11/10</p></td>
 <td><p>Linear/Logistic Regression, Perceptron, Lazy Learning, Clustering</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-even"><td><p>13. 11/17</p></td>
 <td><p>Neural Network, CNN</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>14. 11/24</p></td>
 <td><p>RNN, Attention, Transformer</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-even"><td><p>15. 12/01</p></td>
 <td><p>Project Presentation, Final Exam Topics and Practice</p></td>
-<td><p></p></td>
+<td><p><span class="xref std std-ref">resources</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>16. 12/08</p></td>
 <td><p><strong>Final Exam</strong></p></td>
@@ -457,11 +471,12 @@ document.write(`
 </tbody>
 </table>
 </div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -488,11 +503,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="free-resources.html"
@@ -503,17 +517,16 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -550,6 +563,7 @@ By Dr.Yong Zhuang
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2025.
@@ -576,8 +590,8 @@ By Dr.Yong Zhuang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

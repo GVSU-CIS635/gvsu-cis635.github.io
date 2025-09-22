@@ -1,72 +1,74 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Data Preprocessing III &#8212; GVSU CIS 635 - KDD</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'samples/compression-sampling';</script>
-    <link rel="shortcut icon" href="https://www.gvsu.edu/cms4/asset/94807988-C47A-2A7B-05628C365AC3C2FA/gvsu_avatar_3[1678817053].jpg"/>
+    <link rel="icon" href="https://www.gvsu.edu/cms4/asset/94807988-C47A-2A7B-05628C365AC3C2FA/gvsu_avatar_3[1678817053].jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project Overview" href="../project/project-overview.html" />
+    <link rel="prev" title="Data Preprocessing II" href="data-transformation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -74,23 +76,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -98,7 +93,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -106,16 +100,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -128,9 +131,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../syllabus.html">
+  
   
   
   
@@ -140,12 +147,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.jpg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="GVSU CIS 635 - KDD - Home"/>
+    <img src="../_static/logo.jpg" class="logo__image only-dark pst-js-only" alt="GVSU CIS 635 - KDD - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -161,8 +175,19 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../weekly-readings.html">Weekly Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sample Code</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python.html">Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html">Introduction to Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html">Introduction to Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="descriptive_statistics.html">Descriptive Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cleaning-Integration.html">Data Preprocessing I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data-transformation.html">Data Preprocessing II</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Preprocessing III</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../project/project-overview.html">Project Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/project-proposal.html">Project Proposal Guide</a></li>
 </ul>
 
     </div>
@@ -178,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -187,14 +212,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -219,14 +244,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/GVSU-CIS635/gvsu-cis635.github.io/blob/main/book/samples/compression-sampling.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -300,26 +325,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -353,13 +372,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-preprocessing-iii">
-<h1>Data Preprocessing III<a class="headerlink" href="#data-preprocessing-iii" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing-iii">
+<h1>Data Preprocessing III<a class="headerlink" href="#data-preprocessing-iii" title="Link to this heading">#</a></h1>
 <p>This tutorial contains Python examples for data transformation, focusing on techniques for <strong>sampling</strong> and <strong>data compression</strong>. Follow the step-by-step instructions below carefully. To execute the code, click on the corresponding cell and press the SHIFT+ENTER keys simultaneously.</p>
-<div class="section" id="importing-libraries-and-configuration">
-<h2>Importing Libraries and Configuration<a class="headerlink" href="#importing-libraries-and-configuration" title="Permalink to this heading">#</a></h2>
+<section id="importing-libraries-and-configuration">
+<h2>Importing Libraries and Configuration<a class="headerlink" href="#importing-libraries-and-configuration" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -373,24 +392,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="n">aa6c6ef35a9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pywt</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pywt&#39;
-</pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="settings">
-<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the default figure size for matplotlib plots to 15 inches wide by 6 inches tall</span>
@@ -414,9 +419,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="sampling">
-<h2>Sampling<a class="headerlink" href="#sampling" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="sampling">
+<h2>Sampling<a class="headerlink" href="#sampling" title="Link to this heading">#</a></h2>
 <p>Sampling plays a crucial role in both data reduction for exploratory analysis and scaling algorithms for big data applications, as well as in quantifying uncertainties stemming from diverse data distributions. There are several methods for sampling data, including sampling without replacement, where each chosen instance is removed from the dataset, preventing its reselection, and sampling with replacement, which allows each chosen instance to remain in the dataset, permitting its multiple selections within the sample.</p>
 <p>In the upcoming example, we will demonstrate both sampling with and without replacement using the house_prices dataset.</p>
 <div class="cell docutils container">
@@ -431,17 +436,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/sklearn/datasets/_openml.py:968: FutureWarning: The default value of `parser` will change from `&#39;liac-arff&#39;` to `&#39;auto&#39;` in 1.4. You can set `parser=&#39;auto&#39;` to silence this warning. Therefore, an `ImportError` will be raised from 1.4 if the dataset is dense and pandas is not installed. Note that the pandas parser may return different data types. See the Notes Section in fetch_openml&#39;s API doc for details.
-  warn(
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of samples = 1460
 Number of attributes = 81
 </pre></div>
 </div>
-<div class="output text_html">
-  <div id="df-b3b2e504-b319-4185-844b-f3a040969630" class="colab-df-container">
-    <div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/conda/lib/python3.11/site-packages/sklearn/datasets/_openml.py:1022: FutureWarning: The default value of `parser` will change from `&#39;liac-arff&#39;` to `&#39;auto&#39;` in 1.4. You can set `parser=&#39;auto&#39;` to silence this warning. Therefore, an `ImportError` will be raised from 1.4 if the dataset is dense and pandas is not installed. Note that the pandas parser may return different data types. See the Notes Section in fetch_openml&#39;s API doc for details.
+  warn(
+</pre></div>
+</div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -551,7 +554,7 @@ Number of attributes = 81
       <td>65.0</td>
       <td>8450</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -602,7 +605,7 @@ Number of attributes = 81
       <td>8</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Attchd</td>
       <td>2003.0</td>
       <td>RFn</td>
@@ -617,9 +620,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>2</td>
       <td>2008</td>
@@ -635,7 +638,7 @@ Number of attributes = 81
       <td>80.0</td>
       <td>9600</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -701,9 +704,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>5</td>
       <td>2007</td>
@@ -719,7 +722,7 @@ Number of attributes = 81
       <td>68.0</td>
       <td>11250</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -785,9 +788,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>9</td>
       <td>2008</td>
@@ -803,7 +806,7 @@ Number of attributes = 81
       <td>60.0</td>
       <td>9550</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -869,9 +872,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>2</td>
       <td>2006</td>
@@ -887,7 +890,7 @@ Number of attributes = 81
       <td>84.0</td>
       <td>14260</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -953,9 +956,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>12</td>
       <td>2008</td>
@@ -971,7 +974,7 @@ Number of attributes = 81
       <td>85.0</td>
       <td>14115</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -1022,7 +1025,7 @@ Number of attributes = 81
       <td>5</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Attchd</td>
       <td>1993.0</td>
       <td>Unf</td>
@@ -1037,7 +1040,7 @@ Number of attributes = 81
       <td>320</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>MnPrv</td>
       <td>Shed</td>
       <td>700</td>
@@ -1055,7 +1058,7 @@ Number of attributes = 81
       <td>75.0</td>
       <td>10084</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -1121,9 +1124,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>8</td>
       <td>2007</td>
@@ -1139,7 +1142,7 @@ Number of attributes = 81
       <td>NaN</td>
       <td>10382</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -1205,8 +1208,8 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Shed</td>
       <td>350</td>
       <td>11</td>
@@ -1223,7 +1226,7 @@ Number of attributes = 81
       <td>51.0</td>
       <td>6120</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -1289,9 +1292,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>4</td>
       <td>2008</td>
@@ -1307,7 +1310,7 @@ Number of attributes = 81
       <td>50.0</td>
       <td>7420</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -1373,9 +1376,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>1</td>
       <td>2008</td>
@@ -1385,216 +1388,7 @@ Number of attributes = 81
     </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b3b2e504-b319-4185-844b-f3a040969630')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-b3b2e504-b319-4185-844b-f3a040969630 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b3b2e504-b319-4185-844b-f3a040969630');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-9e4460ce-e088-45fa-a604-8c9477dd8af7">
-  <button class="colab-df-quickchart" onclick="quickchart('df-9e4460ce-e088-45fa-a604-8c9477dd8af7')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-9e4460ce-e088-45fa-a604-8c9477dd8af7 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 <p>In the following code, a sample of size 3 is randomly selected (without replacement) from the original data.</p>
 <div class="cell docutils container">
@@ -1605,9 +1399,7 @@ Number of attributes = 81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-730997c0-213c-4329-83e5-72f980b9b74e" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1710,113 +1502,197 @@ Number of attributes = 81
   </thead>
   <tbody>
     <tr>
-      <th>626</th>
-      <td>627</td>
+      <th>89</th>
+      <td>90</td>
       <td>20</td>
       <td>RL</td>
-      <td>NaN</td>
-      <td>12342</td>
+      <td>60.0</td>
+      <td>8070</td>
       <td>Pave</td>
-      <td>None</td>
-      <td>IR1</td>
+      <td>NaN</td>
+      <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
       <td>Inside</td>
       <td>Gtl</td>
-      <td>NAmes</td>
+      <td>CollgCr</td>
       <td>Norm</td>
       <td>Norm</td>
       <td>1Fam</td>
       <td>1Story</td>
+      <td>4</td>
       <td>5</td>
-      <td>5</td>
-      <td>1960</td>
-      <td>1978</td>
-      <td>Hip</td>
+      <td>1994</td>
+      <td>1995</td>
+      <td>Gable</td>
       <td>CompShg</td>
-      <td>Wd Sdng</td>
-      <td>Wd Sdng</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
       <td>None</td>
       <td>0.0</td>
       <td>TA</td>
       <td>TA</td>
-      <td>CBlock</td>
-      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
       <td>TA</td>
       <td>No</td>
+      <td>GLQ</td>
+      <td>588</td>
       <td>Unf</td>
       <td>0</td>
-      <td>Unf</td>
-      <td>0</td>
-      <td>978</td>
-      <td>978</td>
+      <td>402</td>
+      <td>990</td>
       <td>GasA</td>
-      <td>TA</td>
+      <td>Ex</td>
       <td>Y</td>
       <td>SBrkr</td>
-      <td>1422</td>
+      <td>990</td>
       <td>0</td>
       <td>0</td>
-      <td>1422</td>
-      <td>0</td>
+      <td>990</td>
+      <td>1</td>
       <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>3</td>
       <td>1</td>
       <td>TA</td>
-      <td>6</td>
-      <td>Min1</td>
-      <td>1</td>
-      <td>TA</td>
-      <td>Attchd</td>
-      <td>1960.0</td>
-      <td>RFn</td>
-      <td>1</td>
-      <td>286</td>
-      <td>TA</td>
-      <td>TA</td>
+      <td>5</td>
+      <td>Typ</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Y</td>
       <td>0</td>
       <td>0</td>
-      <td>36</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>GdWo</td>
-      <td>Shed</td>
-      <td>600</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
       <td>8</td>
       <td>2007</td>
       <td>WD</td>
       <td>Normal</td>
-      <td>139900</td>
+      <td>123600</td>
     </tr>
     <tr>
-      <th>499</th>
-      <td>500</td>
-      <td>20</td>
-      <td>RL</td>
-      <td>70.0</td>
-      <td>7535</td>
+      <th>460</th>
+      <td>461</td>
+      <td>60</td>
+      <td>FV</td>
+      <td>75.0</td>
+      <td>8004</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
       <td>Inside</td>
+      <td>Gtl</td>
+      <td>Somerst</td>
+      <td>RRAn</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>8</td>
+      <td>5</td>
+      <td>2009</td>
+      <td>2009</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>Stone</td>
+      <td>110.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>No</td>
+      <td>GLQ</td>
+      <td>544</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>288</td>
+      <td>832</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>832</td>
+      <td>1103</td>
+      <td>0</td>
+      <td>1935</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>8</td>
+      <td>Typ</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>BuiltIn</td>
+      <td>2009.0</td>
+      <td>Fin</td>
+      <td>2</td>
+      <td>552</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0</td>
+      <td>150</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>12</td>
+      <td>2009</td>
+      <td>New</td>
+      <td>Partial</td>
+      <td>263435</td>
+    </tr>
+    <tr>
+      <th>537</th>
+      <td>538</td>
+      <td>20</td>
+      <td>RL</td>
+      <td>NaN</td>
+      <td>12735</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>IR1</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>FR2</td>
       <td>Gtl</td>
       <td>NAmes</td>
       <td>Norm</td>
       <td>Norm</td>
       <td>1Fam</td>
       <td>1Story</td>
+      <td>4</td>
       <td>5</td>
-      <td>7</td>
-      <td>1958</td>
-      <td>1985</td>
-      <td>Gable</td>
+      <td>1972</td>
+      <td>1972</td>
+      <td>Hip</td>
       <td>CompShg</td>
       <td>MetalSd</td>
       <td>MetalSd</td>
@@ -1829,350 +1705,57 @@ Number of attributes = 81
       <td>TA</td>
       <td>No</td>
       <td>BLQ</td>
-      <td>111</td>
-      <td>LwQ</td>
-      <td>279</td>
-      <td>522</td>
-      <td>912</td>
+      <td>600</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>264</td>
+      <td>864</td>
       <td>GasA</td>
-      <td>Fa</td>
+      <td>TA</td>
       <td>Y</td>
       <td>SBrkr</td>
-      <td>912</td>
+      <td>864</td>
       <td>0</td>
       <td>0</td>
-      <td>912</td>
+      <td>864</td>
+      <td>0</td>
       <td>0</td>
       <td>1</td>
-      <td>1</td>
       <td>0</td>
-      <td>2</td>
+      <td>3</td>
       <td>1</td>
       <td>TA</td>
       <td>5</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
-      <td>Attchd</td>
-      <td>1958.0</td>
-      <td>Fin</td>
-      <td>1</td>
-      <td>297</td>
-      <td>TA</td>
-      <td>TA</td>
-      <td>Y</td>
-      <td>12</td>
-      <td>285</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>None</td>
-      <td>MnWw</td>
-      <td>Shed</td>
-      <td>480</td>
-      <td>6</td>
-      <td>2007</td>
-      <td>WD</td>
-      <td>Normal</td>
-      <td>120000</td>
-    </tr>
-    <tr>
-      <th>550</th>
-      <td>551</td>
-      <td>120</td>
-      <td>RL</td>
-      <td>53.0</td>
-      <td>4043</td>
-      <td>Pave</td>
-      <td>None</td>
-      <td>Reg</td>
-      <td>Lvl</td>
-      <td>AllPub</td>
-      <td>Inside</td>
-      <td>Gtl</td>
-      <td>NPkVill</td>
-      <td>Norm</td>
-      <td>Norm</td>
-      <td>TwnhsE</td>
-      <td>1Story</td>
-      <td>6</td>
-      <td>6</td>
-      <td>1977</td>
-      <td>1977</td>
-      <td>Gable</td>
-      <td>CompShg</td>
-      <td>Plywood</td>
-      <td>Plywood</td>
-      <td>None</td>
-      <td>0.0</td>
-      <td>TA</td>
-      <td>TA</td>
-      <td>CBlock</td>
-      <td>Gd</td>
-      <td>TA</td>
-      <td>No</td>
-      <td>ALQ</td>
-      <td>559</td>
+      <td>NaN</td>
+      <td>Detchd</td>
+      <td>1980.0</td>
       <td>Unf</td>
-      <td>0</td>
-      <td>510</td>
-      <td>1069</td>
-      <td>GasA</td>
+      <td>2</td>
+      <td>576</td>
+      <td>TA</td>
       <td>TA</td>
       <td>Y</td>
-      <td>SBrkr</td>
-      <td>1069</td>
+      <td>216</td>
       <td>0</td>
       <td>0</td>
-      <td>1069</td>
       <td>0</td>
       <td>0</td>
-      <td>2</td>
       <td>0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>TA</td>
+      <td>NaN</td>
+      <td>MnWw</td>
+      <td>NaN</td>
+      <td>0</td>
       <td>4</td>
-      <td>Typ</td>
-      <td>0</td>
-      <td>None</td>
-      <td>Attchd</td>
-      <td>1977.0</td>
-      <td>RFn</td>
-      <td>2</td>
-      <td>440</td>
-      <td>TA</td>
-      <td>TA</td>
-      <td>Y</td>
-      <td>0</td>
-      <td>55</td>
-      <td>0</td>
-      <td>0</td>
-      <td>200</td>
-      <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>0</td>
-      <td>10</td>
       <td>2008</td>
       <td>COD</td>
-      <td>Abnorml</td>
-      <td>140000</td>
+      <td>Normal</td>
+      <td>111250</td>
     </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-730997c0-213c-4329-83e5-72f980b9b74e')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-730997c0-213c-4329-83e5-72f980b9b74e button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-730997c0-213c-4329-83e5-72f980b9b74e');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-f9b9323a-b6dd-4d9a-9133-d02f4d864565">
-  <button class="colab-df-quickchart" onclick="quickchart('df-f9b9323a-b6dd-4d9a-9133-d02f4d864565')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-f9b9323a-b6dd-4d9a-9133-d02f4d864565 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 <p>In the next example, we randomly select 1% of the data (without replacement) and display the selected samples. The random_state argument of the function specifies the seed value of the random number generator.</p>
 <div class="cell docutils container">
@@ -2183,9 +1766,7 @@ Number of attributes = 81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-8b64eae4-0dc1-4a2b-bbe7-27c674e7bb1a" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -2295,7 +1876,7 @@ Number of attributes = 81
       <td>80.0</td>
       <td>12435</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -2361,9 +1942,9 @@ Number of attributes = 81
       <td>245</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>5</td>
       <td>2008</td>
@@ -2379,7 +1960,7 @@ Number of attributes = 81
       <td>60.0</td>
       <td>8400</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Bnk</td>
       <td>AllPub</td>
@@ -2445,9 +2026,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>7</td>
       <td>2008</td>
@@ -2463,7 +2044,7 @@ Number of attributes = 81
       <td>NaN</td>
       <td>9819</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -2514,7 +2095,7 @@ Number of attributes = 81
       <td>5</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Detchd</td>
       <td>1970.0</td>
       <td>Unf</td>
@@ -2529,9 +2110,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>MnPrv</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>0</td>
       <td>2</td>
       <td>2010</td>
@@ -2547,7 +2128,7 @@ Number of attributes = 81
       <td>21.0</td>
       <td>1936</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -2598,14 +2179,14 @@ Number of attributes = 81
       <td>3</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
       <td>NaN</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Y</td>
       <td>0</td>
       <td>0</td>
@@ -2613,9 +2194,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>MnPrv</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>0</td>
       <td>12</td>
       <td>2007</td>
@@ -2631,7 +2212,7 @@ Number of attributes = 81
       <td>NaN</td>
       <td>12160</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -2682,7 +2263,7 @@ Number of attributes = 81
       <td>6</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Attchd</td>
       <td>1959.0</td>
       <td>RFn</td>
@@ -2697,9 +2278,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>MnPrv</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>0</td>
       <td>5</td>
       <td>2010</td>
@@ -2715,7 +2296,7 @@ Number of attributes = 81
       <td>86.0</td>
       <td>10562</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -2781,9 +2362,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>11</td>
       <td>2007</td>
@@ -2799,7 +2380,7 @@ Number of attributes = 81
       <td>93.0</td>
       <td>11999</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -2865,9 +2446,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>5</td>
       <td>2007</td>
@@ -2934,7 +2515,7 @@ Number of attributes = 81
       <td>4</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Detchd</td>
       <td>2005.0</td>
       <td>RFn</td>
@@ -2949,9 +2530,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>6</td>
       <td>2006</td>
@@ -2967,7 +2548,7 @@ Number of attributes = 81
       <td>41.0</td>
       <td>12393</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR2</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -3033,9 +2614,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>9</td>
       <td>2006</td>
@@ -3051,7 +2632,7 @@ Number of attributes = 81
       <td>NaN</td>
       <td>12800</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Low</td>
       <td>AllPub</td>
@@ -3117,9 +2698,9 @@ Number of attributes = 81
       <td>0</td>
       <td>396</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>8</td>
       <td>2009</td>
@@ -3135,7 +2716,7 @@ Number of attributes = 81
       <td>70.0</td>
       <td>12243</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -3201,9 +2782,9 @@ Number of attributes = 81
       <td>0</td>
       <td>180</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>2</td>
       <td>2007</td>
@@ -3219,7 +2800,7 @@ Number of attributes = 81
       <td>NaN</td>
       <td>10020</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Low</td>
       <td>AllPub</td>
@@ -3270,14 +2851,14 @@ Number of attributes = 81
       <td>4</td>
       <td>Maj1</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
       <td>NaN</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Y</td>
       <td>0</td>
       <td>0</td>
@@ -3285,9 +2866,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>3</td>
       <td>2009</td>
@@ -3303,7 +2884,7 @@ Number of attributes = 81
       <td>53.0</td>
       <td>3684</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -3369,9 +2950,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>6</td>
       <td>2009</td>
@@ -3387,7 +2968,7 @@ Number of attributes = 81
       <td>68.0</td>
       <td>50271</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Low</td>
       <td>AllPub</td>
@@ -3453,9 +3034,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>11</td>
       <td>2006</td>
@@ -3471,7 +3052,7 @@ Number of attributes = 81
       <td>NaN</td>
       <td>8125</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -3522,7 +3103,7 @@ Number of attributes = 81
       <td>6</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Attchd</td>
       <td>2002.0</td>
       <td>Unf</td>
@@ -3537,9 +3118,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>2</td>
       <td>2006</td>
@@ -3549,216 +3130,7 @@ Number of attributes = 81
     </tr>
   </tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-8b64eae4-0dc1-4a2b-bbe7-27c674e7bb1a')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-8b64eae4-0dc1-4a2b-bbe7-27c674e7bb1a button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-8b64eae4-0dc1-4a2b-bbe7-27c674e7bb1a');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-d1ba9796-2dd7-4b1e-bebd-91df6d4f87a0">
-  <button class="colab-df-quickchart" onclick="quickchart('df-d1ba9796-2dd7-4b1e-bebd-91df6d4f87a0')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-d1ba9796-2dd7-4b1e-bebd-91df6d4f87a0 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 <p>Finally, we perform a sampling with replacement to create a sample whose size is equal to 1% of the entire data. You should be able to observe duplicate instances in the sample by increasing the sample size.</p>
 <div class="cell docutils container">
@@ -3769,9 +3141,7 @@ Number of attributes = 81
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-dc5059e4-ca4b-4c46-a98b-ec44b7c5a3b0" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -3881,7 +3251,7 @@ Number of attributes = 81
       <td>120.0</td>
       <td>18000</td>
       <td>Grvl</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Low</td>
       <td>AllPub</td>
@@ -3932,7 +3302,7 @@ Number of attributes = 81
       <td>6</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Detchd</td>
       <td>1994.0</td>
       <td>RFn</td>
@@ -3947,8 +3317,8 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Shed</td>
       <td>560</td>
       <td>8</td>
@@ -3965,7 +3335,7 @@ Number of attributes = 81
       <td>21.0</td>
       <td>1680</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4016,7 +3386,7 @@ Number of attributes = 81
       <td>5</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Detchd</td>
       <td>1971.0</td>
       <td>Unf</td>
@@ -4031,9 +3401,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>8</td>
       <td>2008</td>
@@ -4049,7 +3419,7 @@ Number of attributes = 81
       <td>60.0</td>
       <td>6882</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4100,14 +3470,14 @@ Number of attributes = 81
       <td>7</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
       <td>NaN</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Y</td>
       <td>136</td>
       <td>0</td>
@@ -4115,9 +3485,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>3</td>
       <td>2007</td>
@@ -4133,7 +3503,7 @@ Number of attributes = 81
       <td>80.0</td>
       <td>9920</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4184,7 +3554,7 @@ Number of attributes = 81
       <td>6</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Attchd</td>
       <td>1954.0</td>
       <td>RFn</td>
@@ -4199,9 +3569,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>MnPrv</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>0</td>
       <td>2</td>
       <td>2010</td>
@@ -4217,7 +3587,7 @@ Number of attributes = 81
       <td>78.0</td>
       <td>10140</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4283,9 +3653,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>MnPrv</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>0</td>
       <td>8</td>
       <td>2009</td>
@@ -4301,7 +3671,7 @@ Number of attributes = 81
       <td>36.0</td>
       <td>15523</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4367,9 +3737,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>8</td>
       <td>2009</td>
@@ -4385,7 +3755,7 @@ Number of attributes = 81
       <td>50.0</td>
       <td>7207</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4436,14 +3806,14 @@ Number of attributes = 81
       <td>4</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
       <td>NaN</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>Y</td>
       <td>117</td>
       <td>0</td>
@@ -4451,9 +3821,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>2</td>
       <td>2010</td>
@@ -4469,7 +3839,7 @@ Number of attributes = 81
       <td>70.0</td>
       <td>9100</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4520,7 +3890,7 @@ Number of attributes = 81
       <td>10</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Detchd</td>
       <td>1963.0</td>
       <td>Unf</td>
@@ -4535,9 +3905,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>11</td>
       <td>2006</td>
@@ -4553,7 +3923,7 @@ Number of attributes = 81
       <td>69.0</td>
       <td>8973</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4604,7 +3974,7 @@ Number of attributes = 81
       <td>6</td>
       <td>Typ</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>2Types</td>
       <td>1998.0</td>
       <td>RFn</td>
@@ -4619,9 +3989,9 @@ Number of attributes = 81
       <td>180</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>MnWw</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>0</td>
       <td>7</td>
       <td>2006</td>
@@ -4637,7 +4007,7 @@ Number of attributes = 81
       <td>50.0</td>
       <td>8405</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4661,12 +4031,12 @@ Number of attributes = 81
       <td>TA</td>
       <td>TA</td>
       <td>Slab</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -4688,7 +4058,7 @@ Number of attributes = 81
       <td>9</td>
       <td>Mod</td>
       <td>0</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Detchd</td>
       <td>1945.0</td>
       <td>Unf</td>
@@ -4703,9 +4073,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>4</td>
       <td>2009</td>
@@ -4721,7 +4091,7 @@ Number of attributes = 81
       <td>60.0</td>
       <td>9600</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4787,9 +4157,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>10</td>
       <td>2008</td>
@@ -4871,9 +4241,9 @@ Number of attributes = 81
       <td>0</td>
       <td>220</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>6</td>
       <td>2008</td>
@@ -4889,7 +4259,7 @@ Number of attributes = 81
       <td>108.0</td>
       <td>13173</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -4955,9 +4325,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>11</td>
       <td>2009</td>
@@ -4973,7 +4343,7 @@ Number of attributes = 81
       <td>50.0</td>
       <td>6000</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>Reg</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -5039,9 +4409,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>5</td>
       <td>2009</td>
@@ -5057,7 +4427,7 @@ Number of attributes = 81
       <td>NaN</td>
       <td>10762</td>
       <td>Pave</td>
-      <td>None</td>
+      <td>NaN</td>
       <td>IR1</td>
       <td>Lvl</td>
       <td>AllPub</td>
@@ -5123,9 +4493,9 @@ Number of attributes = 81
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
       <td>0</td>
       <td>5</td>
       <td>2009</td>
@@ -5135,220 +4505,11 @@ Number of attributes = 81
     </tr>
   </tbody>
 </table>
+</div></div></div>
 </div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-dc5059e4-ca4b-4c46-a98b-ec44b7c5a3b0')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-dc5059e4-ca4b-4c46-a98b-ec44b7c5a3b0 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-dc5059e4-ca4b-4c46-a98b-ec44b7c5a3b0');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-2b0c2a09-ba7d-46c6-845a-440f45dcf50a">
-  <button class="colab-df-quickchart" onclick="quickchart('df-2b0c2a09-ba7d-46c6-845a-440f45dcf50a')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-2b0c2a09-ba7d-46c6-845a-440f45dcf50a button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-    </div>
-  </div>
-</div></div>
-</div>
-</div>
-<div class="section" id="data-compression-noise-reduction-using-haar-discrete-wavelet-transform-dwt">
-<h2>Data Compression &amp; Noise Reduction using Haar Discrete wavelet transform (DWT)<a class="headerlink" href="#data-compression-noise-reduction-using-haar-discrete-wavelet-transform-dwt" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="data-compression-noise-reduction-using-haar-discrete-wavelet-transform-dwt">
+<h2>Data Compression &amp; Noise Reduction using Haar Discrete wavelet transform (DWT)<a class="headerlink" href="#data-compression-noise-reduction-using-haar-discrete-wavelet-transform-dwt" title="Link to this heading">#</a></h2>
 <p>Load an example image and Generate a noisy image by adding Gaussian noise to the image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5418,11 +4579,11 @@ Number of attributes = 81
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3b96e7e141e8fd709b776eaccb5e0e3851650061d8589fadbafd2e6c00bc8e5f.png" src="../_images/3b96e7e141e8fd709b776eaccb5e0e3851650061d8589fadbafd2e6c00bc8e5f.png" />
+<img alt="../_images/3f2ffbb531b2cd6165a8dbf6cb0559242c1b6f3feeab7ab8b4bf14f32c49cf3a.png" src="../_images/3f2ffbb531b2cd6165a8dbf6cb0559242c1b6f3feeab7ab8b4bf14f32c49cf3a.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -5449,23 +4610,39 @@ Number of attributes = 81
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
+    <a class="left-prev"
+       href="data-transformation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Data Preprocessing II</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../project/project-overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Project Overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -5498,6 +4675,7 @@ By Dr.Yong Zhuang
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2025.
@@ -5524,8 +4702,8 @@ By Dr.Yong Zhuang
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
