@@ -41,4 +41,5 @@
 
 ```{div} full-width
 - [Spearman's Rank-Order Correlation](https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php)
+- [Student t-test for Pearson Correlation](assets/pdf/r-student-t.pdf)
 ```
