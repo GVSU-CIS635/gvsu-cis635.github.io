@@ -37,7 +37,7 @@ For the term project, we will use GitHub to manage the project's source files.
 
 1. Create a [GitHub account](https://github.com) if you don't have one.
 
-2. Accept your instructor's [GitHub project invitation](https://classroom.github.com/a/VcDVP-AV) to set up your project repository.
+2. Accept your instructor's [GitHub project invitation](https://classroom.github.com/a/z6Xh1xsp) to set up your project repository.
 
    1. **Select Your Name:** ![select-name](../assets/img/project-selectname.jpg)
    2. **Team Setup:**
@@ -50,9 +50,9 @@ For the term project, we will use GitHub to manage the project's source files.
 
 | Week | Task |
 | --- | --- |
-| Week 6, 7, 8 | [Project proposal](./project-proposal.md) due (Friday, 02/28) |
-| Week 9, 10, 11, 12 | [Progress report](./project-progress-report.md) due (Monday, 03/24) |
-| Week 13, 14, 15 | [Final report](./project-final-report.md) due (Friday, 04/18) |
+| Week 5, 6, 7 | [Project proposal](./project-proposal.md) due (Friday, 10/10) |
+| Week 8, 9, 10, 11 | [Progress report](./project-progress-report.md) due (Friday, 11/07) |
+| Week 12, 13, 14, 15 | [Final report](./project-final-report.md) due (Friday, 12/05) |
 
 ## Possible project ideas
 
@@ -67,6 +67,17 @@ Some example types of projects (your project does not need to fall under any of 
 
 ### Dataset Options for Your Project
 
-You have the flexibility to choose any public dataset that aligns with the goals of your project. Here are some suggested datasets based on various project themes: [Datasets](https://github.com/GVSU-CIS635/Datasets).
+You have the flexibility to choose any public dataset that aligns with the goals of your project. Here are some suggested datasets based on various project themes:
+
+- **Crime Hotspots Forecasting:**
+
+  - Consider using: [Calls-for-service data](https://nij.ojp.gov/funding/real-time-crime-forecasting-challenge-posting#data)
+  - [More details](../assets/pdf/crime-hotspots-forecasting.pdf)
+
+- **Streamflow Forecasting:**
+
+  - Time series: [Streamflow](../assets/data/streamflow.csv)
+
+- **[More Datasets](https://github.com/GVSU-CIS635/Datasets)** suitable for various projects.
 
 If you have any questions or need guidance on selecting the right dataset, feel free to bring your ideas to office hours for further discussion and personalized feedback!
