@@ -31,7 +31,7 @@
 
 ```{div} full-width
 - [Colab to GitHub](https://www.geeksforgeeks.org/how-to-upload-project-on-github-from-google-colab/?ref=ml_lbp)
-- [KL-Divergence](samples/kl-divergence)
+- [KL-Divergence](./samples/kl-divergence)
 - [California Housing Prices Dataset](assets/data/housing.csv)
 ```
 
