@@ -43,3 +43,33 @@
 - [Spearman's Rank-Order Correlation](https://statistics.laerd.com/statistical-guides/spearmans-rank-order-correlation-statistical-guide.php)
 - [Student t-test for Pearson Correlation](assets/pdf/r-student-t.pdf)
 ```
+
+(content:references:w6)=
+
+## Week 6
+
+```{div} full-width
+- [Midterm Exam Topics](exams/midterm-exam-topics.md)
+- Project
+  - [Overview](project/project-overview.md)
+  - [Proposal](project/project-proposal.md)
+- [Bag of Words](https://www.youtube.com/watch?v=pF9wCgUbRtc)
+- [Word Embeddings](https://www.youtube.com/watch?v=wgfSDrqYMJ4)
+- [TF-IDF](https://medium.com/@abhishekjainindore24/tf-idf-in-nlp-term-frequency-inverse-document-frequency-e05b65932f1d)
+- [Word2vec Tutorial](https://www.tensorflow.org/text/tutorials/word2vec)
+- [Word2vec Explained](https://arxiv.org/abs/1402.3722)
+- [Distributed Representations of Words and Phrases and their Compositionality](https://arxiv.org/abs/1310.4546)
+- [Neural Word Embedding as Implicit Matrix Factorization](https://papers.nips.cc/paper_files/paper/2014/file/feab05aa91085b7a8012516bc3533958-Paper.pdf)
+- [Word2vec Parameter Learning Explained](https://arxiv.org/abs/1411.2738)
+- [Stemming vs. lemmatization](https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html)
+```
+
+<!-- [Vector Auto Regression](https://www.youtube.com/watch?v=UQQHSbeIaB0) DWT and then LSTM or others-->
+
+(content:references:w8)=
+
+## Week 8
+
+```{div} full-width
+- [Bayesian network](https://personal.utdallas.edu/~nrr150130/gmbook/bayes.html)
+```
