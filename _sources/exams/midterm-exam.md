@@ -7,8 +7,8 @@
    | Movie | Box Office Revenue ($M) | IMDb Rating | Popularity |
    | ----- | ----------------------- | ----------- | ---------- |
    | 1     | 500                     | 8.5         | Hit        |
-   | 2     | 190                     | 5.8         | Flop       |
-   | 3     | 390                     | 6.7         | Hit        |
+   | 2     | 390                     | 6.7         | Hit        |
+   | 3     | 190                     | 5.8         | Flop       |
    | 4     | 60                      | 4.9         | Flop       |
 
    Compute the minimum, maximum, mean, median, and interquartile range (IQR) for the `IMDb Rating`.
@@ -19,7 +19,7 @@
 
    **Your Answer:**
 
-3. Given a new movie (Movie 5) with a box office revenue of \$280M and an IMDb rating of 7.3, predict whether it will be a "Hit" or a "Flop" by finding its most similar movie from the historical dataset using the Euclidean distance formula.
+3. Given a new movie (Movie 6) with a box office revenue of \$280M and an IMDb rating of 7.3, predict whether it will be a "Hit" or a "Flop" by finding its most similar movie from the historical dataset using the Euclidean distance formula.
 
    **Your Answer:**
 
