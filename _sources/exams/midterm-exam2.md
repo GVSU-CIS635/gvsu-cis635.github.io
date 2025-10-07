@@ -113,4 +113,6 @@
     \text{Class B} = \{\text{apple}: 6, \text{banana}: 2, \text{cherry}: 2, \text{orange}: 1\}
     $$
 
+    Assume that both classes share the same vocabulary, formed by all unique words appearing in either class.
+
     To address the **zero-probability problem**, apply Add-1 (Laplace) smoothing to obtain the smoothed probability distributions for the two classes. After applying Add-1 smoothing, what are the smoothed probability distributions of the words in Class A and Class B?
