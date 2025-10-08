@@ -54,7 +54,7 @@ There is no main textbook for the class. However, you may use materials from the
 | 4. 09/15 | Similarity and Distance Measures: [slides](assets/pdf/similarity-distance.pdf) <br> [Homework 1](assets/data/housing.csv) | {ref}`resources <content:references:w4>` |
 | 5. 09/22 | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w5>` |
 | 6. 09/29 | [Midterm Topics](./exams/midterm-exam-topics.md) and [Practice](./quizzes/4.md) <br> [Non-linear relationship](assets/pdf/nonlinear-relationships.pdf) | {ref}`resources <content:references:w6>` |
-| 7. 10/06 | **Midterm Exam** |  |
+| 7. 10/06 | **Midterm Exam** \| Homework1 \& Midterm Exam Review |  |
 | 8. 10/13 | Feature Extraction, Feature Selection, Markov Blanket | {ref}`resources <content:references:w8>` |
 | 9. 10/20 | **Fall Break (No Class for Section 1)**, TBD for section 2 | {ref}`resources <content:references:w9>` |
 | 10. 10/27 | Decision Tree | {ref}`resources <content:references:w10>` |
