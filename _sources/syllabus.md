@@ -53,12 +53,12 @@ There is no main textbook for the class. However, you may use materials from the
 | 3. 09/08 | Data Cleaning & Integration: [slides](assets/pdf/cleaning-Integration.pdf) \| [<i class="fa fa-code"></i> code](samples/cleaning-Integration.ipynb) <br> Data Compression & Sampling: [slides](assets/pdf/data-compression-sampling.pdf) \| [<i class="fa fa-code"></i> code](samples/compression-sampling.ipynb)<br> Data Transformation [slides](assets/pdf/data-transformation.pdf) \| [<i class="fa fa-code"></i> code](samples/data-transformation-I.ipynb)<br> Quiz 3 | {ref}`resources <content:references:w3>` |
 | 4. 09/15 | Similarity and Distance Measures: [slides](assets/pdf/similarity-distance.pdf) <br> [Homework 1](assets/data/housing.csv) | {ref}`resources <content:references:w4>` |
 | 5. 09/22 | Feature Analysis: Relationships: [slides](assets/pdf/feature-relationships.pdf) <br> Data Transformation II: [slides](assets/pdf/data-transformation-II.pdf) | {ref}`resources <content:references:w5>` |
-| 6. 09/29 | [Midterm Topics](./exams/midterm-exam-topics.md) and [Practice](./quizzes/4.md) <br> [Non-linear relationship](assets/pdf/nonlinear-relationships.pdf) | {ref}`resources <content:references:w6>` |
+| 6. 09/29 | [Midterm Topics](./exams/midterm-exam-topics.md) and [Practice(Quiz 4)](./quizzes/4.md) <br> [Non-linear relationship](assets/pdf/nonlinear-relationships.pdf) | {ref}`resources <content:references:w6>` |
 | 7. 10/06 | **Midterm Exam** \| Homework 1 \& Midterm Exam Review |  |
 | 8. 10/13 | Feature Extraction: [slides](assets/pdf/feature-extraction.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_extraction.ipynb) <br> Feature Selection: [slides](assets/pdf/feature-selection.pdf) \| [<i class="fa fa-code"></i> code](samples/feature_selection.ipynb) <br> Markov Blanket: [slides](assets/pdf/markov-blanket-boundary.pdf) | {ref}`resources <content:references:w8>` |
 | 9. 10/20 | **Fall Break (No Class for Section 1)**,[Homework 2](https://classroom.google.com/c/ODAzMTk1MjMwNTEz/a/ODA0ODA0NjczODU4/details), [ARIMA](./samples/arima.ipynb) | {ref}`resources <content:references:w9>` |
 | 10. 10/27 | [Decision Tree](assets/pdf/decision-tree.pdf) | {ref}`resources <content:references:w10>` |
-| 11. 11/03 | Classifier Evaluation, Model Selection, Bayesian Classification | {ref}`resources <content:references:w11>` |
+| 11. 11/03 | Classifier Evaluation, Model Selection, Bayesian Classification <br> Quiz 5 | {ref}`resources <content:references:w11>` |
 | 12. 11/10 | Linear/Logistic Regression, Perceptron, Lazy Learning, Clustering | {ref}`resources <content:references:w12>` |
 | 13. 11/17 | Neural Network, CNN | {ref}`resources <content:references:w13>` |
 | 14. 11/24 | RNN, Attention, Transformer | {ref}`resources <content:references:w14>` |
