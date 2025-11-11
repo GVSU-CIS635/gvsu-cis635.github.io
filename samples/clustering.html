@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Importing Libraries and Configuration &#8212; GVSU CIS 635 - KDD</title>
+    <title>Cluster Analysis &#8212; GVSU CIS 635 - KDD</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -185,12 +185,7 @@
 <li class="toctree-l1"><a class="reference internal" href="compression-sampling.html">Data Preprocessing III</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_extraction.html">Feature Extraction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_selection.html">Feature Selection</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Importing Libraries and Configuration</a></li>
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cluster Analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Term Project</span></p>
 <ul class="nav bd-sidenav">
@@ -359,7 +354,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Importing Libraries and Configuration</h1>
+    <h1>Cluster Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,14 +364,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Importing Libraries and Configuration</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-dataset">Load the dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">K-means Clustering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agglomerative-clustering">Agglomerative clustering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-scipy-hierarchical-clustering">Appendix: SciPy Hierarchical Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-and-configuration">Importing Libraries and Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-dataset">Load the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">K-means Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agglomerative-clustering">Agglomerative clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-scipy-hierarchical-clustering">Appendix: SciPy Hierarchical Clustering</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -387,8 +381,12 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="importing-libraries-and-configuration">
-<h1>Importing Libraries and Configuration<a class="headerlink" href="#importing-libraries-and-configuration" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="cluster-analysis">
+<h1>Cluster Analysis<a class="headerlink" href="#cluster-analysis" title="Link to this heading">#</a></h1>
+<p>The following tutorial contains Python examples for cluster analysis. Follow the step-by-step instructions below carefully. To execute the code, click on the corresponding cell and press the SHIFT+ENTER keys simultaneously.</p>
+<p><strong>Cluster analysis</strong> aims to partition input data into closely related groups of instances, so that instances belonging to the same cluster are more similar to each other than instances belonging to other clusters. In this tutorial, we will provide examples using different clustering techniques from the scikit-learn library package.</p>
+<section id="importing-libraries-and-configuration">
+<h2>Importing Libraries and Configuration<a class="headerlink" href="#importing-libraries-and-configuration" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -403,7 +401,7 @@
 </div>
 </section>
 <section id="settings">
-<h1>Settings<a class="headerlink" href="#settings" title="Link to this heading">#</a></h1>
+<h2>Settings<a class="headerlink" href="#settings" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the default figure size for matplotlib plots to 15 inches wide by 6 inches tall</span>
@@ -429,7 +427,7 @@
 </div>
 </section>
 <section id="load-the-dataset">
-<h1>Load the dataset<a class="headerlink" href="#load-the-dataset" title="Link to this heading">#</a></h1>
+<h2>Load the dataset<a class="headerlink" href="#load-the-dataset" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&#39;</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -571,7 +569,7 @@
 </div>
 </section>
 <section id="k-means-clustering">
-<h1>K-means Clustering<a class="headerlink" href="#k-means-clustering" title="Link to this heading">#</a></h1>
+<h2>K-means Clustering<a class="headerlink" href="#k-means-clustering" title="Link to this heading">#</a></h2>
 <p>The k-means clustering algorithm represents each cluster by its corresponding cluster centroid. The algorithm would partition the input data into <em>k</em> disjoint clusters by iteratively applying the following two steps:</p>
 <ol class="arabic simple">
 <li><p>Form <em>k</em> clusters by assigning each instance to its nearest centroid.</p></li>
@@ -805,7 +803,7 @@
 </div>
 </section>
 <section id="agglomerative-clustering">
-<h1>Agglomerative clustering<a class="headerlink" href="#agglomerative-clustering" title="Link to this heading">#</a></h1>
+<h2>Agglomerative clustering<a class="headerlink" href="#agglomerative-clustering" title="Link to this heading">#</a></h2>
 <p>This section demonstrates examples of applying Agglomerative Clustering using different linkage criteria:</p>
 <ul class="simple">
 <li><p>Single Linkage (MIN), where the distance between two clusters is defined as the minimum distance between any two points in the clusters.</p></li>
@@ -1047,7 +1045,7 @@
 </div>
 </section>
 <section id="appendix-scipy-hierarchical-clustering">
-<h1>Appendix: SciPy Hierarchical Clustering<a class="headerlink" href="#appendix-scipy-hierarchical-clustering" title="Link to this heading">#</a></h1>
+<h2>Appendix: SciPy Hierarchical Clustering<a class="headerlink" href="#appendix-scipy-hierarchical-clustering" title="Link to this heading">#</a></h2>
 <p>This section demonstrates <strong>agglomerative hierarchical clustering</strong> on the <strong>Iris dataset</strong> using SciPy’s <code class="docutils literal notranslate"><span class="pre">linkage()</span></code> and <code class="docutils literal notranslate"><span class="pre">dendrogram()</span></code> functions.<br />
 Four linkage criteria — <strong>single</strong>, <strong>complete</strong>, <strong>average</strong>, and <strong>ward</strong> — are compared to show how different merging strategies affect the dendrogram structure.</p>
 <p>The code below automatically loads the Iris dataset and visualizes one dendrogram per linkage method.</p>
@@ -1073,6 +1071,7 @@ Four linkage criteria — <strong>single</strong>, <strong>complete</strong>, <s
 <img alt="../_images/8f70e0618a639fa257896b30de69d430485137fbaa1d293d46dd7253e732afe4.png" src="../_images/8f70e0618a639fa257896b30de69d430485137fbaa1d293d46dd7253e732afe4.png" />
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1140,14 +1139,13 @@ Four linkage criteria — <strong>single</strong>, <strong>complete</strong>, <s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Importing Libraries and Configuration</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-dataset">Load the dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">K-means Clustering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agglomerative-clustering">Agglomerative clustering</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-scipy-hierarchical-clustering">Appendix: SciPy Hierarchical Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-libraries-and-configuration">Importing Libraries and Configuration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#settings">Settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-dataset">Load the dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#k-means-clustering">K-means Clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agglomerative-clustering">Agglomerative clustering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix-scipy-hierarchical-clustering">Appendix: SciPy Hierarchical Clustering</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
