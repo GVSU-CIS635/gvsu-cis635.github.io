@@ -37,13 +37,12 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-training = ts
-for i in range(split_validation, len(passengers)):
-    model = ARIMA(training, order=(2, 2, 27))
-    results_ARIMA = model.fit()
-    forecast = results_ARIMA.forecast(steps=1)
-    training = pd.concat([training, forecast])
-plt.plot(passengers)
-plt.plot(training)
+model = ARIMA(ts, order=(27, 2, 0))
+results_AR = model.fit()
+plt.plot(ts, label="Original")
+plt.plot(results_AR.fittedvalues, color="red", label="Fitted Values")
+plt.title("RSS: %.4f" % sum((results_AR.fittedvalues - ts) ** 2))
+plt.legend(loc="best")
+plt.show()
 -------------------
 
