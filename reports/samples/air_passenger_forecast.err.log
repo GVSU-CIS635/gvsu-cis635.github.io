@@ -37,8 +37,6 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['model = ARIMA(data_train, order=(2, 2, 11))', 'results_ARIMA = model.fit()', 'yhat = results_ARIMA.forecast(steps=24)', 'plt.plot(passengers, label="Actual Data")', 'plt.plot(yhat, color="red", label="Forecasted Data")']
-...
-['# Calculating the RMSE (Root Mean Squared Error)', 'rmse = mean_squared_error(data_test["Passengers"], yhat, squared=False)', 'plt.title(f"RMSE: {rmse:.4f}")', 'plt.legend()', 'plt.show()']
+network_training(lstm, "LSTM")
 -------------------
 
