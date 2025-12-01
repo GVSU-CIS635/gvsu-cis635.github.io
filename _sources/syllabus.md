@@ -62,5 +62,5 @@ There is no main textbook for the class. However, you may use materials from the
 | 12. 11/10 | Clustering: [slides](assets/pdf/clustering.pdf) \| [<i class="fa fa-code"></i> code](samples/clustering.ipynb)<br> Linear, Logistic regression and Perceptron: [slides](assets/pdf/logistic-perceptron.pdf) <br> Lazy learning: [slides](assets/pdf/lazy-learning.pdf) | {ref}`resources <content:references:w12>` |
 | 13. 11/17 | Neural Network: [slides](assets/pdf/nn.pdf)<br>CNN: [slides](assets/pdf/cnn.pdf) | {ref}`resources <content:references:w13>` |
 | 14. 11/24 | RNN: [slides](assets/pdf/rnn.pdf) \| [video](https://youtu.be/EZcn1_2OVfk)<br> Attention: [slides](assets/pdf/attention.pdf) \| [video](https://youtu.be/IfskrOqqB4Q) <br> Transformer: [slides](assets/pdf/transformer.pdf) \| [video](https://youtu.be/dm10YEEUa0k) \| [<i class="fa fa-code"></i> code](samples/air_passenger_forecast.ipynb) | {ref}`resources <content:references:w14>` |
-| 15. 12/01 | Project Presentation, Final Exam Topics and Practice | {ref}`resources <content:references:w15>` |
+| 15. 12/01 | Project Presentation, Final Exam: [topics](exams/final-exam-topics.md) \| [practice](exams/final-exam-preparation.md) | {ref}`resources <content:references:w15>` |
 | 16. 12/08 | **Final Exam** |  |
